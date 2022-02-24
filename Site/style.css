@@ -1,0 +1,38 @@
+body
+{
+	background-color: #989b9d;
+}
+
+header
+{
+	border:  3px black solid;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+nav ul
+{
+    list-style-type: none;
+    display: flex;
+}
+
+nav li
+{
+    margin-right: 15px;
+}
+
+nav a
+{
+    font-size: 1.3em;
+    color: #181818;
+    padding-bottom: 3px;
+    text-decoration: none;
+}
+
+nav a:hover
+{
+    color: #ca1b1b;
+    border-bottom: 3px solid #760001;
+}
+
