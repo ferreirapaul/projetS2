@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - options
+    - start
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
@@ -25,6 +26,7 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
+    - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -70,45 +72,98 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1476}
     - Class: 114
-      Script: {instanceID: 1680}
+      Script: {instanceID: 1658}
     - Class: 114
-      Script: {instanceID: 1698}
+      Script: {instanceID: 1676}
     - Class: 114
-      Script: {instanceID: 1750}
+      Script: {instanceID: 1728}
     - Class: 114
-      Script: {instanceID: 1866}
+      Script: {instanceID: 1844}
     - Class: 114
-      Script: {instanceID: 2256}
+      Script: {instanceID: 2234}
     - Class: 114
-      Script: {instanceID: 2264}
+      Script: {instanceID: 2242}
     - Class: 114
-      Script: {instanceID: 2682}
+      Script: {instanceID: 2660}
     - Class: 114
-      Script: {instanceID: 2846}
+      Script: {instanceID: 2824}
     - Class: 114
-      Script: {instanceID: 3066}
+      Script: {instanceID: 3044}
     - Class: 114
-      Script: {instanceID: 3312}
+      Script: {instanceID: 3290}
     - Class: 114
-      Script: {instanceID: 3322}
+      Script: {instanceID: 3300}
     - Class: 114
-      Script: {instanceID: 3434}
+      Script: {instanceID: 3414}
     - Class: 114
-      Script: {instanceID: 3812}
+      Script: {instanceID: 3792}
     - Class: 114
-      Script: {instanceID: 4232}
+      Script: {instanceID: 4212}
     - Class: 114
-      Script: {instanceID: 4450}
+      Script: {instanceID: 4430}
     - Class: 114
-      Script: {instanceID: 4536}
+      Script: {instanceID: 4516}
     - Class: 114
-      Script: {instanceID: 4628}
+      Script: {instanceID: 4608}
     - Class: 114
-      Script: {instanceID: 4650}
+      Script: {instanceID: 4630}
     - Class: 114
-      Script: {instanceID: 4782}
+      Script: {instanceID: 4762}
     - Class: 114
-      Script: {instanceID: 5166}
+      Script: {instanceID: 5146}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/start.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1476}
+    - Class: 114
+      Script: {instanceID: 1844}
+    - Class: 114
+      Script: {instanceID: 2242}
+    - Class: 114
+      Script: {instanceID: 2660}
+    - Class: 114
+      Script: {instanceID: 2824}
+    - Class: 114
+      Script: {instanceID: 2872}
+    - Class: 114
+      Script: {instanceID: 3044}
+    - Class: 114
+      Script: {instanceID: 3290}
+    - Class: 114
+      Script: {instanceID: 3368}
+    - Class: 114
+      Script: {instanceID: 3414}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -444,6 +499,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools
     className: BeforeAfterTestCommandState
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: start
   - hash:
       serializedVersion: 2
       Hash: 0fd6822f6177297bd0eb4d83cc7a9030
@@ -879,4 +940,5 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/settings.unity
-  playerPath: C:/Users/plavi/Desktop/ProjetS2.exe
+  - Assets/Scenes/start.unity
+  playerPath: C:/Users/plavi/Desktop/test/ProjetS2.exe
