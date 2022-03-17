@@ -1,6 +1,7 @@
-namespace Server;
-
-public enum IdMsg
+namespace Server
 {
-    welcome = 1
+    public enum IdMsg
+    {
+        welcome = 1
+    }
 }
