@@ -60,10 +60,15 @@ namespace Server
             buffer.AddRange(BitConverter.GetBytes(_value.Length));
             buffer.AddRange(Encoding.ASCII.GetBytes(_value));
         }
+        
+        public void Write(int _value)
+        {
+            buffer.AddRange(BitConverter.GetBytes(_value));
+        }
 
         public int ReadInt(bool _moveReadPos = true)
         {
-            if (buffer.Count > readPos)
+            if (buffer.Count >= readPos)
             {
 
                 int _value = BitConverter.ToInt32(readableBuffer, readPos);

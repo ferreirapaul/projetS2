@@ -111,13 +111,13 @@ public class GenMapScript : MonoBehaviour
         float clamp_perlin = Mathf.Clamp01(raw_perlin); 
         int id;
         
-        if (clamp_perlin<0.15)
+        if (clamp_perlin<0.1)
         {
             id = 9; // id 9 is deep ocean
         }
         else
         {
-            if  (clamp_perlin<0.3)
+            if  (clamp_perlin<0.2)
             {
                 id = 8; // id 8 is shallow ocean
             }

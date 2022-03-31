@@ -26,8 +26,6 @@ namespace Server
 
             stream.BeginRead(receiveBuffer, 0, dataBufferSize, ReceiveData, null);
 
-            //TODO: send welcome
-
         }
 
         private void ReceiveData(IAsyncResult _result)
@@ -51,6 +49,11 @@ namespace Server
             {
                 Console.WriteLine($"Error: {_ex}");
             }
+        }
+
+        public void SendWelcome()
+        {
+            Send.SendWelcome(this.Id);
         }
 
         public void SendData(Packet _packet)

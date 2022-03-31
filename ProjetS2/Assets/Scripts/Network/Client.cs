@@ -17,7 +17,6 @@ namespace client
 
         public TcpClient socket;
         private delegate void PacketHandler(Packet _packet);
-        private static Dictionary<int, PacketHandler> packetHandlers;
 
         private NetworkStream stream;
         private Packet receivedData;
@@ -29,11 +28,11 @@ namespace client
             {
                 instance = this;
             }
+            ConnectToServer();
         }
 
         public void ConnectToServer()
         {
-            InitializeClientData();
             socket = new TcpClient
             {
                 ReceiveBufferSize = dataBufferSize,
@@ -60,15 +59,6 @@ namespace client
             stream.BeginRead(receiveBuffer, 0, dataBufferSize, ReceiveCallback, null);
         }
 
-        private void InitializeClientData()
-        {
-            packetHandlers = new Dictionary<int, PacketHandler>()
-            {
-                { (int)IdMsg.welcome, ClientHandle.Welcome }
-            };
-            Debug.Log("Initialized packets.");
-        }
-
         public void SendData(Packet _packet)
         {
             try
@@ -88,6 +78,7 @@ namespace client
         {
             try
             {
+                Debug.Log("Received !");
                 int _byteLength = stream.EndRead(_result);
                 if (_byteLength <= 0)
                 {
@@ -112,7 +103,7 @@ namespace client
             int _packetLength = 0;
 
             receivedData.SetBytes(_data);
-
+            /*
             if (receivedData.UnreadLength() >= 4)
             {
                 _packetLength = receivedData.ReadInt();
@@ -120,35 +111,18 @@ namespace client
                 {
                     return true;
                 }
-            }
+            }*/
+            
+            int _packetId = this.receivedData.ReadInt();
+            ClientHandle.ClientActions(this.receivedData,(IdMsg) _packetId);
 
-            while (_packetLength > 0 && _packetLength <= receivedData.UnreadLength())
-            {
-                byte[] _packetBytes = receivedData.ReadBytes(_packetLength);
-                ThreadManager.ExecuteOnMainThread(() =>
-                {
-                    using (Packet _packet = new Packet(_packetBytes))
-                    {
-                        int _packetId = _packet.ReadInt();
-                        packetHandlers[_packetId](_packet);
-                    }
-                });
-
-                _packetLength = 0;
-                if (receivedData.UnreadLength() >= 4)
-                {
-                    _packetLength = receivedData.ReadInt();
-                    if (_packetLength <= 0)
-                    {
-                        return true;
-                    }
-                }
-            }
+                
+            /*
 
             if (_packetLength <= 1)
             {
                 return true;
-            }
+            }*/
 
             return false;
         }

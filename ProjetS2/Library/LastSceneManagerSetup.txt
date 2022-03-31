@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/New Gane.unity
+- path: Assets/Scenes/map.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

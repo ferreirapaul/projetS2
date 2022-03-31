@@ -1,6 +1,7 @@
 using System.Text;
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace client
 {
@@ -79,18 +80,17 @@ namespace client
         {
             if (buffer.Count > readPos)
             {
-
                 int _value = BitConverter.ToInt32(readableBuffer, readPos);
                 if (_moveReadPos)
                 {
-
                     readPos += 4;
                 }
                 return _value; 
             }
             else
             {
-                throw new Exception("Could not read value of type 'int'!");
+                Debug.Log($"Erreur fin msg : buffer:{buffer.Count}, pos: {readPos}");
+                throw new Exception();
             }
         }
             
@@ -119,7 +119,7 @@ namespace client
                 string _value = Encoding.ASCII.GetString(readableBuffer, readPos, _length);
                 if (_moveReadPos && _value.Length > 0)
                 {
-                    readPos += _length + 4; 
+                    readPos += _length; 
                 }
                 return _value; 
             }
