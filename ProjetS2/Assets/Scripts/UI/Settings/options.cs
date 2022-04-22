@@ -56,7 +56,7 @@ public class options : MonoBehaviour
         audiosource.volume = slider.value;
         TxtVolume.text = "Volume " + (audiosource.volume * 100).ToString("00") + "%";
     }
-    public void Load()
+    public void LoadStart()
     {
         SceneManager.LoadScene(1);
     }

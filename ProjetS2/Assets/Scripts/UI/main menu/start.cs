@@ -16,8 +16,12 @@ public class start : MonoBehaviour
     {
 
     }
-    public void Load()
+    public void LoadSettings()
     {
         SceneManager.LoadScene(0);
+    }
+    public void LoadNewGame()
+    {
+        SceneManager.LoadScene(2);
     }
 }
