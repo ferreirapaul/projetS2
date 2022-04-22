@@ -4,7 +4,7 @@ using System.Net.Sockets;
 using System;
 
 
-namespace client
+namespace Network
 {
     public class Client : MonoBehaviour
     {
@@ -22,15 +22,15 @@ namespace client
         private Packet receivedData;
         private byte[] receiveBuffer;
 
-        private void Awake()
+        public Client(Client instance)
         {
             if (instance == null)
             {
                 instance = this;
             }
-            ConnectToServer();
+            instance.ConnectToServer();
         }
-
+        
         public void ConnectToServer()
         {
             socket = new TcpClient
@@ -41,6 +41,15 @@ namespace client
 
             receiveBuffer = new byte[dataBufferSize];
             socket.BeginConnect(instance.ip, instance.port, ConnectCallback, socket);
+        }
+        
+        public void Disconnect()
+        {
+            socket.Close();
+            stream = null;
+            receivedData = null;
+            receiveBuffer = null;
+            socket = null;
         }
 
         private void ConnectCallback(IAsyncResult _result)
@@ -59,7 +68,7 @@ namespace client
             stream.BeginRead(receiveBuffer, 0, dataBufferSize, ReceiveCallback, null);
         }
 
-        public void SendData(Packet _packet)
+        public void SendClientData(Packet _packet)
         {
             try
             {
@@ -82,7 +91,7 @@ namespace client
                 int _byteLength = stream.EndRead(_result);
                 if (_byteLength <= 0)
                 {
-                    // TODO: disconnect
+                    this.Disconnect();
                     return;
                 }
 
@@ -94,14 +103,12 @@ namespace client
             }
             catch
             {
-                // TODO: disconnect
+                this.Disconnect(); 
             }
         }
 
         private bool HandleData(byte[] _data)
         {
-            int _packetLength = 0;
-
             receivedData.SetBytes(_data);
             /*
             if (receivedData.UnreadLength() >= 4)
@@ -124,7 +131,7 @@ namespace client
                 return true;
             }*/
 
-            return false;
+            return true;
         }
     }
 }

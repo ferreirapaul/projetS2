@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.Design.Serialization;
 using System.Net.Sockets;
 
 namespace Server
@@ -35,7 +36,7 @@ namespace Server
                 int _byteLength = stream.EndRead(_result);
                 if (_byteLength <= 0)
                 {
-                    // TODO: disconnect
+                    this.Disconnect();
                     return;
                 }
 
@@ -47,8 +48,18 @@ namespace Server
             }
             catch (Exception _ex)
             {
+                this.Disconnect();
                 Console.WriteLine($"Error: {_ex}");
             }
+        }
+        
+        public void Disconnect()
+        {
+            socket.Close();
+            stream = null;
+            receivedData = null;
+            receiveBuffer = null;
+            socket = null;
         }
 
         public void SendWelcome()
@@ -73,41 +84,10 @@ namespace Server
 
         private bool HandleData(byte[] _data)
         {
-            int _packetLength = 0;
-
             receivedData.SetBytes(_data);
-
-            if (receivedData.reste() >= 4)
-            {
-                _packetLength = receivedData.ReadInt();
-                if (_packetLength <= 0)
-                {
-                    return true;
-                }
-            }
-
-            while (_packetLength > 0 && _packetLength <= receivedData.reste())
-            {
-                byte[] _packetBytes = receivedData.ReadBytes(_packetLength);
-                //TODO: handle the data
-
-                _packetLength = 0;
-                if (receivedData.reste() >= 4)
-                {
-                    _packetLength = receivedData.ReadInt();
-                    if (_packetLength <= 0)
-                    {
-                        return true;
-                    }
-                }
-            }
-
-            if (_packetLength <= 1)
-            {
-                return true;
-            }
-
-            return false;
+            int _packetId = this.receivedData.ReadInt();
+            ServerHandle.ServerActions(this.receivedData,(IdMsg) _packetId);
+            return true;
         }
 
     }

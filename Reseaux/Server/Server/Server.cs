@@ -8,7 +8,7 @@ namespace Server
 {
     public class Server
     {
-        public static int Port;
+        public static int Port = 27880;
         public static int Max_players;
         public static TcpListener tcpListener;
         public static Dictionary<int, Client> clients;
@@ -17,7 +17,6 @@ namespace Server
 
         public static void Start()
         {
-            Port = 27880;
             Max_players = 4;
 
             Console.WriteLine("Start Server");
