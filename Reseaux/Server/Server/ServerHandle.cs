@@ -1,4 +1,6 @@
-﻿namespace Server
+﻿using System;
+
+namespace Server
 {
     public class ServerHandle
     {
@@ -6,6 +8,9 @@
         {
             switch (id)
             {
+                case IdMsg.createLobby:
+                    Console.WriteLine(p.ReadString());
+                    break;
                 default:
                     break;
             }

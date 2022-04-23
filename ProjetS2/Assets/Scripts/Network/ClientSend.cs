@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace client
+namespace Network
 {
     public class ClientSend : MonoBehaviour
     {
-        private static void SendTCPData(Packet _packet)
+        public static void SendString(string msg, IdMsg id)
         {
-            _packet.Write(_packet.buffer.Count);
-            Client.instance.SendData(_packet);
+            Packet p = new Packet(id);
+            p.Write(msg);
+            Client.instance.SendClientData(p);
         }
     }
 }
