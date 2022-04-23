@@ -1,8 +1,7 @@
-namespace Network
+namespace client
 {
     public enum IdMsg
     {
-        welcome = 1,
-        startLobby = 2
+        welcome = 1
     }
 }

@@ -4,7 +4,7 @@ using System.Net.Sockets;
 using System;
 
 
-namespace Network
+namespace client
 {
     public class Client : MonoBehaviour
     {
@@ -22,15 +22,15 @@ namespace Network
         private Packet receivedData;
         private byte[] receiveBuffer;
 
-        public Client(Client instance)
+        private void Awake()
         {
             if (instance == null)
             {
                 instance = this;
             }
-            instance.ConnectToServer();
+            ConnectToServer();
         }
-        
+
         public void ConnectToServer()
         {
             socket = new TcpClient
@@ -41,15 +41,6 @@ namespace Network
 
             receiveBuffer = new byte[dataBufferSize];
             socket.BeginConnect(instance.ip, instance.port, ConnectCallback, socket);
-        }
-        
-        public void Disconnect()
-        {
-            socket.Close();
-            stream = null;
-            receivedData = null;
-            receiveBuffer = null;
-            socket = null;
         }
 
         private void ConnectCallback(IAsyncResult _result)
@@ -68,7 +59,7 @@ namespace Network
             stream.BeginRead(receiveBuffer, 0, dataBufferSize, ReceiveCallback, null);
         }
 
-        public void SendClientData(Packet _packet)
+        public void SendData(Packet _packet)
         {
             try
             {
@@ -91,7 +82,7 @@ namespace Network
                 int _byteLength = stream.EndRead(_result);
                 if (_byteLength <= 0)
                 {
-                    this.Disconnect();
+                    // TODO: disconnect
                     return;
                 }
 
@@ -103,12 +94,14 @@ namespace Network
             }
             catch
             {
-                this.Disconnect(); 
+                // TODO: disconnect
             }
         }
 
         private bool HandleData(byte[] _data)
         {
+            int _packetLength = 0;
+
             receivedData.SetBytes(_data);
             /*
             if (receivedData.UnreadLength() >= 4)
@@ -131,7 +124,7 @@ namespace Network
                 return true;
             }*/
 
-            return true;
+            return false;
         }
     }
 }

@@ -1,9 +1,5 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/New Gane.unity
-=======
-- path: Assets/Scenes/settings.unity
->>>>>>> 6a6bf1602ad88b9523678af762b27c3638c693fe
+- path: Assets/Scenes/New Game.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

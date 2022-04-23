@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Network
+namespace client
 {
     public class Packet : IDisposable
     {
