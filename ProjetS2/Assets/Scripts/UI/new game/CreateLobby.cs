@@ -10,17 +10,22 @@ public class CreateLobby : MonoBehaviour
     public string Name;
     public int Seed = -1;
     public int choice = 1;
+    public int JoinCode;
     public Network_global Network;
 
     public void Send()
     {
         string res = "";
-        res += "Name:" + Name + ";";
-        res += "Choice:" + choice + ";";
+        res += Name + ";";
+        res += choice + ";";
         if (Seed != -1)
         {
-            res += "Seed:" + Seed + ";";
+            this.Seed = UnityEngine.Random.Range(0, 1000);
+            res += this.Seed + ";";
         }
+
+        this.JoinCode = UnityEngine.Random.Range(100000, 999999);
+        res += this.JoinCode + ";";
         Network.SendString(res,IdMsg.startLobby);
     }
 

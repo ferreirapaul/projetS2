@@ -113,27 +113,8 @@ namespace Network
         private bool HandleData(byte[] _data)
         {
             receivedData.SetBytes(_data);
-            /*
-            if (receivedData.UnreadLength() >= 4)
-            {
-                _packetLength = receivedData.ReadInt();
-                if (_packetLength <= 0)
-                {
-                    return true;
-                }
-            }*/
-            
             int _packetId = this.receivedData.ReadInt();
             ClientHandle.ClientActions(this.receivedData,(IdMsg) _packetId);
-
-                
-            /*
-
-            if (_packetLength <= 1)
-            {
-                return true;
-            }*/
-
             return true;
         }
     }

@@ -17,6 +17,17 @@ namespace Server
             Server.clients[idClient].SendData(p);
         }
         
+        public static void SendEveryoneExcept(int idBadMan, IdMsg idMsg, string msg)
+        {
+            foreach (int i in Server.clients.Keys)
+            {
+                if (i != idBadMan)
+                {
+                    SendDataClient(i, idMsg, msg);
+                }
+            }
+        }
+        
         public static void SendWelcome(int idClient)
         {
             Packet p = new Packet(IdMsg.welcome);
