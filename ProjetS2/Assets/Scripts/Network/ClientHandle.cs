@@ -19,7 +19,7 @@ namespace Network
         {
             string _msg = _packet.ReadString();
             int _myId = _packet.ReadInt();
-            Debug.Log(_myId);
+            Client.isConnected = true;
             Client.instance.myId = _myId;
         }
     }

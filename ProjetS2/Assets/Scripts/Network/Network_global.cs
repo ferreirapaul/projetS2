@@ -6,15 +6,18 @@ namespace Network
 {
     public class Network_global : MonoBehaviour
     {
-        public GameObject Client;
-        private void Start()
-        {
-            Instantiate(Client);
-        }
+        public Client Client;
 
-        public static void SendString(string msg, IdMsg id)
+        public void SendString(string msg, IdMsg id)
         {
-            ClientSend.SendString(msg, id);
+            if (Client.isConnected)
+            {
+                ClientSend.SendString(msg, id);
+            }
+            else
+            {
+                Debug.Log("Not connected");
+            }
         }
 
     }

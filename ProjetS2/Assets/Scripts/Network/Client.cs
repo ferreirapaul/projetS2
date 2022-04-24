@@ -16,13 +16,14 @@ namespace Network
         public int myId = 0;
 
         public TcpClient socket;
+        public static bool isConnected = false;
         private delegate void PacketHandler(Packet _packet);
 
         private NetworkStream stream;
         private Packet receivedData;
         private byte[] receiveBuffer;
 
-        public void Start()
+        public void Awake()
         {
             if (instance == null)
             {
@@ -33,6 +34,7 @@ namespace Network
         
         public void ConnectToServer()
         {
+            Debug.Log("A");
             socket = new TcpClient
             {
                 ReceiveBufferSize = dataBufferSize,
@@ -50,6 +52,7 @@ namespace Network
             receivedData = null;
             receiveBuffer = null;
             socket = null;
+            isConnected = false;
         }
 
         private void ConnectCallback(IAsyncResult _result)

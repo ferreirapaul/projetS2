@@ -11,23 +11,17 @@ public class CreateLobby : MonoBehaviour
     public int Seed = -1;
     public int choice = 1;
     public Network_global Network;
-    
-    
-    void Start()
-    {
-        GameObject.Instantiate(Network);
-    }
 
     public void Send()
     {
         string res = "";
-        res += "Name:" + Name;
-        res += "Choice:" + choice;
+        res += "Name:" + Name + ";";
+        res += "Choice:" + choice + ";";
         if (Seed != -1)
         {
-            res += "Seed:" + Seed;
+            res += "Seed:" + Seed + ";";
         }
-        Network.SendMessage(res,IdMsg.startLobby);
+        Network.SendString(res,IdMsg.startLobby);
     }
 
     public void ChangeName(string name)
