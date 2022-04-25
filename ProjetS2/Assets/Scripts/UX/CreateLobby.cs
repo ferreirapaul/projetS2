@@ -54,4 +54,8 @@ public class CreateLobby : MonoBehaviour
     {
         this.choice += 1;
     }
+    public void ChangeNamePlayers(string name)
+    {
+        this.Name = name;
+    }
 }
