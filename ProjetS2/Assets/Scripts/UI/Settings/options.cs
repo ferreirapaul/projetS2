@@ -58,6 +58,6 @@ public class options : MonoBehaviour
     }
     public void LoadStart()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 }

@@ -99,7 +99,7 @@ public class lobby : MonoBehaviour
     }
     public void LoadStart()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
     public void LoadMap()
     {
