@@ -5,6 +5,26 @@ namespace Network
 {
     public class ClientHandle
     {
+        
+        public static List<string> GetValues(string txt)
+        {
+            List<string> res = new List<string>();
+            string temp ="";
+            foreach (char c in txt)
+            {
+                if (c == ';')
+                {
+                    res.Add(temp);
+                    temp = "";
+                }
+                else
+                {
+                    temp += c;
+                }
+            }
+
+            return res;
+        }
 
         public static void ClientActions(Packet p, IdMsg id)
         {

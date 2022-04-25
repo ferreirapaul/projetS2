@@ -27,7 +27,7 @@ namespace Lobby
             player.emperor = Int32.Parse(value[1]);
             this.players.Add(player.Id,player);
             Send.SendDataClient(player.Id,IdMsg.sendSeed,this.Seed+";");
-            Send.SendEveryoneExcept(player.Id,IdMsg.newPlayer, value[0]+ ";" + value[1]+ ";");
+            Send.SendEveryoneExcept(player.Id,IdMsg.newPlayer, value[0]+ ";" + value[1]+ ";" + player.Id + ";");
         }
     }
 }
