@@ -16,13 +16,10 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
-    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
-    - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -265,8 +262,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
-    - Class: 49
-      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 82
@@ -281,10 +276,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 1676}
     - Class: 114
       Script: {instanceID: 1728}
-    - Class: 114
-      Script: {instanceID: 1844}
-    - Class: 114
-      Script: {instanceID: 2238}
     - Class: 114
       Script: {instanceID: 2246}
     - Class: 114
@@ -308,13 +299,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4536}
     - Class: 114
-      Script: {instanceID: 4628}
-    - Class: 114
       Script: {instanceID: 4650}
-    - Class: 114
-      Script: {instanceID: 4782}
-    - Class: 114
-      Script: {instanceID: 5164}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -344,6 +329,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 104
@@ -352,6 +339,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 1476}
     - Class: 114
       Script: {instanceID: 1844}
+    - Class: 114
+      Script: {instanceID: 2238}
     - Class: 114
       Script: {instanceID: 2246}
     - Class: 114
@@ -368,6 +357,12 @@ ScriptsOnlyBuild:
       Script: {instanceID: 3380}
     - Class: 114
       Script: {instanceID: 3426}
+    - Class: 114
+      Script: {instanceID: 4628}
+    - Class: 114
+      Script: {instanceID: 4782}
+    - Class: 114
+      Script: {instanceID: 5164}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1185,8 +1180,8 @@ ScriptsOnlyBuild:
     className: TMP_TextEventCheck
   platform: 19
   scenePathNames:
-  - Assets/Scenes/settings.unity
   - Assets/Scenes/start.unity
+  - Assets/Scenes/settings.unity
   - Assets/Scenes/New Game.unity
   - Assets/Scenes/join.unity
   - Assets/Scenes/map.unity
