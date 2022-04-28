@@ -15,6 +15,8 @@ public class CreateLobby : MonoBehaviour
     public bool isCreated = false;
     public Dictionary<int, Player> players;
 
+    public lobby lobby;
+
     public void Send()
     {
         string res = "";
@@ -27,6 +29,7 @@ public class CreateLobby : MonoBehaviour
         }
 
         this.JoinCode = UnityEngine.Random.Range(100000, 999999);
+        lobby.Generate(JoinCode);
         res += this.JoinCode + ";";
         Network.SendString(res,IdMsg.startLobby);
         isCreated = true;
@@ -37,7 +40,7 @@ public class CreateLobby : MonoBehaviour
     {
         Player p = new Player(values);
         players.Add(p.Id, p);
-        //TODO : UPDATE UI
+        lobby.AddorChangePlayer(players.Count, p.Name, p.Emperor);
     }
 
     public void ChangeName(string name)
@@ -57,5 +60,6 @@ public class CreateLobby : MonoBehaviour
     public void ChangeNamePlayers(string name)
     {
         this.Name = name;
+        
     }
 }
