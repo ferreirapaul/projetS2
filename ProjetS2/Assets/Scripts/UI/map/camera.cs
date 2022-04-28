@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class camera : MonoBehaviour
 {
-    public float speedmov = 1f;
+    /*public float speedmov = 1f;
     public Camera cam;
     private float maxZoom = 5;
     private float minZoom = 20;
@@ -16,11 +16,11 @@ public class camera : MonoBehaviour
         //movement
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.position = new Vector3(transform.position.x + speedmov, transform.position.y, transform.position.z);
+            cam.transform.position = Cameramov(cam.transform.position + new Vector3(cam.transform.position.x + speedmov, cam.transform.position.y, cam.transform.position.z));
         }
         if (Input.GetKey(KeyCode.LeftArrow)&& Camera.main.transform.position.x>35f -11+targetZoom)
         {
-            transform.position = new Vector3(transform.position.x - speedmov, transform.position.y, transform.position.z);
+            cam.transform.position = Cameramov(cam.transform.position + new Vector3(cam.transform.position.x + speedmov, cam.transform.position.y, cam.transform.position.z));
         }
         if (Input.GetKey(KeyCode.DownArrow) && Camera.main.transform.position.y > 0)
         {
@@ -37,21 +37,17 @@ public class camera : MonoBehaviour
         targetZoom = Mathf.Clamp(targetZoom, maxZoom, minZoom);
         float newSize = Mathf.MoveTowards(cam.orthographicSize, targetZoom, speedzoom * Time.deltaTime);
         cam.orthographicSize = newSize;
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.Translate(new Vector3(speedzoom * Time.deltaTime, 0, 0));
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.Translate(new Vector3(-speedzoom * Time.deltaTime, 0, 0));
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.Translate(new Vector3(0, -speedzoom * Time.deltaTime, 0));
-        }
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            transform.Translate(new Vector3(0, speedzoom * Time.deltaTime, 0));
-        }
-    }
+        float newSize = cam.orthographicSize + zoom;
+        cam.orthographicSize = Mathf.Clamp(newSize, minsize, maxsize);
+        cam.transform.position = Cameramov(cam.transform.position);
+
+
+        
+    }protected Vector3 Cameramov(Vector3 targetp) => new Vector3(Mathf.Clamp(targetp.x,
+                                                                         mapMinx + (cam.orthographicSize * cam.aspect),
+                                                                         mapMaxx - (cam.orthographicSize * cam.aspect))
+                                                              , Mathf.Clamp(targetp.y,
+                                                                           mapMiny + cam.orthographicSize,
+                                                                           mapMaxy - cam.orthographicSize)
+                                                              , targetp.z);*/
 }

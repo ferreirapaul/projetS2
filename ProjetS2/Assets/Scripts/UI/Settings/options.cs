@@ -20,7 +20,8 @@ public class options : MonoBehaviour
     private void Start() 
     {
         SliderChange();
-        KeyBinding.SetActive(false);
+        KeyBinding.SetActive(visible);
+        Panel.SetActive(visible);
     }
 
     void Update()
