@@ -5,7 +5,7 @@ namespace Server
         welcome = 1,
         createLobby = 2,
         joinLobby = 3,
-        sendSeed = 4,
+        sendInfo = 4,
         newPlayer = 5
     }
 }

@@ -26,8 +26,17 @@ namespace Lobby
             player.name = value[0];
             player.emperor = Int32.Parse(value[1]);
             this.players.Add(player.Id,player);
-            Send.SendDataClient(player.Id,IdMsg.sendSeed,this.Seed+";");
             Send.SendEveryoneExcept(player.Id,IdMsg.newPlayer, value[0]+ ";" + value[1]+ ";" + player.Id + ";");
+
+            string res = this.Seed + ";";
+            foreach (int i in players.Keys)
+            {
+                res += players[i].name + ";";
+                res += players[i].emperor + ";";
+                res += players[i].Id + ";";
+            }
+            
+            Send.SendDataClient(player.Id,IdMsg.sendInfo,res);
         }
     }
 }

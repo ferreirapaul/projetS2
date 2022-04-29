@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 namespace Network
@@ -30,6 +31,9 @@ namespace Network
         {
             switch(id)
             {
+                case IdMsg.newPlayer:
+                    CreateLobby.Join(GetValues(p.ToString()));
+                    break;
                 default:
                     Welcome(p);
                     break;
