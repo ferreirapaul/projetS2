@@ -67,11 +67,10 @@ public class lobby : MonoBehaviour
     }
     public void Continue()
     {
-        if (Seed.text!=""&&PanelN1.text!=""&& civP1 != 0)
+        if (PanelN1.text!=""&& civP1 != 0)
         {
             PanelAfterGenerate.SetActive(true);
             PanelBeforeGenerate.SetActive(false);
-            Createlobby.Send();
         }
 
     }

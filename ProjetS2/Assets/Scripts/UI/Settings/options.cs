@@ -16,12 +16,17 @@ public class options : MonoBehaviour
     public Text TxtVolume;
 
     public GameObject KeyBinding;
+    
+
+    
 
     private void Start() 
     {
         SliderChange();
         KeyBinding.SetActive(visible);
         Panel.SetActive(visible);
+        
+
     }
 
     void Update()
@@ -61,4 +66,5 @@ public class options : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+    
 }

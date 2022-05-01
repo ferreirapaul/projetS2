@@ -21,9 +21,10 @@ public class GenMapScript : MonoBehaviour
     public GameObject Snow_Hill;
     public GameObject Deep_Ocean;
     public GameObject Shallow_Ocean;
- 
-    public int map_width = 160;   // value is the amount of tiles 
-    public int map_height = 90;
+
+    public SpriteRenderer spriteRenderer;
+    private float map_width = 160f;   // value is the amount of tiles 
+    private float map_height = 90f;
     public float magnification = 15.0f;  // recommend 4 to 20
  
     List<List<int>> noise_grid = new List<List<int>>();
@@ -37,6 +38,8 @@ public class GenMapScript : MonoBehaviour
  
     void Start()
     {
+        map_width = spriteRenderer.transform.localScale.x;
+        map_height = spriteRenderer.transform.localScale.y;
         if (seed == -1)
         {
             seed = Random.Range(0, 1000);
