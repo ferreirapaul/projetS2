@@ -9,7 +9,7 @@ public class lobby : MonoBehaviour
     public GameObject PanelAfterGenerate;
     public GameObject PanelBeforeGenerate;
    
-    private int civP1 = 0;
+    public int civP1 = 1;
 
     public GameObject Panel1;
     public GameObject Panel2;
@@ -32,10 +32,7 @@ public class lobby : MonoBehaviour
 
     private List<(InputField, GameObject)> AllPanel;
 
-    
-    private CreateLobby allplayers;
-    private int count;
-    public CreateLobby Createlobby;
+
 
     // Start is called before the first frame update
     void Start()
@@ -50,10 +47,6 @@ public class lobby : MonoBehaviour
     AllPanel.Add((PanelN2, PanelC2));
     AllPanel.Add((PanelN3, PanelC3));
     AllPanel.Add((PanelN4, PanelC4));
-
-
-
-        count = 1;
     }
 
     // Update is called once per frame
@@ -162,5 +155,13 @@ public class lobby : MonoBehaviour
     public void P1chooseCiv2()
     {
         civP1 = 2;
+    }
+    public void P1chooseCiv3()
+    {
+        civP1 = 3;
+    }
+    public void P1chooseCiv4()
+    {
+        civP1 = 4;
     }
 }

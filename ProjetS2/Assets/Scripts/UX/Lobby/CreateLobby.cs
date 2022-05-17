@@ -17,7 +17,7 @@ public class CreateLobby : MonoBehaviour
     public static bool isCreated = false;
     public static Dictionary<int, Player> players;
 
-    public static lobby lobby;
+    public lobby lobby;
 
     public static void Send()
     {
