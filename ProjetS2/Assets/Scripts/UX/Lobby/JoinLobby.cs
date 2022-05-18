@@ -2,18 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using Network;
+using UnityEditor;
 using UnityEngine;
 
 public class JoinLobby : MonoBehaviour
 {
-    public static Network_global Network;
-    public static int Code;
-    public static int Choice = 1;
-    public static string Name;
+    public Network_global Network;
+    public int Code;
+    public int Choice = 1;
+    public string Name;
     
-    public static Dictionary<int, Player> players;
-    public static int Seed = -1;
-    public static lobby lobby;
+    public Dictionary<int, Player> players;
+    public int Seed = -1;
+    public LobbyInfos lobby;
     
     public void Send()
     {
@@ -22,8 +23,12 @@ public class JoinLobby : MonoBehaviour
             string res = "";
             res += Name + ";";
             res += Choice + ";";
+            string thisplayer = res + Network.Client.myId + ";";
             res += Code + ";";
             Network.SendString(res,IdMsg.joinLobby);
+            players = new Dictionary<int, Player>();
+            Player me = new Player(ClientHandle.GetValues(thisplayer));
+            players.Add(me.Id, me);
         }
         else
         {
@@ -32,16 +37,18 @@ public class JoinLobby : MonoBehaviour
         }
     }
     
-    public static void Join(List<string> values)
-    {
-        Player p = new Player(values);
-        players.Add(p.Id, p);
-        lobby.AddorChangePlayer(players.Count, p.Name, p.Emperor);
-    }
 
-    public static void GetInfos(List<string> values)
+    public void GetInfos(List<string> values)
     {
         Seed = Int32.Parse(values[0]);
+        lobby.choice = this.Choice;
+        lobby.players = this.players;
+        lobby.Name = this.name;
+        lobby.isCreated = true;
+        lobby.Seed = Seed;
+        lobby.JoinCode = this.Code;
+        lobby.lobby.AddorChangePlayer(1,this.name,this.Choice);
+
         List<string> temp = new List<string>();
         int count = 0;
         for(int i = 1; i < values.Count; i++)
@@ -50,7 +57,7 @@ public class JoinLobby : MonoBehaviour
             {
                 temp.Add(values[i]);
                 count = 0;
-                Join(values);
+                lobby.Join(values);
                 values.Clear();
             }
             else
@@ -61,18 +68,13 @@ public class JoinLobby : MonoBehaviour
         }
         
     }
-    
-    public static void ChangeChoice()
-    {
-        Choice += 1;
-    }
-    
-    public static void ChangeName(string name)
+
+    public void ChangeName(string name)
     {
         Name = name;
     }
     
-    public static void ChangeCode(string seed)
+    public void ChangeCode(string seed)
     {
         try
         {

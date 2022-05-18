@@ -12,7 +12,7 @@ namespace Network
         public static int dataBufferSize = 4096;
 
         public string ip = "127.0.0.1";
-        public int port = 26950;
+        public int port = 27880;
         public int myId = 0;
 
         public TcpClient socket;
@@ -22,6 +22,9 @@ namespace Network
         private NetworkStream stream;
         private Packet receivedData;
         private byte[] receiveBuffer;
+
+        public LobbyInfos lobby;
+        public JoinLobby lobbyJoin;
 
         public void Awake()
         {
@@ -34,7 +37,6 @@ namespace Network
         
         public void ConnectToServer()
         {
-            Debug.Log("A");
             socket = new TcpClient
             {
                 ReceiveBufferSize = dataBufferSize,

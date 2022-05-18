@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class lobby : MonoBehaviour
+public class Lobby : MonoBehaviour
 {
     public GameObject PanelAfterGenerate;
     public GameObject PanelBeforeGenerate;
@@ -31,22 +31,23 @@ public class lobby : MonoBehaviour
     public InputField Seed;
 
     private List<(InputField, GameObject)> AllPanel;
+    public LobbyInfos Lobbyinf;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-    PanelAfterGenerate.SetActive(false);
-    Panel2.SetActive(false);
-    Panel3.SetActive(false);
-    Panel4.SetActive(false);
+        PanelAfterGenerate.SetActive(false);
+        Panel2.SetActive(false);
+        Panel3.SetActive(false);
+        Panel4.SetActive(false);
 
-    AllPanel = new List<(InputField, GameObject)>();
-    AllPanel.Add((PanelN1, PanelC1));
-    AllPanel.Add((PanelN2, PanelC2));
-    AllPanel.Add((PanelN3, PanelC3));
-    AllPanel.Add((PanelN4, PanelC4));
+        AllPanel = new List<(InputField, GameObject)>();
+        AllPanel.Add((PanelN1, PanelC1));
+        AllPanel.Add((PanelN2, PanelC2));
+        AllPanel.Add((PanelN3, PanelC3));
+        AllPanel.Add((PanelN4, PanelC4));
     }
 
     // Update is called once per frame
@@ -58,15 +59,6 @@ public class lobby : MonoBehaviour
         }
         */
     }
-    public void Continue()
-    {
-        if (PanelN1.text!=""&& civP1 != 0)
-        {
-            PanelAfterGenerate.SetActive(true);
-            PanelBeforeGenerate.SetActive(false);
-        }
-
-    }
 
     public void RemovePlayer()
     {
@@ -74,8 +66,8 @@ public class lobby : MonoBehaviour
         {
             
         }*/
-       
     }
+    
     public void AddorChangePlayer(int number,string name,int emperorcount)
     {
         switch (number)
@@ -139,6 +131,7 @@ public class lobby : MonoBehaviour
         PanelBeforeGenerate.SetActive(false);
         code.text = codetojoin.ToString();
     }
+    
     public void LoadStart()
     {
         SceneManager.LoadScene(0);
@@ -150,18 +143,22 @@ public class lobby : MonoBehaviour
     public void P1chooseCiv1()
     {
         civP1 = 1;
+        Lobbyinf.choice = civP1;
     }
 
     public void P1chooseCiv2()
     {
         civP1 = 2;
+        Lobbyinf.choice = civP1;
     }
     public void P1chooseCiv3()
     {
         civP1 = 3;
+        Lobbyinf.choice = civP1;
     }
     public void P1chooseCiv4()
     {
         civP1 = 4;
+        Lobbyinf.choice = civP1;
     }
 }

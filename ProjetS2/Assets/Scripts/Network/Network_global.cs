@@ -16,7 +16,7 @@ namespace Network
             }
             else
             {
-                Debug.Log("Not connected");
+                Debug.Log("Not Connected");
             }
         }
 

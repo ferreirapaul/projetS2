@@ -32,7 +32,10 @@ namespace Network
             switch(id)
             {
                 case IdMsg.newPlayer:
-                    CreateLobby.Join(GetValues(p.ToString()));
+                    Client.instance.lobby.Join(GetValues(p.ToString()));
+                    break;
+                case IdMsg.sendInfos:
+                    Client.instance.lobbyJoin.GetInfos(GetValues(p.ToString()));
                     break;
                 default:
                     Welcome(p);

@@ -19,7 +19,7 @@ namespace Server
 
         public static void Start()
         {
-            Max_players = 10000;
+            Max_players = 10000000;
 
             Console.WriteLine("Start Server");
             clients = new Dictionary<int, Client>();
