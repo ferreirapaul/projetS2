@@ -363,6 +363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PanelN: {fileID: 1776541244}
+  lobby: {fileID: 112188113}
 --- !u!114 &592300106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1526,7 +1527,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 250.5, y: -25.9}
+  m_AnchoredPosition: {x: 406.6, y: -20}
   m_SizeDelta: {x: 472.5248, y: 25.973907}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1299638915
@@ -2269,8 +2270,8 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 592300105}
-        m_TargetAssemblyTypeName: join, Assembly-CSharp
+      - m_Target: {fileID: 112188113}
+        m_TargetAssemblyTypeName: JoinLobby, Assembly-CSharp
         m_MethodName: ChangeName
         m_Mode: 5
         m_Arguments:
@@ -2278,7 +2279,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Text
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   m_OnValueChanged:
@@ -2412,7 +2413,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1841929186}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 112188113}
+        m_TargetAssemblyTypeName: JoinLobby, Assembly-CSharp
+        m_MethodName: Send
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1841929186
 MonoBehaviour:
   m_ObjectHideFlags: 0

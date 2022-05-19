@@ -11,39 +11,25 @@ public class join : MonoBehaviour
 
     public InputField PanelN;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    public void ChangeName(string change)
-    {
-        name = change;
-    }
+    public JoinLobby lobby;
+    
 
     public void PchooseCiv1()
     {
-        civP1 = 1;
+        lobby.Choice = 1;
     }
 
     public void PchooseCiv2()
     {
-        civP1 = 2;
+        lobby.Choice = 2;
     }
     public void PchooseCiv3()
     {
-        civP1 = 3;
+        lobby.Choice = 3;
     }
     public void PchooseCiv4()
     {
-        civP1 = 4;
+        lobby.Choice = 4;
     }
     public void LoadStart()
     {
