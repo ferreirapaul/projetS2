@@ -53,7 +53,7 @@
      <Compile Include="Assets\Scripts\UX\Lobby\JoinLobby.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
      <Compile Include="Assets\Scripts\Network\ClientSend.cs" />
-     <Compile Include="Assets\Scripts\UI\new game\lobby.cs" />
+     <Compile Include="Assets\Scripts\UI\new game\Lobby.cs" />
      <Compile Include="Assets\Scripts\Network\IdMsg.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
      <Compile Include="Assets\Scripts\Network\ClientHandle.cs" />

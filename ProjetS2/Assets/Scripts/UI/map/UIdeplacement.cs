@@ -20,6 +20,9 @@ public class UIdeplacement : MonoBehaviour
 
     public Toggle mousedrag;
     public float speed = 1f;
+    public float ClickDuration = 0.2f;
+    bool clicking = false;
+    float totalDownTime = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -92,25 +95,31 @@ public class UIdeplacement : MonoBehaviour
 
             if (mousedrag.isOn)
             {
-                DragWithMouse();
+                if (Input.GetMouseButtonDown(0))
+                {
+                     totalDownTime = 0;
+                     clicking = true;
+                      drag = cam.ScreenToWorldPoint(Input.mousePosition);
+                }
+
+                if (clicking && Input.GetMouseButton(0))
+                {
+                   totalDownTime += Time.deltaTime;
+
+                     if (totalDownTime >= ClickDuration)
+                     {
+                       
+                        Vector3 diff = drag - cam.ScreenToWorldPoint(Input.mousePosition);
+                        cam.transform.position = Cameramov(cam.transform.position + diff);
+                      }
+                }
             }
+        
 
     }
 
-    private void DragWithMouse()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            drag = cam.ScreenToWorldPoint(Input.mousePosition);
-        }
 
-        if (Input.GetMouseButton(0))
-        {
-            Vector3 diff = drag - cam.ScreenToWorldPoint(Input.mousePosition);
-            cam.transform.position = Cameramov(cam.transform.position + diff);
-        }
 
-    }
     public void verify(InputField input)
     {
 

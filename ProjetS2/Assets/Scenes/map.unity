@@ -1847,6 +1847,8 @@ MonoBehaviour:
   ip: 127.0.0.1
   port: 27880
   myId: 0
+  lobby: {fileID: 0}
+  lobbyJoin: {fileID: 0}
 --- !u!4 &624612402
 Transform:
   m_ObjectHideFlags: 0
@@ -2332,6 +2334,7 @@ MonoBehaviour:
   right: {fileID: 1181366212}
   mousedrag: {fileID: 2016430573}
   speed: 1
+  ClickDuration: 0.2
 --- !u!114 &686846136
 MonoBehaviour:
   m_ObjectHideFlags: 0
