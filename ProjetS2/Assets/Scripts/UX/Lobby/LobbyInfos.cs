@@ -38,12 +38,12 @@ public class LobbyInfos : MonoBehaviour
         }
 
         JoinCode = UnityEngine.Random.Range(100000, 999999);
-        lobby.Generate(JoinCode);
         res += JoinCode + ";";
         Network.SendString(res,IdMsg.startLobby);
         res += Network.Client.myId + ";";
         isCreated = true;
         Player p = new Player(ClientHandle.GetValues(res));
+        lobby.Generate(JoinCode,p);
         players = new Dictionary<int, Player>();
         players.Add(p.Id, p);
     }
@@ -84,7 +84,7 @@ public class LobbyInfos : MonoBehaviour
     {
         List<string> temp = new List<string>();
         int count = 0;
-        for(int i = 1; i < values.Count; i++)
+        for(int i = 1; i < temp.Count; i++)
         {
             if (count == 4)
             {
@@ -101,7 +101,7 @@ public class LobbyInfos : MonoBehaviour
         }
 
         SceneManager.LoadScene("New Game");
-        lobby.Generate(JoinCode);
+        lobby.Generate(JoinCode,players[Network.Client.myId]);
     }
 
     public void StartGame()

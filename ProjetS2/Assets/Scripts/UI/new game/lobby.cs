@@ -74,22 +74,22 @@ public class Lobby : MonoBehaviour
         {
             case 1:
                 AllPanel[0].Item1.text = name;
-                AllPanel[0].Item2.GetComponentInChildren<Text>().text = "emperor number" + emperorcount.ToString();
+                AllPanel[0].Item2.GetComponentInChildren<Text>().text = "emperor number" + emperorcount;
                 break;
             case 2:
                 Panel2.SetActive(true);
                 AllPanel[1].Item1.text = name;
-                AllPanel[1].Item2.GetComponentInChildren<Text>().text = "emperor number" + emperorcount.ToString();
+                AllPanel[1].Item2.GetComponentInChildren<Text>().text = "emperor number" + emperorcount;
                 break;
             case 3:
                 Panel3.SetActive(true);
                 AllPanel[2].Item1.text = name;
-                AllPanel[2].Item2.GetComponentInChildren<Text>().text = "emperor number" + emperorcount.ToString();
+                AllPanel[2].Item2.GetComponentInChildren<Text>().text = "emperor number" + emperorcount;
                 break;
             case 4:
                 Panel4.SetActive(true);
                 AllPanel[3].Item1.text = name;
-                AllPanel[3].Item2.GetComponentInChildren<Text>().text = "emperor number" + emperorcount.ToString();
+                AllPanel[3].Item2.GetComponentInChildren<Text>().text = "emperor number" + emperorcount;
                 break;
             default:
                 break;
@@ -125,11 +125,13 @@ public class Lobby : MonoBehaviour
 
     
 
-    public void Generate(int codetojoin)
+    public void Generate(int codetojoin, Player p)
     {
         PanelAfterGenerate.SetActive(true);
         PanelBeforeGenerate.SetActive(false);
         code.text = codetojoin.ToString();
+        AllPanel[0].Item1.text = p.Name;
+        AllPanel[0].Item2.GetComponentInChildren<Text>().text = "emperor number" + p.Emperor;
     }
     
     public void LoadStart()
