@@ -35,7 +35,7 @@ namespace Network
                     Client.instance.lobby.Join(GetValues(p.ToString()));
                     break;
                 case IdMsg.sendInfos:
-                    Client.instance.lobbyJoin.GetInfos(GetValues(p.ToString()));
+                    Client.instance.lobby.GetInfos(GetValues(p.ToString()));
                     break;
                 default:
                     Welcome(p);

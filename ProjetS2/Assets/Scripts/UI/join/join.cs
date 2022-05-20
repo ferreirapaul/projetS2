@@ -10,26 +10,24 @@ public class join : MonoBehaviour
     private string name = "";
 
     public InputField PanelN;
-
-    public JoinLobby lobby;
-    
+    public LobbyInfos lobby;
 
     public void PchooseCiv1()
     {
-        lobby.Choice = 1;
+        lobby.choice = 1;
     }
 
     public void PchooseCiv2()
     {
-        lobby.Choice = 2;
+        lobby.choice = 2;
     }
     public void PchooseCiv3()
     {
-        lobby.Choice = 3;
+        lobby.choice = 3;
     }
     public void PchooseCiv4()
     {
-        lobby.Choice = 4;
+        lobby.choice = 4;
     }
     public void LoadStart()
     {

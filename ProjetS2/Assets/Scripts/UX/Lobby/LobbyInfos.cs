@@ -12,6 +12,7 @@ public class LobbyInfos : MonoBehaviour
 {
     public string Name;
     public int Seed = -1;
+    public int code;
     public int choice = 1;
     public int JoinCode;
     public Network_global Network;
@@ -25,7 +26,7 @@ public class LobbyInfos : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-    public void Send()
+    public void SendCreate()
     {
         string res = "";
         res += Name + ";";
@@ -46,6 +47,28 @@ public class LobbyInfos : MonoBehaviour
         players = new Dictionary<int, Player>();
         players.Add(p.Id, p);
     }
+    
+    public void SendJoin()
+    {
+        if (code >= 100000)
+        {
+            string res = "";
+            res += Name + ";";
+            res += choice + ";";
+            string thisplayer = res + Network.Client.myId + ";";
+            res += code + ";";
+            Network.SendString(res,IdMsg.joinLobby);
+            players = new Dictionary<int, Player>();
+            Player me = new Player(ClientHandle.GetValues(thisplayer));
+            players.Add(me.Id, me);
+            this.isCreated = true;
+        }
+        else
+        {
+            Debug.Log("Wrong code");
+            //TODO : affichier erreur
+        }
+    }
 
     public void Join(List<string> values)
     {
@@ -55,6 +78,30 @@ public class LobbyInfos : MonoBehaviour
             players.Add(p.Id, p);
             lobby.AddorChangePlayer(players.Count, p.Name, p.Emperor);
         }
+    }
+    
+    public void GetInfos(List<string> values)
+    {
+        List<string> temp = new List<string>();
+        int count = 0;
+        for(int i = 1; i < values.Count; i++)
+        {
+            if (count == 4)
+            {
+                temp.Add(values[i]);
+                count = 0;
+                Join(values);
+                values.Clear();
+            }
+            else
+            {
+                count++;
+                temp.Add(values[i]);
+            }
+        }
+
+        SceneManager.LoadScene("New Game");
+        lobby.Generate(JoinCode);
     }
 
     public void StartGame()
@@ -77,6 +124,19 @@ public class LobbyInfos : MonoBehaviour
         try
         {
             Seed = Int32.Parse(seed);
+        }
+        catch (FormatException)
+        {
+            Debug.Log("sign other than number in seed");
+            //TODO: Afficher erreur jeu
+        }
+    }
+    
+    public void ChangeCode(string seed)
+    {
+        try
+        {
+            this.code = Int32.Parse(seed);
         }
         catch (FormatException)
         {

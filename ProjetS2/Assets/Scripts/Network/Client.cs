@@ -24,7 +24,6 @@ namespace Network
         private byte[] receiveBuffer;
 
         public LobbyInfos lobby;
-        public JoinLobby lobbyJoin;
 
         public void Awake()
         {
