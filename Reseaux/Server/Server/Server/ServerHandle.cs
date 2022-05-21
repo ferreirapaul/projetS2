@@ -29,15 +29,17 @@ namespace Server
         
         public static void ServerActions(Packet p, IdMsg id, int clientId)
         {
+            string val = p.ReadString();
+            Console.WriteLine(val);
             switch (id)
             {
                 case IdMsg.createLobby:
-                    Lobby.Lobby l = new Lobby.Lobby(GetValues(p.ToString()), Server.clients[clientId]);
+                    Lobby.Lobby l = new Lobby.Lobby(GetValues(val), Server.clients[clientId]);
                     Server.lobbys.Add(l.IdSession, l);
                     Server.countLobby++;
                     break;
                 case IdMsg.joinLobby:
-                    List<string> value = GetValues(p.ToString());
+                    List<string> value = GetValues(val);
                     if (Server.lobbys.ContainsKey(Int32.Parse(value[2])))
                     {
                         Server.lobbys[Int32.Parse(value[2])].AddPlayer(value, Server.clients[clientId]);

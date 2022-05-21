@@ -12,9 +12,8 @@ public class LobbyInfos : MonoBehaviour
 {
     public string Name;
     public int Seed = -1;
-    public int code;
+    public int Code;
     public int choice = 1;
-    public int JoinCode;
     public Network_global Network;
     public bool isCreated = false;
     public Dictionary<int, Player> players;
@@ -31,32 +30,32 @@ public class LobbyInfos : MonoBehaviour
         string res = "";
         res += Name + ";";
         res += choice + ";";
-        if (Seed != -1)
+        if (Seed == -1)
         {
             Seed = UnityEngine.Random.Range(0, 1000);
             res += Seed + ";";
         }
 
-        JoinCode = UnityEngine.Random.Range(100000, 999999);
-        res += JoinCode + ";";
+        Code = UnityEngine.Random.Range(100000, 999999);
+        res += Code + ";";
         Network.SendString(res,IdMsg.startLobby);
         res += Network.Client.myId + ";";
         isCreated = true;
         Player p = new Player(ClientHandle.GetValues(res));
-        lobby.Generate(JoinCode,p);
+        lobby.Generate(Code,p);
         players = new Dictionary<int, Player>();
         players.Add(p.Id, p);
     }
     
     public void SendJoin()
     {
-        if (code >= 100000)
+        if (Code >= 100000)
         {
             string res = "";
             res += Name + ";";
             res += choice + ";";
             string thisplayer = res + Network.Client.myId + ";";
-            res += code + ";";
+            res += Code + ";";
             Network.SendString(res,IdMsg.joinLobby);
             players = new Dictionary<int, Player>();
             Player me = new Player(ClientHandle.GetValues(thisplayer));
@@ -101,7 +100,7 @@ public class LobbyInfos : MonoBehaviour
         }
 
         SceneManager.LoadScene("New Game");
-        lobby.Generate(JoinCode,players[Network.Client.myId]);
+        lobby.Generate(Code,players[Network.Client.myId]);
     }
 
     public void StartGame()
@@ -114,16 +113,11 @@ public class LobbyInfos : MonoBehaviour
         }*/
     }
 
-    public void ChangeName(string name)
-    {
-        Name = name;
-    }
-    
-    public void ChangeSeed(string seed)
+    public void ChangeCode(string codestr)
     {
         try
         {
-            Seed = Int32.Parse(seed);
+            this.Code = Int32.Parse(codestr);
         }
         catch (FormatException)
         {
@@ -132,22 +126,4 @@ public class LobbyInfos : MonoBehaviour
         }
     }
     
-    public void ChangeCode(string seed)
-    {
-        try
-        {
-            this.code = Int32.Parse(seed);
-        }
-        catch (FormatException)
-        {
-            Debug.Log("sign other than number in seed");
-            //TODO: Afficher erreur jeu
-        }
-    }
-    
-    public void ChangeNamePlayers(string name)
-    {
-        Name = name;
-        
-    }
 }

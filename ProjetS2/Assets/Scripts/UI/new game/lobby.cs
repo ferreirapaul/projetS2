@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -8,8 +9,6 @@ public class Lobby : MonoBehaviour
 {
     public GameObject PanelAfterGenerate;
     public GameObject PanelBeforeGenerate;
-   
-    public int civP1 = 1;
 
     public GameObject Panel1;
     public GameObject Panel2;
@@ -142,25 +141,40 @@ public class Lobby : MonoBehaviour
     {
         SceneManager.LoadScene(4);
     }
+
+    public void ChangeName()
+    {
+        Lobbyinf.Name = AllPanel[0].Item1.name;
+    }
+
+    public void ChangeSeed()
+    {
+        try
+        {
+            Lobbyinf.Seed = Int32.Parse(Seed.text);
+        }
+        catch (FormatException)
+        {
+            Debug.Log("sign other than number in seed");
+            //TODO: Afficher erreur jeu
+        }
+    }
+    
     public void P1chooseCiv1()
     {
-        civP1 = 1;
-        Lobbyinf.choice = civP1;
+        Lobbyinf.choice = 1;
     }
 
     public void P1chooseCiv2()
     {
-        civP1 = 2;
-        Lobbyinf.choice = civP1;
+        Lobbyinf.choice = 2;
     }
     public void P1chooseCiv3()
     {
-        civP1 = 3;
-        Lobbyinf.choice = civP1;
+        Lobbyinf.choice = 3;
     }
     public void P1chooseCiv4()
     {
-        civP1 = 4;
-        Lobbyinf.choice = civP1;
+        Lobbyinf.choice = 3;
     }
 }

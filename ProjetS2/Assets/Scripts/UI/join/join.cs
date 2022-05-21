@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -10,7 +11,26 @@ public class join : MonoBehaviour
     private string name = "";
 
     public InputField PanelN;
+    public InputField Code;
     public LobbyInfos lobby;
+    
+    public void ChangeName()
+    {
+        lobby.Name = PanelN.text;
+    }
+
+    public void ChangeCode()
+    {
+        try
+        {
+            lobby.Code= Int32.Parse(Code.text);
+        }
+        catch (FormatException)
+        {
+            Debug.Log("sign other than number in seed");
+            //TODO: Afficher erreur jeu
+        }
+    }
 
     public void PchooseCiv1()
     {
