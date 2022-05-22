@@ -29,14 +29,13 @@ namespace Network
 
         public static void ClientActions(Packet p, IdMsg id)
         {
-            string val = p.ReadString();
             switch(id)
             {
                 case IdMsg.newPlayer:
-                    Client.instance.lobby.Join(GetValues(val));
+                    Client.instance.lobby.Join(GetValues(p.ReadString()));
                     break;
                 case IdMsg.sendInfos:
-                    Client.instance.lobby.GetInfos(GetValues(val));
+                    Client.instance.lobby.GetInfos(GetValues(p.ReadString()));
                     break;
                 default:
                     Welcome(p);

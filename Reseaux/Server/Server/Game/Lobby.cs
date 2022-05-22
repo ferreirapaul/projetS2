@@ -25,7 +25,6 @@ namespace Lobby
         {
             player.name = value[0];
             player.emperor = Int32.Parse(value[1]);
-            this.players.Add(player.Id,player);
             Send.SendEveryoneExcept(player.Id,IdMsg.newPlayer, value[0]+ ";" + value[1]+ ";" + player.Id + ";");
 
             string res = this.Seed + ";";
@@ -35,6 +34,7 @@ namespace Lobby
                 res += players[i].emperor + ";";
                 res += players[i].Id + ";";
             }
+            this.players.Add(player.Id,player);
             
             Send.SendDataClient(player.Id,IdMsg.sendInfo,res);
         }
