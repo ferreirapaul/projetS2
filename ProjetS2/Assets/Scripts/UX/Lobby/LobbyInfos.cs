@@ -82,6 +82,9 @@ public class LobbyInfos : MonoBehaviour
     public void GetInfos(List<string> values)
     {
         List<string> temp = new List<string>();
+        SceneManager.LoadScene("New Game");
+        lobby.Generate(Code,players[Network.Client.myId]);
+        
         int count = 0;
         for(int i = 1; i < temp.Count; i++)
         {
@@ -98,9 +101,6 @@ public class LobbyInfos : MonoBehaviour
                 temp.Add(values[i]);
             }
         }
-
-        SceneManager.LoadScene("New Game");
-        lobby.Generate(Code,players[Network.Client.myId]);
     }
 
     public void StartGame()

@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class Lobby : MonoBehaviour
 {
@@ -38,9 +39,6 @@ public class Lobby : MonoBehaviour
     void Start()
     {
         PanelAfterGenerate.SetActive(false);
-        Panel2.SetActive(false);
-        Panel3.SetActive(false);
-        Panel4.SetActive(false);
 
         AllPanel = new List<(InputField, GameObject)>();
         AllPanel.Add((PanelN1, PanelC1));
@@ -48,82 +46,30 @@ public class Lobby : MonoBehaviour
         AllPanel.Add((PanelN3, PanelC3));
         AllPanel.Add((PanelN4, PanelC4));
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        /*if (count <= allplayers.players.Count)
-        {
-            AddPlayer();
-        }
-        */
-    }
-
-    public void RemovePlayer()
-    {
-        /*for (int i = 0; i < length; i++)
-        {
-            
-        }*/
-    }
+    
     
     public void AddorChangePlayer(int number,string name,int emperorcount)
     {
-        switch (number)
+        if (number==2)
         {
-            case 1:
-                AllPanel[0].Item1.text = name;
-                AllPanel[0].Item2.GetComponentInChildren<Text>().text = "emperor number" + emperorcount;
-                break;
-            case 2:
-                Panel2.SetActive(true);
-                AllPanel[1].Item1.text = name;
-                AllPanel[1].Item2.GetComponentInChildren<Text>().text = "emperor number" + emperorcount;
-                break;
-            case 3:
-                Panel3.SetActive(true);
-                AllPanel[2].Item1.text = name;
-                AllPanel[2].Item2.GetComponentInChildren<Text>().text = "emperor number" + emperorcount;
-                break;
-            case 4:
-                Panel4.SetActive(true);
-                AllPanel[3].Item1.text = name;
-                AllPanel[3].Item2.GetComponentInChildren<Text>().text = "emperor number" + emperorcount;
-                break;
-            default:
-                break;
+            AllPanel[1].Item1.text = name;
+            AllPanel[1].Item2.GetComponentInChildren<Text>().text = "emperor number" + emperorcount;
         }
-        
-    }
+        else if (number==3)
+        {
+            Panel3.SetActive(true);
+            AllPanel[2].Item1.text = name;
+            AllPanel[2].Item2.GetComponentInChildren<Text>().text = "emperor number" + emperorcount;
+        }
+        else if (number==4)
+        {
+            Panel4.SetActive(true);
+            AllPanel[3].Item1.text = name;
+            AllPanel[3].Item2.GetComponentInChildren<Text>().text = "emperor number" + emperorcount;
+        }
 
-    public int SearchForIndex(string name)
-    {
-        int res = 0;
-        string J1 = AllPanel[0].Item1.text;
-        string J2 = AllPanel[1].Item1.text;
-        string J3 = AllPanel[2].Item1.text;
-        string J4 = AllPanel[3].Item1.text;
-        if (name==J1)
-        {
-            res = 1;
-        }
-        if (name==J2)
-        {
-            res = 2;
-        }
-        if (name==J3)
-        {
-            res = 3;
-        }
-        if (name==J4)
-        {
-            res = 4;
-        }
-        return res;
     }
-
     
-
     public void Generate(int codetojoin, Player p)
     {
         PanelAfterGenerate.SetActive(true);
