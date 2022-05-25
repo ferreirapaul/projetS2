@@ -18,7 +18,7 @@ public class LobbyInfos : MonoBehaviour
     public bool isCreated = false;
     public Dictionary<int, Player> players;
 
-    public Lobby lobby;
+    public lobby lobby;
 
     public void Start()
     {

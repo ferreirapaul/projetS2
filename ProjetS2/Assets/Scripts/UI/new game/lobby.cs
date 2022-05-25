@@ -6,12 +6,11 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
-public class Lobby : MonoBehaviour
+public class lobby : MonoBehaviour
 {
     public GameObject PanelAfterGenerate;
     public GameObject PanelBeforeGenerate;
 
-    public GameObject Panel1;
     public GameObject Panel2;
     public GameObject Panel3;
     public GameObject Panel4;
@@ -39,6 +38,9 @@ public class Lobby : MonoBehaviour
     void Start()
     {
         PanelAfterGenerate.SetActive(false);
+        Panel2.SetActive(false);
+        Panel3.SetActive(false);
+        Panel4.SetActive(false);
 
         AllPanel = new List<(InputField, GameObject)>();
         AllPanel.Add((PanelN1, PanelC1));
@@ -52,6 +54,7 @@ public class Lobby : MonoBehaviour
     {
         if (number==2)
         {
+            Panel2.SetActive(true);
             AllPanel[1].Item1.text = name;
             AllPanel[1].Item2.GetComponentInChildren<Text>().text = "emperor number" + emperorcount;
         }
@@ -97,7 +100,7 @@ public class Lobby : MonoBehaviour
     {
         try
         {
-            Lobbyinf.Seed = Int32.Parse(Seed.text);
+            Lobbyinf.Seed = Int32.Parse(AllPanel[0].Item1.text);
         }
         catch (FormatException)
         {
@@ -109,18 +112,22 @@ public class Lobby : MonoBehaviour
     public void P1chooseCiv1()
     {
         Lobbyinf.choice = 1;
+        AllPanel[0].Item2.GetComponentInChildren<Text>().text = "emperor number" + 1;
     }
 
     public void P1chooseCiv2()
     {
         Lobbyinf.choice = 2;
+        AllPanel[0].Item2.GetComponentInChildren<Text>().text = "emperor number" + 2;
     }
     public void P1chooseCiv3()
     {
         Lobbyinf.choice = 3;
+        AllPanel[0].Item2.GetComponentInChildren<Text>().text = "emperor number" +3;
     }
     public void P1chooseCiv4()
     {
         Lobbyinf.choice = 3;
+        AllPanel[0].Item2.GetComponentInChildren<Text>().text = "emperor number" + 4;
     }
 }
