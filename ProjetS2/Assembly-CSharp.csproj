@@ -56,9 +56,9 @@
      <Compile Include="Assets\Scripts\Network\IdMsg.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
      <Compile Include="Assets\Scripts\Network\ClientHandle.cs" />
-     <Compile Include="Assets\Scripts\UX\Lobby\LobbyInfos.cs" />
+     <Compile Include="Assets\Scripts\UX\lobby\LobbyInfos.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
-     <Compile Include="Assets\Scripts\UX\Lobby\Player.cs" />
+     <Compile Include="Assets\Scripts\UX\lobby\Player.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />

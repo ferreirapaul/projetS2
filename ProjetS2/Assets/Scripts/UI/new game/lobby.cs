@@ -52,11 +52,12 @@ public class lobby : MonoBehaviour
     
     public void AddorChangePlayer(int number,string name,int emperorcount)
     {
+        Panel2.SetActive(true);
+        AllPanel[1].Item1.text = name;
+        AllPanel[1].Item2.GetComponentInChildren<Text>().text = "emperor number" + emperorcount;
         if (number==2)
         {
-            Panel2.SetActive(true);
-            AllPanel[1].Item1.text = name;
-            AllPanel[1].Item2.GetComponentInChildren<Text>().text = "emperor number" + emperorcount;
+            
         }
         else if (number==3)
         {

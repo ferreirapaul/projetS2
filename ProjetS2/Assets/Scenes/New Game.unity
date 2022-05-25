@@ -1861,6 +1861,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 659767682}
     - target: {fileID: 7643365723590813438, guid: a96aad5848fe15b4596207d957f17c62, type: 3}
+      propertyPath: ip
+      value: epirum.fr
+      objectReference: {fileID: 0}
+    - target: {fileID: 7643365723590813438, guid: a96aad5848fe15b4596207d957f17c62, type: 3}
       propertyPath: port
       value: 27880
       objectReference: {fileID: 0}
