@@ -144,7 +144,7 @@ public class Lobby : MonoBehaviour
 
     public void ChangeName()
     {
-        Lobbyinf.Name = AllPanel[0].Item1.name;
+        Lobbyinf.Name = AllPanel[0].Item1.text;
     }
 
     public void ChangeSeed()
