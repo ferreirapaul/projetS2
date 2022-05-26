@@ -310,6 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f962098b919bdb46bb17a127409c13c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amountOfCities: 50
   Desert: {fileID: 4018191296487985470, guid: 7cc9a7898a8139141807216b8e0ea88f, type: 3}
   Jungle: {fileID: 8166211391801374283, guid: 3d5ffd0b373459c4fb161731637f6afc, type: 3}
   Plains: {fileID: 8166211391801374283, guid: 3d5ffd0b373459c4fb161731637f6afc, type: 3}
@@ -320,6 +321,7 @@ MonoBehaviour:
   Snow_Hill: {fileID: 3110066424309081120, guid: 3b39fbc58035dec4da455f96e0c2c0e9, type: 3}
   Deep_Ocean: {fileID: 5000894601550076132, guid: 4ee4a1b7ddaae8b45a0cbb63d8f2cded, type: 3}
   Shallow_Ocean: {fileID: 7679113226050892638, guid: e27637247b4e5524a875cfa875a301e4, type: 3}
+  City: {fileID: 7294030458484276468, guid: 19244aa98e542cd41a3949a2b60d1067, type: 3}
   spriteRenderer: {fileID: 1201304384}
   magnification: 25
   seed: 42069
@@ -1848,7 +1850,6 @@ MonoBehaviour:
   port: 27880
   myId: 0
   lobby: {fileID: 0}
-  lobbyJoin: {fileID: 0}
 --- !u!4 &624612402
 Transform:
   m_ObjectHideFlags: 0

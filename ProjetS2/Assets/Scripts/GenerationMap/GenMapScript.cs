@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
  
 /* Danndx 2021 (youtube.com/danndx)
 From video: youtu.be/qNZ-0-7WuS8
@@ -10,6 +11,9 @@ public class GenMapScript : MonoBehaviour
 {
     Dictionary<int, GameObject> tileset;
     Dictionary<int, GameObject> tile_groups;
+
+    public int amountOfCities;
+
 
     public GameObject Desert;
     public GameObject Jungle;
@@ -22,10 +26,12 @@ public class GenMapScript : MonoBehaviour
     public GameObject Deep_Ocean;
     public GameObject Shallow_Ocean;
 
+    public GameObject City;
+
     public SpriteRenderer spriteRenderer;
     private float map_width = 160f;   // value is the amount of tiles 
     private float map_height = 90f;
-    public float magnification = 15.0f;  // recommend 4 to 20
+    public float magnification = 10.0f;  // recommend 4 to 20
  
     List<List<int>> noise_grid = new List<List<int>>();
     List<List<GameObject>> tile_grid = new List<List<GameObject>>();
@@ -47,6 +53,7 @@ public class GenMapScript : MonoBehaviour
         CreateTileset();
         CreateTileGroups();
         GenerateMap();
+        generateCities(amountOfCities);
     }
  
     void CreateTileset()
@@ -65,6 +72,7 @@ public class GenMapScript : MonoBehaviour
         tileset.Add(7, Desert_Hill);
         tileset.Add(8, Shallow_Ocean);
         tileset.Add(9, Deep_Ocean);
+        tileset.Add(10, City);
     }
  
     void CreateTileGroups()
@@ -126,7 +134,7 @@ public class GenMapScript : MonoBehaviour
             }
             else
             {
-                if  (clamp_perlin<0.33) 
+                if  (clamp_perlin<0.25) 
                 {
                     id = 3; // id 3 is desert/sand and this way it will make beaches around bodies of water
                 }else
@@ -155,7 +163,7 @@ public class GenMapScript : MonoBehaviour
             (x - seed) / magnification,
             (y - seed) / magnification
         );
-        float clamp_perlin = Mathf.Clamp01(raw_perlin); // Thanks: youtu.be/qNZ-0-7WuS8&lc=UgyoLWkYZxyp1nNc4f94AaABAg
+        float clamp_perlin = Mathf.Clamp01(raw_perlin); 
         float scaled_perlin = clamp_perlin * 4;
  
         // Replaced 4 with tileset.Count to make adding tiles easier
@@ -183,7 +191,58 @@ public class GenMapScript : MonoBehaviour
  
         tile.name = string.Format("tile_x{0}_y{1}", x, y);
         tile.transform.localPosition = new Vector3(x, y, 0);
+        if(tile_id == 10)
+        {    
+            tile.transform.localPosition = new Vector3(x, y, -1);        
+        }
+        else
+        {
+            tile.transform.localPosition = new Vector3(x, y, 0);
+        }
  
         tile_grid[x].Add(tile);
+    }
+
+
+    int getDistanceSquared ((int,int) city1 , (int,int) city2)
+    {
+        return (city1.Item1-city2.Item1)*(city1.Item1-city2.Item1) + (city1.Item2-city2.Item2)*(city1.Item2-city2.Item2);
+    }
+
+    bool cityIsValid ((int,int) Couple, List<(int,int)> cities )
+    {
+        int id = GetAltitudeIdUsingPerlin(Couple.Item1,Couple.Item2);
+        bool valid  = true;
+        int index = 0;
+        while(index < cities.Count && valid )
+        {
+            //Debug.Log("distance between" + cities[index] + " and " + Couple + " is : " + getDistanceSquared(cities[index],Couple));
+            if( getDistanceSquared(cities[index],Couple) < 500 || id > 3)
+            {
+                valid = false;
+            }
+            index++;
+        }
+
+        
+        return valid;
+    }
+
+    void generateCities (int amount)
+    {
+        List<(int,int)> cities = new List<(int,int)>{};
+        int Count = 0;
+        while(amount > 0 && Count < 10000)
+        {
+            int x = (int) Random.Range(0, map_width);
+            int y = (int) Random.Range(0, map_height);
+            if (  cityIsValid( (x,y) ,  cities) ) {
+                CreateTile(10,x,y);
+                cities.Add((x,y));
+                amount--;
+            }
+            Count++;
+
+        }
     }
 }
