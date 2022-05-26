@@ -18,12 +18,8 @@ public class LobbyInfos : MonoBehaviour
     public bool isCreated = false;
     public Dictionary<int, Player> players;
 
-    public lobby lobby;
-
-    public void Start()
-    {
-        DontDestroyOnLoad(this);
-    }
+    public lobbyjunior lobby;
+  
 
     public void SendCreate()
     {
@@ -41,8 +37,8 @@ public class LobbyInfos : MonoBehaviour
         Network.SendString(res,IdMsg.startLobby);
         res += Network.Client.myId + ";";
         isCreated = true;
+        lobby.Generate(Code);
         Player p = new Player(ClientHandle.GetValues(res));
-        lobby.Generate(Code,p);
         players = new Dictionary<int, Player>();
         players.Add(p.Id, p);
     }
@@ -75,7 +71,7 @@ public class LobbyInfos : MonoBehaviour
         {
             Player p = new Player(values);
             players.Add(p.Id, p);
-            lobby.AddorChangePlayer(players.Count, p.Name, p.Emperor);
+            lobby.AddPlayer(players.Count, p.Name, p.Emperor);
         }
     }
     
@@ -83,8 +79,8 @@ public class LobbyInfos : MonoBehaviour
     {
         List<string> temp = new List<string>();
         SceneManager.LoadScene("New Game");
-        lobby.Generate(Code,players[Network.Client.myId]);
-        
+        lobby.Generate(Code);
+
         int count = 0;
         for(int i = 1; i < temp.Count; i++)
         {
