@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -15,7 +16,7 @@ public class lobbyjunior : MonoBehaviour
     public GameObject Panel;
     public GameObject civP1;
 
-    public GameObject civP2;
+    public daName civP2;
     public GameObject civP3;
     public GameObject civP4;
 
@@ -23,8 +24,20 @@ public class lobbyjunior : MonoBehaviour
 
     public InputField NameP1;
     public daName NameP2;
+    public GameObject T;
+
     public Text NameP3;
     public Text NameP4;
+    private List<string> allnames = new List<string>() { "Name", "Name", "Name" };
+    private List<string> allciv = new List<string>(){"0", "0", "0"};
+
+    public void Update()
+    {
+        //NameP2.ChangeName(allnames[0]);
+        //civP2.ChangeCiv(allciv[0]);
+        T.SetActive(false);
+        T.SetActive(true);
+    }
 
     public void PchooseCiv1()
     {
@@ -63,23 +76,21 @@ public class lobbyjunior : MonoBehaviour
 
     public void Generate(int codetojoin)
     {
-        Debug.Log("Fuck");
         Panel.SetActive(true);
-        Debug.Log("Yes Yes Yes");
         civP1.GetComponentInChildren<Text>().text = "emperor number " + civ1;
         code.text = codetojoin.ToString();
     }
 
     public void AddPlayer(int player, string name, int emperor)
     {
-        Debug.Log("shit");
+        allnames[player - 2] = name;
+        allciv[player - 2] = emperor.ToString();
         switch(player)
         {
             case 2:
-
-                Debug.Log("shit1");
+                Debug.Log("2");
                 NameP2.ChangeName(name);
-                civP2.GetComponentInChildren<Text>().text = "emperor number " + emperor;
+                civP2.ChangeName(emperor.ToString());
                 break;
             case 3:
                 NameP3.enabled = false;
