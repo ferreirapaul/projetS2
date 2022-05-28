@@ -22,7 +22,7 @@ public class lobbyjunior : MonoBehaviour
     public InputField code;
 
     public InputField NameP1;
-    public Text NameP2;
+    public daName NameP2;
     public Text NameP3;
     public Text NameP4;
 
@@ -72,19 +72,25 @@ public class lobbyjunior : MonoBehaviour
 
     public void AddPlayer(int player, string name, int emperor)
     {
+        Debug.Log("shit");
         switch(player)
         {
             case 2:
-                Debug.Log(name);
-                NameP2.text = name;
+
+                Debug.Log("shit1");
+                NameP2.ChangeName(name);
                 civP2.GetComponentInChildren<Text>().text = "emperor number " + emperor;
                 break;
             case 3:
+                NameP3.enabled = false;
                 NameP3.text = name;
+                NameP3.enabled = true;
                 civP3.GetComponentInChildren<Text>().text = "emperor number " + emperor;
                 break;
             default:
+                NameP4.enabled = false;
                 NameP4.text = name;
+                NameP4.enabled = true;
                 civP4.GetComponentInChildren<Text>().text = "emperor number " + emperor;
                 break;
         }

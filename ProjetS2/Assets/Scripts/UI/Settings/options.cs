@@ -20,7 +20,7 @@ public class options : MonoBehaviour
 
     
 
-    private void Start() 
+    private void Awake() 
     {
         SliderChange();
         KeyBinding.SetActive(visible);
