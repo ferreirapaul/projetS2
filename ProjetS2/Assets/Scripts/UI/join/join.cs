@@ -7,12 +7,19 @@ using UnityEngine.SceneManagement;
 
 public class join : MonoBehaviour
 {
-    private int civP1 = 1;
-    private string name = "";
-
     public InputField PanelN;
     public InputField Code;
     public LobbyInfos lobby;
+    
+    public void Awake()
+    {
+        lobby = FindObjectOfType<LobbyInfos>();
+    }
+
+    public void Send()
+    {
+        lobby.SendJoin();
+    }
     
     public void ChangeName()
     {

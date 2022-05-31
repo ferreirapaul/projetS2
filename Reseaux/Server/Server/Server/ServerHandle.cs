@@ -45,6 +45,10 @@ namespace Server
                         Server.lobbys[Int32.Parse(value[2])].AddPlayer(value, Server.clients[clientId]);
                     }//return false
                     break;
+                
+                case IdMsg.launchGame:
+                    Send.SendEveryoneExcept(clientId,IdMsg.launchGame,val);
+                    break;
                 default:
                     Console.Error.WriteLine("Unknow Id");
                     break;

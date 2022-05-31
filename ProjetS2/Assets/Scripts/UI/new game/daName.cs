@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class daName : MonoBehaviour
 {
     public GameObject me;
-    Text t;
+    private Text t;
     
     public void Start()
     {
@@ -14,8 +14,8 @@ public class daName : MonoBehaviour
     }
     public void ChangeName(string name)
     {
+        Debug.Log(name);
         t.text = name;
-        Debug.Log(t.text);
     }
     public void ChangeCiv(string emperor)
     {

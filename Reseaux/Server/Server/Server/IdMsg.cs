@@ -6,6 +6,7 @@ namespace Server
         createLobby = 2,
         joinLobby = 3,
         sendInfo = 4,
-        newPlayer = 5
+        newPlayer = 5,
+        launchGame = 6
     }
 }
