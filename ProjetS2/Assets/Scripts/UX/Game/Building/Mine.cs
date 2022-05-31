@@ -11,7 +11,7 @@ namespace Building
         public Mine(Gold g)
         {
             this.golds = g;
-            this.gain = 7;
+            this.gain = 3;
         }
 
         public override void DoTurn()

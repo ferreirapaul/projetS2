@@ -4,7 +4,7 @@
     {
         public ProductionPoints ()
         {
-            
+            this.Value = 3;
         }
     }
 }

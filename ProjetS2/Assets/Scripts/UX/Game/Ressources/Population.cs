@@ -4,7 +4,7 @@
     {
         public Population()
         {
-            
+            this.Value = 30;
         }
     }
 }

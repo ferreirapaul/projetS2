@@ -4,7 +4,7 @@
     {
         public Gold()
         {
-            
+            this.Value = 200;
         }
     }
 }

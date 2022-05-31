@@ -10,7 +10,6 @@ namespace Building
         public Forge(ProductionPoints p)
         {
             this.points = p;
-            this.points.Value = 1;
             this.gain = 1;
         }
 

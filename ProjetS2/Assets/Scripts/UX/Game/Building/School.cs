@@ -11,8 +11,7 @@ namespace Building
         public School(Sciences s)
         {
             this.sciences = s;
-            this.sciences.Value = 0;
-            this.gain = 1;
+            this.gain = 2;
         }
 
         public override void DoTurn()

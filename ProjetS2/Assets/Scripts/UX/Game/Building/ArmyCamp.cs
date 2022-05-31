@@ -1,4 +1,6 @@
-﻿using Ressources;
+﻿using System.Collections.Generic;
+using Ressources;
+using Technology;
 
 namespace Building
 {
@@ -8,6 +10,12 @@ namespace Building
         private Food food;
         public int LossGold;
         public int LossFood;
+        protected List<Army.Army> availableSoldiers;
+
+        public List<Army.Army> AvailableSoldiers
+        {
+            get => this.availableSoldiers;
+        }
 
         public ArmyCamp(Gold g, Food f)
         {
@@ -15,6 +23,7 @@ namespace Building
             this.LossGold = 5;
             this.golds = g;
             this.food = f;
+            //TODO: Add sword man
         }
 
         public override void DoTurn()

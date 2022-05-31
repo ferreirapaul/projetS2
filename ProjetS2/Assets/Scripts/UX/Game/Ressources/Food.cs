@@ -4,7 +4,7 @@
     {
         public Food()
         {
-            
+            this.Value = 50;
         }
     }
 }

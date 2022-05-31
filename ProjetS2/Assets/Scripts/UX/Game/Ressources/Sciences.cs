@@ -4,7 +4,7 @@
     {
         public Sciences()
         {
-            
+            this.Value = 10;
         }
     }
 }
