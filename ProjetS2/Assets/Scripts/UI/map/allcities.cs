@@ -15,7 +15,6 @@ public class allcities : MonoBehaviour
     public GameObject ListA;
     public GameObject ChildB;
     public GameObject ChildA;
-    public GameObject NameA;
     private int displaywhat = 0;
     // Start is called before the first frame update
     void Start()
@@ -33,7 +32,7 @@ public class allcities : MonoBehaviour
         /*switch (displaywhat)
         {
             case 0:
-                DisplayInformations(Name,)
+                DisplayBuildings(Name,)
                 break;
             case 1:
                 DisplaySciences();
@@ -49,30 +48,27 @@ public class allcities : MonoBehaviour
         
     }
    
-    public void DisplayInformations(string name,List<cities> buildings)
+    public void DisplayBuildings(string name,List<cities> buildings)
     {
         Panelbuildings.SetActive(true);
         Name.text = name;
-        DisplayList(0);
 
     }
     
     public void DisplayArmy(string name, List<army> army)
     {
         Panelarmy.SetActive(true);
-        DisplayList(1);
     }
 
     public void DisplaySciences(string name, List<army> army)
     {
         Panelsciences.SetActive(true);
-        DisplayList(2);
     }
     */
-    public void AddArmy(int numberofarmy,string name)
+    public void AddArmy(string name)
     {
-        
         GameObject arm = Instantiate(ChildA);
+        
         GameObject texta = arm.transform.Find("Name").gameObject;
         Debug.Log(texta);
         TextMeshProUGUI whythis=texta.GetComponent<TextMeshProUGUI>();
@@ -80,7 +76,45 @@ public class allcities : MonoBehaviour
         arm.transform.parent = ListA.transform;
         arm.transform.localScale = new Vector3(1, 1, 1);
         VerticalLayoutGroup listofarmy = ListA.GetComponent<VerticalLayoutGroup>();
-        listofarmy.spacing = numberofarmy*3-105;
+        arm.transform.localPosition = new Vector3(0,0,0);
+        listofarmy.spacing = 0;
+        
+
+        RectTransform rect = ListA.GetComponent<RectTransform>();
+        rect.sizeDelta = new Vector2(160.74f, rect.sizeDelta.y+13.355f);
+        ListA.transform.localPosition =new Vector3(ListA.transform.localPosition.x, ListA.transform.localPosition.y-6.677f, 0) ;
+        RectTransform rectparent = ListA.transform.parent.gameObject.GetComponent<RectTransform>();
+        Debug.Log(rectparent);
+        rectparent.sizeDelta = new Vector2(0, rectparent.sizeDelta.y + 14);
+    }
+    /*
+     * -22.525
+     * 
+     * -22.202
+     * 
+     * */
+
+    public void AddBuildings(string name)
+    {
+        GameObject build = Instantiate(ChildB);
+        GameObject textb = build.transform.Find("Name").gameObject;
+        TextMeshProUGUI whythis = textb.GetComponent<TextMeshProUGUI>();
+        whythis.text = name;
+        build.transform.parent = ListB.transform;
+        build.transform.localScale = new Vector3(1, 1, 1);
+        VerticalLayoutGroup listofbuildings = ListB.GetComponent<VerticalLayoutGroup>();
+    }
+    public void testAdd()
+    {
+        AddArmy("fuck");
+    }
+    public void DisplayInformations()
+    {
+        Panelville.SetActive(true);
+    }
+    public void HideInformations()
+    {
+        Panelville.SetActive(false);
     }
     public void ChooseBuildings()
     {

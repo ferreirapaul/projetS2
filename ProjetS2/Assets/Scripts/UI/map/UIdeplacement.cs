@@ -23,6 +23,7 @@ public class UIdeplacement : MonoBehaviour
     public float ClickDuration = 0.2f;
     bool clicking = false;
     float totalDownTime = 0;
+    public allcities allcities;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +44,7 @@ public class UIdeplacement : MonoBehaviour
     void Update()
     {
         
-            if (Input.mouseScrollDelta.y != 0 && (cam.orthographicSize != 5 || cam.orthographicSize != 20))
+            if (allcities.Panelville.activeSelf==false&&Input.mouseScrollDelta.y != 0 && (cam.orthographicSize != 5 || cam.orthographicSize != 20))
             {
                 float targetZoom = cam.orthographicSize - Input.mouseScrollDelta.y * zoom;
                 cam.orthographicSize = Mathf.Clamp(targetZoom, minsize, maxsize);
