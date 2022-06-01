@@ -15,6 +15,8 @@ public class lobbyjunior : MonoBehaviour
 
     public InputField code;
 
+    public bool isAfterPanel = false;
+
     public InputField NameP1Base;
     public daName NameP1;
     public GameObject P1;
@@ -40,6 +42,12 @@ public class lobbyjunior : MonoBehaviour
         P3.SetActive(true);
         P4.SetActive(false);
         P4.SetActive(true);
+        if (isAfterPanel)
+        {
+            before.SetActive(false);
+            Panel.SetActive(true);
+            isAfterPanel = false;
+        }
     }
 
     public void Send()
@@ -84,10 +92,7 @@ public class lobbyjunior : MonoBehaviour
 
     public void Generate(int codetojoin)
     {
-        /*
-        before.SetActive(false);
-        Panel.SetActive(true);
-        code.text = codetojoin.ToString();*/
+        code.text = codetojoin.ToString();
     }
 
     public void AddPlayer(int player, string name)

@@ -4,7 +4,7 @@ namespace Technology
 {
     public class Infantry : Technology
     {
-        public Infantry(List<Ressources.Ressources> r, List<Building.Building> b, List<Army> a)
+        public Infantry(List<Ressources.Ressources> r, List<Building.Building> b, List<Army.Army> a)
             : base(r, b, a)
         {
             coast = 60;

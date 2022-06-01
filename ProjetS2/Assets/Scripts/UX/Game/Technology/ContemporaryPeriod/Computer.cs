@@ -4,7 +4,7 @@ namespace Technology
 {
     public class Computer : Technology
     {
-        public Computer(List<Ressources.Ressources> r, List<Building.Building> b, List<Army> a)
+        public Computer(List<Ressources.Ressources> r, List<Building.Building> b, List<Army.Army> a)
             : base(r, b, a)
         {
             coast = 150;

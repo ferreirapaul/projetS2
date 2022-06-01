@@ -5,7 +5,7 @@ namespace Technology
 {
     public class Market : Technology
     {
-        public Market(List<Ressources.Ressources> r, List<Building.Building> b, List<Army> a)
+        public Market(List<Ressources.Ressources> r, List<Building.Building> b, List<Army.Army> a)
             : base(r, b, a)
         {
             coast = 13;

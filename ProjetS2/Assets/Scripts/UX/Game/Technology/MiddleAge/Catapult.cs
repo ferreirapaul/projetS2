@@ -4,7 +4,7 @@ namespace Technology
 {
     public class Catapult : Technology
     {
-        public Catapult(List<Ressources.Ressources> r, List<Building.Building> b, List<Army> a)
+        public Catapult(List<Ressources.Ressources> r, List<Building.Building> b, List<Army.Army> a)
             : base(r, b, a)
         {
             coast = 20;

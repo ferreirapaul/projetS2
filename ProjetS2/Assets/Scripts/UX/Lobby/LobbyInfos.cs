@@ -55,6 +55,7 @@ public class LobbyInfos : MonoBehaviour
         res += Network.Client.myId + ";";
         isCreated = true;
         lobby.Generate(Code);
+        lobby.isAfterPanel = true;
         Player p = new Player(ClientHandle.GetValues(res), true);
         players = new Dictionary<int, Player>();
         players.Add(p.Id, p);
@@ -94,28 +95,34 @@ public class LobbyInfos : MonoBehaviour
     
     public void GetInfos(List<string> values)
     {
-        SceneManager.LoadScene(2);
-        List<string> temp = new List<string>();
-        if (!(lobby is null))
+        if(SceneManager.GetActiveScene() != SceneManager.GetSceneByBuildIndex(2))
         {
-            isGetInfo = false;
-            lobby.Generate(Code);
-            this.Seed = Int32.Parse(values[0]);
-            Debug.Log("stp");
-            int count = 1;
-            for (int i = 1; i < temp.Count; i++)
+            SceneManager.LoadScene(2);
+        }
+        else
+        {
+            List<string> temp = new List<string>();
+            if (!(lobby is null))
             {
-                if (count == 3)
+                isGetInfo = false;
+                lobby.Generate(Code);
+                lobby.isAfterPanel = true;
+                this.Seed = Int32.Parse(values[0]);
+                int count = 1;
+                for (int i = 1; i < values.Count; i++)
                 {
-                    temp.Add(values[i]);
-                    count = 1;
-                    Join(temp);
-                    temp.Clear();
-                }
-                else
-                {
-                    count++;
-                    temp.Add(values[i]);
+                    if (count == 3)
+                    {
+                        temp.Add(values[i]);
+                        count = 1;
+                        Join(temp);
+                        temp.Clear();
+                    }
+                    else
+                    {
+                        count++;
+                        temp.Add(values[i]);
+                    }
                 }
             }
         }

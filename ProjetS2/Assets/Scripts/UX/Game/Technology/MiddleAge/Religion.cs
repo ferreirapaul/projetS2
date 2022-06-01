@@ -6,7 +6,7 @@ namespace Technology
     {
         public int goldGain;
         public int popGain;
-        public Religion(List<Ressources.Ressources> r, List<Building.Building> b, List<Army> a)
+        public Religion(List<Ressources.Ressources> r, List<Building.Building> b, List<Army.Army> a)
             : base(r, b, a)
         {
             coast = 10;

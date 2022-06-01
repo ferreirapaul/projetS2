@@ -5,7 +5,7 @@ namespace Technology
     public class Globalization : Technology
     {
         public int gain;
-        public Globalization(List<Ressources.Ressources> r, List<Building.Building> b, List<Army> a)
+        public Globalization(List<Ressources.Ressources> r, List<Building.Building> b, List<Army.Army> a)
             : base(r, b, a)
         {
             coast = 70;

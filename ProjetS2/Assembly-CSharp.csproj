@@ -119,7 +119,7 @@
      <Compile Include="Assets\Scripts\UX\Game\Technology\ContemporaryPeriod\Oil.cs" />
      <Compile Include="Assets\Scripts\UX\Game\Ressources\Gold.cs" />
      <Compile Include="Assets\Scripts\UX\Game\Technology\AncientTimes\Equitation.cs" />
-     <Compile Include="Assets\Scripts\UX\Game\Technology\AncientTimes\Army.cs" />
+     <Compile Include="Assets\Scripts\UX\Game\Technology\AncientTimes\ArmyC.cs" />
      <Compile Include="Assets\Scripts\UX\Game\Technology\MiddleAge\Knight.cs" />
      <Compile Include="Assets\Scripts\UX\Game\Technology\MiddleAge\Catapult.cs" />
      <Compile Include="Assets\Scripts\UX\Game\Technology\MiddleAge\Feudalism.cs" />

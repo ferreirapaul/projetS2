@@ -6,7 +6,7 @@ namespace Technology
     {
         public int goldGain;
         public int prodGain;
-        public SteamMachine(List<Ressources.Ressources> r, List<Building.Building> b, List<Army> a)
+        public SteamMachine(List<Ressources.Ressources> r, List<Building.Building> b, List<Army.Army> a)
             : base(r, b, a)
         {
             coast = 50;
