@@ -47,7 +47,12 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+<<<<<<< HEAD
      <Compile Include="Assets\Scripts\UX\Army\Army.cs" />
+=======
+     <Compile Include="Assets\Scripts\UX\Game\Game.cs" />
+     <Compile Include="Assets\Scripts\UX\Game\Army\Army.cs" />
+>>>>>>> origin/jpp
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
      <Compile Include="Assets\Scripts\UX\Game\Technology\MiddleAge\Crossbow.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
@@ -61,14 +66,25 @@
      <Compile Include="Assets\Scripts\UX\Game\Ressources\Ressources.cs" />
      <Compile Include="Assets\Scripts\Network\ClientHandle.cs" />
      <Compile Include="Assets\Scripts\UX\Game\Technology\MiddleAge\Mill.cs" />
+<<<<<<< HEAD
+=======
+     <Compile Include="Assets\Scripts\UX\Game\City.cs" />
+>>>>>>> origin/jpp
      <Compile Include="Assets\Scripts\UX\Game\Technology\AncientTimes\Forge.cs" />
      <Compile Include="Assets\Scripts\UI\Settings\formainmenu.cs" />
      <Compile Include="Assets\Scripts\UX\Game\Technology\ContemporaryPeriod\Computer.cs" />
      <Compile Include="Assets\Scripts\UX\Game\Technology\ContemporaryPeriod\Globalization.cs" />
+<<<<<<< HEAD
      <Compile Include="Assets\Scripts\UX\lobby\LobbyInfos.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
      <Compile Include="Assets\Scripts\UX\Game\Technology\ContemporaryPeriod\Tank.cs" />
      <Compile Include="Assets\Scripts\UX\lobby\Player.cs" />
+=======
+     <Compile Include="Assets\Scripts\UX\Lobby\LobbyInfos.cs" />
+     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
+     <Compile Include="Assets\Scripts\UX\Game\Technology\ContemporaryPeriod\Tank.cs" />
+     <Compile Include="Assets\Scripts\UX\Lobby\Player.cs" />
+>>>>>>> origin/jpp
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
      <Compile Include="Assets\Scripts\UX\Game\Ressources\Population.cs" />
      <Compile Include="Assets\Scripts\UX\Game\Ressources\Sciences.cs" />
@@ -87,7 +103,10 @@
      <Compile Include="Assets\Scripts\UX\Game\Technology\ContemporaryPeriod\Comunism.cs" />
      <Compile Include="Assets\Scripts\Network\Network_global.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
+<<<<<<< HEAD
      <Compile Include="Assets\Scripts\UI\map\allcities.cs" />
+=======
+>>>>>>> origin/jpp
      <Compile Include="Assets\Scripts\UX\Game\Technology\ContemporaryPeriod\Missiles.cs" />
      <Compile Include="Assets\Scripts\UX\Game\Technology\AncientTimes\Market.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />

@@ -40,14 +40,11 @@ public class GenMapScript : MonoBehaviour
     public int seed = -1; 
 
  
-    void Start()
+    public void Generate(int s)
     {
         map_width = spriteRenderer.transform.localScale.x;
         map_height = spriteRenderer.transform.localScale.y;
-        if (seed == -1)
-        {
-            seed = Random.Range(0, 1000);
-        }
+        this.seed = s;
         CreateTileset();
         CreateTileGroups();
         GenerateMap();
