@@ -16,8 +16,7 @@ namespace Network
         public int myId = 0;
 
         public TcpClient socket;
-        public static bool isConnected = false;
-        private delegate void PacketHandler(Packet _packet);
+        public bool isConnected = false;
 
         private NetworkStream stream;
         private Packet receivedData;
@@ -27,6 +26,8 @@ namespace Network
 
         public void Awake()
         {
+            lobby = FindObjectOfType<LobbyInfos>();
+            
             if (instance == null)
             {
                 instance = this;
@@ -48,6 +49,7 @@ namespace Network
         
         public void Disconnect()
         {
+            Debug.Log("Disconnect ;(");
             socket.Close();
             stream = null;
             receivedData = null;
@@ -56,7 +58,7 @@ namespace Network
             isConnected = false;
         }
 
-        private void ConnectCallback(IAsyncResult _result)
+        public void ConnectCallback(IAsyncResult _result)
         {
             socket.EndConnect(_result);
 
@@ -87,7 +89,7 @@ namespace Network
             }
         }
 
-        private void ReceiveCallback(IAsyncResult _result)
+        public void ReceiveCallback(IAsyncResult _result)
         {
             try
             {
@@ -107,15 +109,16 @@ namespace Network
             }
             catch
             {
-                this.Disconnect(); 
+                //this.Disconnect(); 
             }
         }
 
-        private bool HandleData(byte[] _data)
+        public bool HandleData(byte[] _data)
         {
+            ClientHandle handle = new ClientHandle(this);
             receivedData.SetBytes(_data);
             int _packetId = this.receivedData.ReadInt();
-            ClientHandle.ClientActions(this.receivedData,(IdMsg) _packetId);
+            handle.ClientActions(this.receivedData,(IdMsg) _packetId);
             return true;
         }
     }

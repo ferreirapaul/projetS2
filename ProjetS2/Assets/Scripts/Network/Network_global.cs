@@ -7,6 +7,11 @@ namespace Network
     public class Network_global : MonoBehaviour
     {
         public Client Client;
+        
+        public void Start()
+        {
+            DontDestroyOnLoad(this.gameObject);
+        }
 
         public void SendString(string msg, IdMsg id)
         {
