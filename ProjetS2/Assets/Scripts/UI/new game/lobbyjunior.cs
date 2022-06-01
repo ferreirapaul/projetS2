@@ -8,58 +8,72 @@ using UnityEngine.UI;
 
 public class lobbyjunior : MonoBehaviour
 {
-    private int civ1 = 1;
-
-
     public LobbyInfos lobbyinf;
     public InputField Seed;
     public GameObject Panel;
-    public GameObject civP1;
-
-    public daName civP2;
-    public GameObject civP3;
-    public GameObject civP4;
+    public GameObject before;
 
     public InputField code;
+    
 
-    public InputField NameP1;
+    public InputField NameP1Base;
+    public daName NameP1;
+    public GameObject P1;
     public daName NameP2;
-    public GameObject T;
+    public GameObject P2;
+    public daName NameP3;
+    public GameObject P3;
+    public daName NameP4;
+    public GameObject P4;
 
-    public Text NameP3;
-    public Text NameP4;
-    private List<string> allnames = new List<string>() { "Name", "Name", "Name" };
-    private List<string> allciv = new List<string>(){"0", "0", "0"};
+    public void Awake()
+    {
+        lobbyinf = FindObjectOfType<LobbyInfos>();
+    }
 
     public void Update()
     {
-        //NameP2.ChangeName(allnames[0]);
-        //civP2.ChangeCiv(allciv[0]);
-        T.SetActive(false);
-        T.SetActive(true);
+        P1.SetActive(false);
+        P1.SetActive(true);
+        P2.SetActive(false);
+        P2.SetActive(true);
+        P3.SetActive(false);
+        P3.SetActive(true);
+        P4.SetActive(false);
+        P4.SetActive(true);
+    }
+
+    public void StartGame()
+    {
+        lobbyinf.StartGameHost();
+    }
+
+    public void Send()
+    {
+        lobbyinf.SendCreate();
     }
 
     public void PchooseCiv1()
     {
-        civ1 = 1;
+        lobbyinf.choice = 1;
     }
 
     public void PchooseCiv2()
     {
-        civ1 = 2;
+        lobbyinf.choice = 2;
     }
     public void PchooseCiv3()
     {
-        civ1 = 3;
+        lobbyinf.choice = 3;
     }
     public void PchooseCiv4()
     {
-        civ1 = 4;
+        lobbyinf.choice = 4;
     }
 
     public void ChangeName()
     {
-        lobbyinf.Name = NameP1.text;
+        lobbyinf.Name = NameP1Base.text;
     }
 
     public void ChangeSeed()
@@ -76,33 +90,31 @@ public class lobbyjunior : MonoBehaviour
 
     public void Generate(int codetojoin)
     {
+        before.SetActive(false);
         Panel.SetActive(true);
-        civP1.GetComponentInChildren<Text>().text = "emperor number " + civ1;
+        code.text = codetojoin.ToString();
+    }
+    
+    public void Generate(int codetojoin, string name)
+    {
+        before.SetActive(false);
+        Panel.SetActive(true);
+        NameP1.ChangeName(name);
         code.text = codetojoin.ToString();
     }
 
-    public void AddPlayer(int player, string name, int emperor)
+    public void AddPlayer(int player, string name)
     {
-        allnames[player - 2] = name;
-        allciv[player - 2] = emperor.ToString();
         switch(player)
         {
             case 2:
-                Debug.Log("2");
                 NameP2.ChangeName(name);
-                civP2.ChangeName(emperor.ToString());
                 break;
             case 3:
-                NameP3.enabled = false;
-                NameP3.text = name;
-                NameP3.enabled = true;
-                civP3.GetComponentInChildren<Text>().text = "emperor number " + emperor;
+                NameP3.ChangeName(name);
                 break;
             default:
-                NameP4.enabled = false;
-                NameP4.text = name;
-                NameP4.enabled = true;
-                civP4.GetComponentInChildren<Text>().text = "emperor number " + emperor;
+                NameP4.ChangeName(name);
                 break;
         }
     }

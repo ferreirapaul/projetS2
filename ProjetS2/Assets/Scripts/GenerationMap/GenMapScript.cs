@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
- 
-/* Danndx 2021 (youtube.com/danndx)
-From video: youtu.be/qNZ-0-7WuS8
-thanks - delete me! :) */
- 
+
 public class GenMapScript : MonoBehaviour
 {
     Dictionary<int, GameObject> tileset;
     Dictionary<int, GameObject> tile_groups;
 
-    public int amountOfCities;
+    public int numberOfPlayers;
 
 
     public GameObject Desert;
@@ -25,16 +21,19 @@ public class GenMapScript : MonoBehaviour
     public GameObject Snow_Hill;
     public GameObject Deep_Ocean;
     public GameObject Shallow_Ocean;
+    public GameObject Fog_Of_War;
 
     public GameObject City;
 
     public SpriteRenderer spriteRenderer;
-    private float map_width = 160f;   // value is the amount of tiles 
-    private float map_height = 90f;
+    public float map_width = 160f;   // value is the amount of tiles 
+    public float map_height = 90f;
     public float magnification = 10.0f;  // recommend 4 to 20
- 
+    
+    List<(int,int)> cities = new List<(int,int)>{};
     List<List<int>> noise_grid = new List<List<int>>();
     List<List<GameObject>> tile_grid = new List<List<GameObject>>();
+    List<List<GameObject>> FogOfWar_grid = new List<List<GameObject>>();
 
     /** changing this seed will offset the base coordinates of the perlin nois function by the given amount
         the same see will always generate the same map **/
@@ -44,6 +43,8 @@ public class GenMapScript : MonoBehaviour
  
     void Start()
     {
+        
+        int amountOfCities = numberOfPlayers * 3;   
         map_width = spriteRenderer.transform.localScale.x;
         map_height = spriteRenderer.transform.localScale.y;
         if (seed == -1)
@@ -53,7 +54,9 @@ public class GenMapScript : MonoBehaviour
         CreateTileset();
         CreateTileGroups();
         GenerateMap();
+        generateFogOfWar();
         generateCities(amountOfCities);
+
     }
  
     void CreateTileset()
@@ -217,6 +220,7 @@ public class GenMapScript : MonoBehaviour
         while(index < cities.Count && valid )
         {
             //Debug.Log("distance between" + cities[index] + " and " + Couple + " is : " + getDistanceSquared(cities[index],Couple));
+            //Debug.Log("id is " + id);
             if( getDistanceSquared(cities[index],Couple) < 500 || id > 3)
             {
                 valid = false;
@@ -230,7 +234,6 @@ public class GenMapScript : MonoBehaviour
 
     void generateCities (int amount)
     {
-        List<(int,int)> cities = new List<(int,int)>{};
         int Count = 0;
         while(amount > 0 && Count < 10000)
         {
@@ -238,6 +241,7 @@ public class GenMapScript : MonoBehaviour
             int y = (int) Random.Range(0, map_height);
             if (  cityIsValid( (x,y) ,  cities) ) {
                 CreateTile(10,x,y);
+                AddVision(x,y,10);
                 cities.Add((x,y));
                 amount--;
             }
@@ -245,4 +249,99 @@ public class GenMapScript : MonoBehaviour
 
         }
     }
+
+    void generateFogOfWar()
+    {
+        GameObject tile_group = new GameObject(Fog_Of_War.name);
+        tile_group.transform.parent = gameObject.transform;
+        tile_group.transform.localPosition = new Vector3(0, 0, 0);
+        tile_groups.Add(11, tile_group);
+        
+
+        GameObject tile_prefab = Fog_Of_War;
+
+
+        for(int x = 0; x < map_width; x++)
+        {
+            FogOfWar_grid.Add(new List<GameObject>());
+            for(int y = 0; y < map_height; y++)
+            {
+                GameObject tile = Instantiate(tile_prefab, tile_group.transform);
+        
+                tile.name = string.Format("tile_x{0}_y{1}", x, y);
+                tile.transform.localPosition = new Vector3(x, y, -2);
+        
+                FogOfWar_grid[x].Add(tile);
+            }
+        }
+    }
+
+    void AddVision(int posX,int posY, int VisionRange = 1)
+    {
+        for(int x = posX-VisionRange; x <= posX + VisionRange; x++)
+        {
+            for(int y = posY-VisionRange; y <= posY + VisionRange; y++)
+            {
+                if (x >= 0 && x <= map_width && y >= 0 && y <= map_height)
+                {
+                    FogOfWar_grid[x][y].transform.localPosition = new Vector3(x,y,1);
+                }
+            }            
+        }
+    }
+
+    void RemoveVision(int posX,int posY, int VisionRange = 1)
+    {
+        for(int x = posX-VisionRange; x <= posX + VisionRange; x++)
+        {
+            for(int y = posY-VisionRange; y <= posY + VisionRange; y++)
+            {
+                if (x >= 0 && x <= map_width && y >= 0 && y <= map_height)
+                {
+                    FogOfWar_grid[x][y].transform.localPosition = new Vector3(x,y,-2);
+                }
+            }            
+        }
+    }
+
+    List<(int,int)> GetStartingCity(int PlayerNumber)
+    {
+        List<(int,int)> citiesToChooseFrom = new List<(int,int)>{};
+
+        switch (PlayerNumber)
+        {
+            case 0:
+                citiesToChooseFrom.Add(cities[0]);
+                citiesToChooseFrom.Add(cities[1]);
+                citiesToChooseFrom.Add(cities[2]);
+                break;
+
+            case 1:
+                citiesToChooseFrom.Add(cities[3]);
+                citiesToChooseFrom.Add(cities[4]);
+                citiesToChooseFrom.Add(cities[5]);
+                break;
+            case 2:
+                citiesToChooseFrom.Add(cities[6]);
+                citiesToChooseFrom.Add(cities[7]);
+                citiesToChooseFrom.Add(cities[8]);
+                break;
+            case 3:
+                citiesToChooseFrom.Add(cities[9]);
+                citiesToChooseFrom.Add(cities[10]);
+                citiesToChooseFrom.Add(cities[11]);
+                break;
+
+            default:
+                break;
+        }
+        return citiesToChooseFrom;
+    }
+
+    //void ChooseStartingCity ()
+    //{
+    //
+    //}
+
+
 }
