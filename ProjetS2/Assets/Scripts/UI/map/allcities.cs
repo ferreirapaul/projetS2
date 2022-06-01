@@ -70,7 +70,6 @@ public class allcities : MonoBehaviour
         GameObject arm = Instantiate(ChildA);
         
         GameObject texta = arm.transform.Find("Name").gameObject;
-        Debug.Log(texta);
         TextMeshProUGUI whythis=texta.GetComponent<TextMeshProUGUI>();
         whythis.text = name;
         arm.transform.parent = ListA.transform;
@@ -84,15 +83,8 @@ public class allcities : MonoBehaviour
         rect.sizeDelta = new Vector2(160.74f, rect.sizeDelta.y+13.355f);
         ListA.transform.localPosition =new Vector3(ListA.transform.localPosition.x, ListA.transform.localPosition.y-6.677f, 0) ;
         RectTransform rectparent = ListA.transform.parent.gameObject.GetComponent<RectTransform>();
-        Debug.Log(rectparent);
         rectparent.sizeDelta = new Vector2(0, rectparent.sizeDelta.y + 14);
     }
-    /*
-     * -22.525
-     * 
-     * -22.202
-     * 
-     * */
 
     public void AddBuildings(string name)
     {
@@ -104,9 +96,9 @@ public class allcities : MonoBehaviour
         build.transform.localScale = new Vector3(1, 1, 1);
         VerticalLayoutGroup listofbuildings = ListB.GetComponent<VerticalLayoutGroup>();
     }
-    public void testAdd()
+    public void AddSciences(string name)
     {
-        AddArmy("fuck");
+
     }
     public void DisplayInformations()
     {
