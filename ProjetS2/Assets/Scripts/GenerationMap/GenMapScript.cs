@@ -2,11 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
- 
-/* Danndx 2021 (youtube.com/danndx)
-From video: youtu.be/qNZ-0-7WuS8
-thanks - delete me! :) */
- 
+
 public class GenMapScript : MonoBehaviour
 {
     Dictionary<int, GameObject> tileset;
@@ -25,6 +21,7 @@ public class GenMapScript : MonoBehaviour
     public GameObject Snow_Hill;
     public GameObject Deep_Ocean;
     public GameObject Shallow_Ocean;
+    public GameObject Fog_Of_War;
 
     public GameObject City;
 
@@ -35,6 +32,7 @@ public class GenMapScript : MonoBehaviour
  
     List<List<int>> noise_grid = new List<List<int>>();
     List<List<GameObject>> tile_grid = new List<List<GameObject>>();
+    List<List<GameObject>> FogOfWar_grid = new List<List<GameObject>>();
 
     /** changing this seed will offset the base coordinates of the perlin nois function by the given amount
         the same see will always generate the same map **/
@@ -53,7 +51,9 @@ public class GenMapScript : MonoBehaviour
         CreateTileset();
         CreateTileGroups();
         GenerateMap();
+        generateFogOfWar();
         generateCities(amountOfCities);
+
     }
  
     void CreateTileset()
@@ -238,6 +238,7 @@ public class GenMapScript : MonoBehaviour
             int y = (int) Random.Range(0, map_height);
             if (  cityIsValid( (x,y) ,  cities) ) {
                 CreateTile(10,x,y);
+                AddVision(x,y);
                 cities.Add((x,y));
                 amount--;
             }
@@ -245,4 +246,64 @@ public class GenMapScript : MonoBehaviour
 
         }
     }
+
+    void generateFogOfWar()
+    {
+        GameObject tile_group = new GameObject(Fog_Of_War.name);
+        tile_group.transform.parent = gameObject.transform;
+        tile_group.transform.localPosition = new Vector3(0, 0, 0);
+        tile_groups.Add(11, tile_group);
+        
+
+        GameObject tile_prefab = Fog_Of_War;
+
+
+        for(int x = 0; x < map_width; x++)
+        {
+            FogOfWar_grid.Add(new List<GameObject>());
+            for(int y = 0; y < map_height; y++)
+            {
+                GameObject tile = Instantiate(tile_prefab, tile_group.transform);
+        
+                tile.name = string.Format("tile_x{0}_y{1}", x, y);
+                tile.transform.localPosition = new Vector3(x, y, -2);
+        
+                FogOfWar_grid[x].Add(tile);
+            }
+        }
+    }
+
+    void AddVision(int posX,int posY)
+    {
+        for(int x = posX-1; x <= posX + 1; x++)
+        {
+            for(int y = posY-1; y <= posY + 1; y++)
+            {
+                if (x >= 0 && x <= map_width && y >= 0 && y <= map_height)
+                {
+                    FogOfWar_grid[x][y].transform.localPosition = new Vector3(x,y,1);
+                }
+            }            
+        }
+    }
+
+    void RemoveVision(int posX,int posY)
+    {
+        for(int x = posX-1; x <= posX + 1; x++)
+        {
+            for(int y = posY-1; y <= posY + 1; y++)
+            {
+                if (x >= 0 && x <= map_width && y >= 0 && y <= map_height)
+                {
+                    FogOfWar_grid[x][y].transform.localPosition = new Vector3(x,y,-2);
+                }
+            }            
+        }
+    }
+
+
+
+
+
+
 }
