@@ -16,7 +16,7 @@ namespace Network
         public int myId = 0;
 
         public TcpClient socket;
-        public static bool isConnected = false;
+        public bool isConnected = false;
 
         private NetworkStream stream;
         private Packet receivedData;
@@ -49,6 +49,7 @@ namespace Network
         
         public void Disconnect()
         {
+            Debug.Log("Disconnect ;(");
             socket.Close();
             stream = null;
             receivedData = null;
@@ -108,7 +109,7 @@ namespace Network
             }
             catch
             {
-                this.Disconnect(); 
+                //this.Disconnect(); 
             }
         }
 

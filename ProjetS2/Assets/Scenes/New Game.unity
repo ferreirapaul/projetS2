@@ -429,7 +429,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 121778054}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 595840934}
+        m_TargetAssemblyTypeName: lobbyjunior, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &121778054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1007,7 +1019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6a748272130a244b5e7b7a756e4372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  me: {fileID: 1489276007}
+  txt: {fileID: 1489276009}
 --- !u!114 &595840934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2418,7 +2430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6a748272130a244b5e7b7a756e4372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  me: {fileID: 1286944748}
+  txt: {fileID: 793403755}
 --- !u!1 &1298202077
 GameObject:
   m_ObjectHideFlags: 0
@@ -2581,7 +2593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6a748272130a244b5e7b7a756e4372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  me: {fileID: 1137326819}
+  txt: {fileID: 1137326820}
 --- !u!4 &1402467939
 Transform:
   m_ObjectHideFlags: 0
@@ -4030,4 +4042,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6a748272130a244b5e7b7a756e4372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  me: {fileID: 1568414574}
+  txt: {fileID: 1568414576}

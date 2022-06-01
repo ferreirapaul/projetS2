@@ -60,8 +60,8 @@ namespace Network
         {
             string _msg = _packet.ReadString();
             int _myId = _packet.ReadInt();
-            Client.isConnected = true;
-            Client.instance.myId = _myId;
+            client.isConnected = true;
+            client.myId = _myId;
         }
     }
 }

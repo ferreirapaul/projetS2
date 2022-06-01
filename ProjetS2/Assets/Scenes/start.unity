@@ -1542,6 +1542,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Network
       objectReference: {fileID: 0}
+    - target: {fileID: 3079622147655925961, guid: a96aad5848fe15b4596207d957f17c62, type: 3}
+      propertyPath: lobby
+      value: 
+      objectReference: {fileID: 1651286084}
     - target: {fileID: 6749213691330174754, guid: a96aad5848fe15b4596207d957f17c62, type: 3}
       propertyPath: m_RootOrder
       value: 4

@@ -18,6 +18,7 @@ public class LobbyInfos : MonoBehaviour
     public Network_global Network;
     public bool isCreated = false;
     public Dictionary<int, Player> players;
+    public Player me;
 
     public lobbyjunior lobby;
 
@@ -55,10 +56,9 @@ public class LobbyInfos : MonoBehaviour
         res += Network.Client.myId + ";";
         isCreated = true;
         lobby.Generate(Code);
-        lobby.isAfterPanel = true;
-        Player p = new Player(ClientHandle.GetValues(res), true);
+        me = new Player(ClientHandle.GetValues(res), true);
         players = new Dictionary<int, Player>();
-        players.Add(p.Id, p);
+        players.Add(me.Id, me);
     }
     
     public void SendJoin()
@@ -72,7 +72,7 @@ public class LobbyInfos : MonoBehaviour
             res += Code + ";";
             Network.SendString(res,IdMsg.joinLobby);
             players = new Dictionary<int, Player>();
-            Player me = new Player(ClientHandle.GetValues(thisplayer), false);
+            me = new Player(ClientHandle.GetValues(thisplayer), false);
             players.Add(me.Id, me);
             this.isCreated = true;
         }
@@ -105,8 +105,7 @@ public class LobbyInfos : MonoBehaviour
             if (!(lobby is null))
             {
                 isGetInfo = false;
-                lobby.Generate(Code);
-                lobby.isAfterPanel = true;
+                lobby.Generate(Code,this.Name);
                 this.Seed = Int32.Parse(values[0]);
                 int count = 1;
                 for (int i = 1; i < values.Count; i++)
@@ -128,17 +127,18 @@ public class LobbyInfos : MonoBehaviour
         }
     }
 
+    public void StartGameHost()
+    {
+        if (isCreated && players.Count >= 2 && me.isHost)
+        {
+            Network.SendString("start", IdMsg.launchGame);
+            StartGame();
+        }
+    }
+
     public void StartGame()
     {
-        if (isCreated && players.Count > 2)
-        {
-            SceneManager.MoveGameObjectToScene(this.gameObject,SceneManager.GetSceneAt(4));
-            SceneManager.LoadScene(4);
-            if (this.players[Network.Client.myId].isHost)
-            {
-                Network.SendString("start", IdMsg.launchGame);
-            }
-        }
+        SceneManager.LoadScene(4);
     }
 
     public void ChangeCode(string codestr)
