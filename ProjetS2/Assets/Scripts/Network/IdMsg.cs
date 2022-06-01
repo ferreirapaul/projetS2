@@ -6,6 +6,7 @@ namespace Network
         startLobby = 2,
         joinLobby = 3,
         sendInfos = 4,
-        newPlayer = 5
+        newPlayer = 5,
+        launchGame = 6
     }
 }
