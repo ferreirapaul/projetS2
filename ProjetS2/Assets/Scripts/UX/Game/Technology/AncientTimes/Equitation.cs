@@ -4,7 +4,7 @@ namespace Technology
 {
     public class Equitation : Technology
     {
-        public Equitation(List<Ressources.Ressources> r, List<Building.Building> b, List<Army> a)
+        public Equitation(List<Ressources.Ressources> r, List<Building.Building> b, List<Army.Army> a)
             : base(r, b, a)
         {
             coast = 6;

@@ -47,6 +47,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\UX\Game\Game.cs" />
      <Compile Include="Assets\Scripts\UX\Army\Army.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
      <Compile Include="Assets\Scripts\UX\Game\Technology\MiddleAge\Crossbow.cs" />
@@ -61,6 +62,7 @@
      <Compile Include="Assets\Scripts\UX\Game\Ressources\Ressources.cs" />
      <Compile Include="Assets\Scripts\Network\ClientHandle.cs" />
      <Compile Include="Assets\Scripts\UX\Game\Technology\MiddleAge\Mill.cs" />
+     <Compile Include="Assets\Scripts\UX\Game\City.cs" />
      <Compile Include="Assets\Scripts\UX\Game\Technology\AncientTimes\Forge.cs" />
      <Compile Include="Assets\Scripts\UI\Settings\formainmenu.cs" />
      <Compile Include="Assets\Scripts\UX\Game\Technology\ContemporaryPeriod\Computer.cs" />
@@ -75,6 +77,7 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
      <Compile Include="Assets\Scripts\UX\Game\Ressources\ProductionPoints.cs" />
+     <Compile Include="Assets\Scripts\UX\Game\Army\Army.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
      <Compile Include="Assets\Scripts\UX\Game\Technology\MiddleAge\Religion.cs" />
      <Compile Include="Assets\Scripts\GenerationMap\GenMapScript.cs" />
@@ -123,6 +126,7 @@
      <Compile Include="Assets\Scripts\UX\Game\Technology\ContemporaryPeriod\Infantry.cs" />
      <Compile Include="Assets\Scripts\UI\new game\daName.cs" />
      <Compile Include="Assets\Scripts\UX\Game\Technology\Reborn\Lumieres.cs" />
+     <Compile Include="Assets\Scripts\UX\Game\Technology\AncientTimes\ArmyC.cs" />
      <Compile Include="Assets\Scripts\UX\Game\Building\Market.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
@@ -143,6 +147,7 @@
      <Compile Include="Assets\Scripts\UX\Game\Technology\Reborn\Halberdier.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\Scripts\UI\map\UIdeplacement.cs" />
+     <Compile Include="Assets\Scripts\UI\map\TechnologyList.cs" />
      <Compile Include="Assets\Scripts\UX\Game\Building\Forge.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
      <Compile Include="Assets\Scripts\UX\Game\Technology\AncientTimes\Ebeniste.cs" />

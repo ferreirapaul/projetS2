@@ -4,7 +4,7 @@ namespace Technology
 {
     public class Bow : Technology
     {
-        public Bow(List<Ressources.Ressources> r, List<Building.Building> b, List<Army> a)
+        public Bow(List<Ressources.Ressources> r, List<Building.Building> b, List<Army.Army> a)
             : base(r, b, a)
         {
             coast = 5;

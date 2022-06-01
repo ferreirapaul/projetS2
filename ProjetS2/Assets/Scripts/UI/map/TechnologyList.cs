@@ -4,20 +4,20 @@ using UnityEngine.UI;
 using UnityEngine;
 using Technology;
 using TMPro;
+using Game;
 
 public class TechnologyList : MonoBehaviour
 {
     public GameObject ListS;
     public GameObject ChildS;
-    public List<Technology.Technology> ancienttimes;
-    public List<Technology.Technology> contemporary;
-    public List<Technology.Technology> MiddleAge;
-    public List<Technology.Technology> Reborn;
-    private int index = 0;
+    public Game.Game game;
     // Start is called before the first frame update
     void Start()
     {
-
+        for (int i = 0; i < game.listTechno.Count; i++)
+        {
+            AddTechno(i);
+        }
     }
 
     // Update is called once per frame
@@ -25,21 +25,10 @@ public class TechnologyList : MonoBehaviour
     {
         
     }
-    public void AddTechno()
+    
+    public void AddTechno(int index)
     {
-        (string, string) both = (Reborn[index].name, Reborn[index].description);
-        if(ancienttimes.Count==0)
-        {
-            both = (ancienttimes[index].name, ancienttimes[index].description);
-        }
-        else if (MiddleAge.Count==0)
-        {
-            both = (MiddleAge[index].name, MiddleAge[index].description);
-        }
-        else if (contemporary.Count == 0)
-        {
-            both = (contemporary[index].name, contemporary[index].description);
-        }
+        (string, string) both = (game.listTechno[index].name, game.listTechno[index].description);
         
 
         GameObject tech = Instantiate(ChildS);
@@ -57,11 +46,11 @@ public class TechnologyList : MonoBehaviour
         listoftech.spacing = 0;
 
 
-       /* RectTransform rect = ListS.GetComponent<RectTransform>();
-        rect.sizeDelta = new Vector2(160.74f, rect.sizeDelta.y + 13.355f);
-        ListA.transform.localPosition = new Vector3(ListS.transform.localPosition.x, ListS.transform.localPosition.y - 6.677f, 0);
+        RectTransform rect = ListS.GetComponent<RectTransform>();
+        rect.sizeDelta = new Vector2(243.111f, rect.sizeDelta.y + 31);
+        ListS.transform.localPosition = new Vector3(ListS.transform.localPosition.x, ListS.transform.localPosition.y - 15.5f, 0);
         RectTransform rectparent = ListS.transform.parent.gameObject.GetComponent<RectTransform>();
-        rectparent.sizeDelta = new Vector2(0, rectparent.sizeDelta.y + 14);*/
+        rectparent.sizeDelta = new Vector2(0, rectparent.sizeDelta.y + 31);
     }
 
 }

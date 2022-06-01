@@ -6,7 +6,7 @@ namespace Technology
     {
         public int gain;
         public int loss;
-        public Lumieres(List<Ressources.Ressources> r, List<Building.Building> b, List<Army> a)
+        public Lumieres(List<Ressources.Ressources> r, List<Building.Building> b, List<Army.Army> a)
             : base(r, b,a)
         {
             coast = 40;

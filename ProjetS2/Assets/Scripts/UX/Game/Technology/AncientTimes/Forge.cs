@@ -5,7 +5,7 @@ namespace Technology
 {
     public class Forge : Technology
     {
-        public Forge(List<Ressources.Ressources> r, List<Building.Building> b, List<Army> a)
+        public Forge(List<Ressources.Ressources> r, List<Building.Building> b, List<Army.Army> a)
             : base(r, b, a)
         {
             coast = 10;

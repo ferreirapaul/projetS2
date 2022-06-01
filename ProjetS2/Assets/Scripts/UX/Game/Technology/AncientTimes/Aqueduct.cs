@@ -5,7 +5,7 @@ namespace Technology
     public class Aqueduct : Technology
     {
         private int gain;
-        public Aqueduct(List<Ressources.Ressources> r, List<Building.Building> b, List<Army> a)
+        public Aqueduct(List<Ressources.Ressources> r, List<Building.Building> b, List<Army.Army> a)
             : base(r, b, a)
         {
             coast = 20;

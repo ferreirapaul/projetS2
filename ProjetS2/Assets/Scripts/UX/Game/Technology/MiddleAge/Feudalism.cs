@@ -4,7 +4,7 @@ namespace Technology
 {
     public class Feudalism : Technology
     {
-        public Feudalism(List<Ressources.Ressources> r, List<Building.Building> b, List<Army> a)
+        public Feudalism(List<Ressources.Ressources> r, List<Building.Building> b, List<Army.Army> a)
             : base(r, b,a)
         {
             coast = 15;

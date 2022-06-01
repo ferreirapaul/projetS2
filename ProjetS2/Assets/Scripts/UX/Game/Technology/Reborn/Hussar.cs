@@ -4,7 +4,7 @@ namespace Technology
 {
     public class Hussar : Technology
     {
-        public Hussar(List<Ressources.Ressources> r, List<Building.Building> b, List<Army> a)
+        public Hussar(List<Ressources.Ressources> r, List<Building.Building> b, List<Army.Army> a)
             : base(r, b, a)
         {
             coast = 35;

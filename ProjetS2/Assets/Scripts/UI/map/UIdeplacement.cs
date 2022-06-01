@@ -38,6 +38,7 @@ public class UIdeplacement : MonoBehaviour
         zqsd.Add("q");
         zqsd.Add("s");
         zqsd.Add("d");
+        cam.orthographicSize = 15;
     }
 
     // Update is called once per frame

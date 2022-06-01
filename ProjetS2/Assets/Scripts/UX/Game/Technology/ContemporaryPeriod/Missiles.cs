@@ -4,7 +4,7 @@ namespace Technology
 {
     public class Missiles : Technology
     {
-        public Missiles(List<Ressources.Ressources> r, List<Building.Building> b, List<Army> a)
+        public Missiles(List<Ressources.Ressources> r, List<Building.Building> b, List<Army.Army> a)
             : base(r, b, a)
         {
             coast = 65;

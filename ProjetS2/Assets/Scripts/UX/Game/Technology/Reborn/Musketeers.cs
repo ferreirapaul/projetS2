@@ -4,7 +4,7 @@ namespace Technology
 {
     public class Musketeers : Technology
     {
-        public Musketeers(List<Ressources.Ressources> r, List<Building.Building> b, List<Army> a)
+        public Musketeers(List<Ressources.Ressources> r, List<Building.Building> b, List<Army.Army> a)
             : base(r, b, a)
         {
             coast = 35;
