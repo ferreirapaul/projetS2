@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f962098b919bdb46bb17a127409c13c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountOfCities: 3
+  numberOfPlayers: 4
   Desert: {fileID: 4018191296487985470, guid: 7cc9a7898a8139141807216b8e0ea88f, type: 3}
   Jungle: {fileID: 8166211391801374283, guid: 3d5ffd0b373459c4fb161731637f6afc, type: 3}
   Plains: {fileID: 8166211391801374283, guid: 3d5ffd0b373459c4fb161731637f6afc, type: 3}
@@ -245,8 +245,10 @@ MonoBehaviour:
   Fog_Of_War: {fileID: 6706681296731631380, guid: da32d5e6b5a8ac74ba6ef3b6443214e5, type: 3}
   City: {fileID: 7294030458484276468, guid: 19244aa98e542cd41a3949a2b60d1067, type: 3}
   spriteRenderer: {fileID: 1201304384}
+  map_width: 160
+  map_height: 90
   magnification: 30
-  seed: 42069
+  seed: -1
 --- !u!4 &47778317
 Transform:
   m_ObjectHideFlags: 0

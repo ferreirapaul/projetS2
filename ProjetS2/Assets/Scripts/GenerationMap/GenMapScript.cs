@@ -8,7 +8,7 @@ public class GenMapScript : MonoBehaviour
     Dictionary<int, GameObject> tileset;
     Dictionary<int, GameObject> tile_groups;
 
-    public int amountOfCities;
+    public int numberOfPlayers;
 
 
     public GameObject Desert;
@@ -26,10 +26,11 @@ public class GenMapScript : MonoBehaviour
     public GameObject City;
 
     public SpriteRenderer spriteRenderer;
-    private float map_width = 160f;   // value is the amount of tiles 
-    private float map_height = 90f;
+    public float map_width = 160f;   // value is the amount of tiles 
+    public float map_height = 90f;
     public float magnification = 10.0f;  // recommend 4 to 20
- 
+    
+    List<(int,int)> cities = new List<(int,int)>{};
     List<List<int>> noise_grid = new List<List<int>>();
     List<List<GameObject>> tile_grid = new List<List<GameObject>>();
     List<List<GameObject>> FogOfWar_grid = new List<List<GameObject>>();
@@ -42,6 +43,8 @@ public class GenMapScript : MonoBehaviour
  
     void Start()
     {
+        
+        int amountOfCities = numberOfPlayers * 3;   
         map_width = spriteRenderer.transform.localScale.x;
         map_height = spriteRenderer.transform.localScale.y;
         if (seed == -1)
@@ -217,6 +220,7 @@ public class GenMapScript : MonoBehaviour
         while(index < cities.Count && valid )
         {
             //Debug.Log("distance between" + cities[index] + " and " + Couple + " is : " + getDistanceSquared(cities[index],Couple));
+            //Debug.Log("id is " + id);
             if( getDistanceSquared(cities[index],Couple) < 500 || id > 3)
             {
                 valid = false;
@@ -230,7 +234,6 @@ public class GenMapScript : MonoBehaviour
 
     void generateCities (int amount)
     {
-        List<(int,int)> cities = new List<(int,int)>{};
         int Count = 0;
         while(amount > 0 && Count < 10000)
         {
@@ -238,7 +241,7 @@ public class GenMapScript : MonoBehaviour
             int y = (int) Random.Range(0, map_height);
             if (  cityIsValid( (x,y) ,  cities) ) {
                 CreateTile(10,x,y);
-                AddVision(x,y);
+                AddVision(x,y,10);
                 cities.Add((x,y));
                 amount--;
             }
@@ -273,11 +276,11 @@ public class GenMapScript : MonoBehaviour
         }
     }
 
-    void AddVision(int posX,int posY)
+    void AddVision(int posX,int posY, int VisionRange = 1)
     {
-        for(int x = posX-1; x <= posX + 1; x++)
+        for(int x = posX-VisionRange; x <= posX + VisionRange; x++)
         {
-            for(int y = posY-1; y <= posY + 1; y++)
+            for(int y = posY-VisionRange; y <= posY + VisionRange; y++)
             {
                 if (x >= 0 && x <= map_width && y >= 0 && y <= map_height)
                 {
@@ -287,11 +290,11 @@ public class GenMapScript : MonoBehaviour
         }
     }
 
-    void RemoveVision(int posX,int posY)
+    void RemoveVision(int posX,int posY, int VisionRange = 1)
     {
-        for(int x = posX-1; x <= posX + 1; x++)
+        for(int x = posX-VisionRange; x <= posX + VisionRange; x++)
         {
-            for(int y = posY-1; y <= posY + 1; y++)
+            for(int y = posY-VisionRange; y <= posY + VisionRange; y++)
             {
                 if (x >= 0 && x <= map_width && y >= 0 && y <= map_height)
                 {
@@ -301,9 +304,44 @@ public class GenMapScript : MonoBehaviour
         }
     }
 
+    List<(int,int)> GetStartingCity(int PlayerNumber)
+    {
+        List<(int,int)> citiesToChooseFrom = new List<(int,int)>{};
 
+        switch (PlayerNumber)
+        {
+            case 0:
+                citiesToChooseFrom.Add(cities[0]);
+                citiesToChooseFrom.Add(cities[1]);
+                citiesToChooseFrom.Add(cities[2]);
+                break;
 
+            case 1:
+                citiesToChooseFrom.Add(cities[3]);
+                citiesToChooseFrom.Add(cities[4]);
+                citiesToChooseFrom.Add(cities[5]);
+                break;
+            case 2:
+                citiesToChooseFrom.Add(cities[6]);
+                citiesToChooseFrom.Add(cities[7]);
+                citiesToChooseFrom.Add(cities[8]);
+                break;
+            case 3:
+                citiesToChooseFrom.Add(cities[9]);
+                citiesToChooseFrom.Add(cities[10]);
+                citiesToChooseFrom.Add(cities[11]);
+                break;
 
+            default:
+                break;
+        }
+        return citiesToChooseFrom;
+    }
+
+    //void ChooseStartingCity ()
+    //{
+    //
+    //}
 
 
 }
