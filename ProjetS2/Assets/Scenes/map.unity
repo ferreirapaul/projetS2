@@ -533,10 +533,14 @@ MonoBehaviour:
   Shallow_Ocean: {fileID: 7679113226050892638, guid: e27637247b4e5524a875cfa875a301e4, type: 3}
   Fog_Of_War: {fileID: 8166211391801374283, guid: 3d5ffd0b373459c4fb161731637f6afc, type: 3}
   City: {fileID: 7294030458484276468, guid: 19244aa98e542cd41a3949a2b60d1067, type: 3}
+  SelectCircle: {fileID: 0}
   spriteRenderer: {fileID: 1201304384}
   map_width: 160
   map_height: 90
   magnification: 25
+  playerIDs: 
+  lobby: {fileID: 0}
+  network: {fileID: 0}
   seed: 42069
 --- !u!4 &47778317
 Transform:
@@ -3918,7 +3922,6 @@ MonoBehaviour:
   slider: {fileID: 1830839720}
   TxtVolume: {fileID: 1344710583}
   KeyBinding: {fileID: 1777435106}
-  settinginstart: {fileID: 0}
   Forward: {fileID: 0}
   Left: {fileID: 0}
   Back: {fileID: 0}
@@ -4228,7 +4231,6 @@ GameObject:
   - component: {fileID: 686846133}
   - component: {fileID: 686846134}
   - component: {fileID: 686846135}
-  - component: {fileID: 686846137}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4402,25 +4404,6 @@ MonoBehaviour:
   cam: {fileID: 1409519616}
   minimap: {fileID: 1027314258}
   renderTexture: {fileID: 8400000, guid: 12364b7320267ff4d8a119b56aa9422d, type: 2}
---- !u!114 &686846137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 686846128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cf6b6b6095b22943a9e67d2a8297414, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ip: epirum.fr
-  movement:
-  - z
-  - q
-  - s
-  - d
-  volume: 1
 --- !u!1 &713231762
 GameObject:
   m_ObjectHideFlags: 0

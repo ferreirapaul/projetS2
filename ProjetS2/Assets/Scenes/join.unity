@@ -375,7 +375,6 @@ GameObject:
   - component: {fileID: 592300107}
   - component: {fileID: 592300106}
   - component: {fileID: 592300105}
-  - component: {fileID: 592300110}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -480,25 +479,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &592300110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 592300104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cf6b6b6095b22943a9e67d2a8297414, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ip: epirum.fr
-  movement:
-  - z
-  - q
-  - s
-  - d
-  volume: 1
 --- !u!1 &648666400
 GameObject:
   m_ObjectHideFlags: 0
