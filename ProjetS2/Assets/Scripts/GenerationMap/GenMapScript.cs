@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Network;
 
 
 public class GenMapScript : MonoBehaviour
@@ -22,8 +23,9 @@ public class GenMapScript : MonoBehaviour
     public GameObject Deep_Ocean;
     public GameObject Shallow_Ocean;
     public GameObject Fog_Of_War;
-
     public GameObject City;
+    public GameObject SelectCircle;
+
 
     public SpriteRenderer spriteRenderer;
     public float map_width = 160f;   // value is the amount of tiles 
@@ -34,6 +36,10 @@ public class GenMapScript : MonoBehaviour
     List<List<int>> noise_grid = new List<List<int>>();
     List<List<GameObject>> tile_grid = new List<List<GameObject>>();
     List<List<GameObject>> FogOfWar_grid = new List<List<GameObject>>();
+    public List<int> playerIDs;
+    public LobbyInfos lobby;
+    public Network_global network;
+    public List<Player> playersList;
 
     /** changing this seed will offset the base coordinates of the perlin nois function by the given amount
         the same see will always generate the same map **/
@@ -43,6 +49,17 @@ public class GenMapScript : MonoBehaviour
  
     void Start()
     {
+        lobby   = FindObjectOfType<LobbyInfos>();
+        network = FindObjectOfType<Network_global>();
+        Debug.Log(lobby);
+        foreach(int key in lobby.players.Keys)
+        {
+            playerIDs.Add(key);
+        }
+        playersList = new List<Player>{};
+        foreach (int playerID in playerIDs){
+            playersList.Add(lobby.players[playerID]);
+        }
         
         int amountOfCities = numberOfPlayers * 3;   
         map_width = spriteRenderer.transform.localScale.x;
@@ -56,6 +73,7 @@ public class GenMapScript : MonoBehaviour
         GenerateMap();
         generateFogOfWar();
         generateCities(amountOfCities);
+        ChooseStartingCity();
 
     }
  
@@ -241,7 +259,6 @@ public class GenMapScript : MonoBehaviour
             int y = (int) Random.Range(0, map_height);
             if (  cityIsValid( (x,y) ,  cities) ) {
                 CreateTile(10,x,y);
-                AddVision(x,y,10);
                 cities.Add((x,y));
                 amount--;
             }
@@ -282,7 +299,7 @@ public class GenMapScript : MonoBehaviour
         {
             for(int y = posY-VisionRange; y <= posY + VisionRange; y++)
             {
-                if (x >= 0 && x <= map_width && y >= 0 && y <= map_height)
+                if (x >= 0 && x < map_width && y >= 0 && y < map_height)
                 {
                     FogOfWar_grid[x][y].transform.localPosition = new Vector3(x,y,1);
                 }
@@ -296,7 +313,7 @@ public class GenMapScript : MonoBehaviour
         {
             for(int y = posY-VisionRange; y <= posY + VisionRange; y++)
             {
-                if (x >= 0 && x <= map_width && y >= 0 && y <= map_height)
+                if (x >= 0 && x < map_width && y >= 0 && y < map_height)
                 {
                     FogOfWar_grid[x][y].transform.localPosition = new Vector3(x,y,-2);
                 }
@@ -304,44 +321,39 @@ public class GenMapScript : MonoBehaviour
         }
     }
 
-    List<(int,int)> GetStartingCity(int PlayerNumber)
-    {
-        List<(int,int)> citiesToChooseFrom = new List<(int,int)>{};
-
-        switch (PlayerNumber)
+    List<(int,int)> GetStartingCities()
+    {        
+        int playerID = network.Client.myId;
+        int playerNumber = 0;
+        while (playerNumber<playerIDs.Count && playerID != playerIDs[playerNumber])
         {
-            case 0:
-                citiesToChooseFrom.Add(cities[0]);
-                citiesToChooseFrom.Add(cities[1]);
-                citiesToChooseFrom.Add(cities[2]);
-                break;
-
-            case 1:
-                citiesToChooseFrom.Add(cities[3]);
-                citiesToChooseFrom.Add(cities[4]);
-                citiesToChooseFrom.Add(cities[5]);
-                break;
-            case 2:
-                citiesToChooseFrom.Add(cities[6]);
-                citiesToChooseFrom.Add(cities[7]);
-                citiesToChooseFrom.Add(cities[8]);
-                break;
-            case 3:
-                citiesToChooseFrom.Add(cities[9]);
-                citiesToChooseFrom.Add(cities[10]);
-                citiesToChooseFrom.Add(cities[11]);
-                break;
-
-            default:
-                break;
+            playerNumber++;
         }
+        Debug.Log(playerNumber);
+        List<(int,int)> citiesToChooseFrom = new List<(int,int)>{
+            cities[playerNumber],
+            cities[playerNumber+1],
+            cities[playerNumber+2],
+
+        };
+
         return citiesToChooseFrom;
     }
 
-    //void ChooseStartingCity ()
-    //{
-    //
-    //}
+    
 
+    void ChooseStartingCity ()
+    {
+        List<(int,int)> cities = GetStartingCities();
+        foreach ((int,int) city in cities)
+        {
+            AddVision(city.Item1,city.Item2,10);
+        }
+    
+    }
 
+    public void SelectCity(int posX,int posY)
+    {
+        SelectCircle.transform.localPosition=new Vector3(posX,posY,-3);
+    }
 }

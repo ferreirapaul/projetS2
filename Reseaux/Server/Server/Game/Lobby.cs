@@ -9,11 +9,16 @@ namespace Lobby
         public int IdSession;
         public int Seed;
         public Dictionary<int, Client> players;
+        private List<int> clientsId;
+        public int i;
 
         public Lobby(List<string> value, Client creator)
         {
+            clientsId = new List<int>();
+            clientsId.Add(creator.Id);
             creator.name = value[0];
             creator.emperor = Int32.Parse(value[1]);
+            creator.idlobby = Int32.Parse(value[3]);
             this.Seed = Int32.Parse(value[2]);
             this.IdSession = Int32.Parse(value[3]);
             
@@ -25,6 +30,7 @@ namespace Lobby
         {
             player.name = value[0];
             player.emperor = Int32.Parse(value[1]);
+            clientsId.Add(player.Id);
             Send.SendEveryoneExcept(player.Id,IdMsg.newPlayer, value[0]+ ";" + value[1]+ ";" + player.Id + ";");
 
             string res = this.Seed + ";";
@@ -37,6 +43,18 @@ namespace Lobby
             this.players.Add(player.Id,player);
             
             Send.SendDataClient(player.Id,IdMsg.sendInfo,res);
+        }
+
+        public void EndTurn(string val, int clientId)
+        {
+            Send.SendEveryoneExcept(clientId,IdMsg.endTurn,val);
+            i = (i + 1) % players.Count;
+            Send.SendDataClient(clientsId[i],IdMsg.youTurn,"go go power rangers tutututu");
+        }
+
+        public void Win(int clientId)
+        {
+            Send.SendEveryoneExcept(clientId,IdMsg.winGame,"you loose eheheheheh"); 
         }
     }
 }
