@@ -138,6 +138,7 @@ public class LobbyInfos : MonoBehaviour
 
     public void StartGame()
     {
+        Debug.Log("fuck");
         SceneManager.LoadScene(4);
     }
 

@@ -15,7 +15,6 @@ public class allcities : MonoBehaviour
     public GameObject ListA;
     public GameObject ChildB;
     public GameObject ChildA;
-    private int displaywhat = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,42 +28,7 @@ public class allcities : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*switch (displaywhat)
-        {
-            case 0:
-                DisplayBuildings(Name,)
-                break;
-            case 1:
-                DisplaySciences();
-                break;
-            default:
-                DisplayArmy();
-                break;
-        }*/
     }
-    /*
-    public void DisplayList(int which)
-    {
-        
-    }
-   
-    public void DisplayBuildings(string name,List<cities> buildings)
-    {
-        Panelbuildings.SetActive(true);
-        Name.text = name;
-
-    }
-    
-    public void DisplayArmy(string name, List<army> army)
-    {
-        Panelarmy.SetActive(true);
-    }
-
-    public void DisplaySciences(string name, List<army> army)
-    {
-        Panelsciences.SetActive(true);
-    }
-    */
     public void AddArmy(string name)
     {
         GameObject arm = Instantiate(ChildA);
@@ -96,10 +60,6 @@ public class allcities : MonoBehaviour
         build.transform.localScale = new Vector3(1, 1, 1);
         VerticalLayoutGroup listofbuildings = ListB.GetComponent<VerticalLayoutGroup>();
     }
-    public void AddSciences(string name)
-    {
-
-    }
     public void DisplayInformations()
     {
         Panelville.SetActive(true);
@@ -110,21 +70,18 @@ public class allcities : MonoBehaviour
     }
     public void ChooseBuildings()
     {
-        displaywhat = 0;
         Panelbuildings.SetActive(true);
         Panelarmy.SetActive(false);
         Panelsciences.SetActive(false);
     }
-    public void ChooseSciences()
+    public void ChooseTechno()
     {
-        displaywhat = 1;
         Panelbuildings.SetActive(false);
         Panelarmy.SetActive(false);
         Panelsciences.SetActive(true);
     }
     public void ChooseArmy()
     {
-        displaywhat = 2;
         Panelbuildings.SetActive(false);
         Panelarmy.SetActive(true);
         Panelsciences.SetActive(false);

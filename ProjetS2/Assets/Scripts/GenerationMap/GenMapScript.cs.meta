@@ -14,9 +14,9 @@ MonoImporter:
   - Snow_Hill: {fileID: 3110066424309081120, guid: 3b39fbc58035dec4da455f96e0c2c0e9, type: 3}
   - Deep_Ocean: {fileID: 5000894601550076132, guid: 4ee4a1b7ddaae8b45a0cbb63d8f2cded, type: 3}
   - Shallow_Ocean: {fileID: 7679113226050892638, guid: e27637247b4e5524a875cfa875a301e4, type: 3}
-  - Fog_Of_War: {fileID: 6706681296731631380, guid: da32d5e6b5a8ac74ba6ef3b6443214e5, type: 3}
+  - Fog_Of_War: {fileID: 8166211391801374283, guid: 3d5ffd0b373459c4fb161731637f6afc, type: 3}
   - City: {fileID: 7294030458484276468, guid: 19244aa98e542cd41a3949a2b60d1067, type: 3}
-  - spriteRenderer: {instanceID: 0}
+  - spriteRenderer: {fileID: 1733823257467980213, guid: 3d5ffd0b373459c4fb161731637f6afc, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

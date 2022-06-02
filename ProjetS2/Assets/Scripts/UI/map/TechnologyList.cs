@@ -11,13 +11,11 @@ public class TechnologyList : MonoBehaviour
     public GameObject ListS;
     public GameObject ChildS;
     public Game.Game game;
+    public GameObject ListSAvilable;
+    public GameObject ChildSAvailable;
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < game.listTechno.Count; i++)
-        {
-            AddTechno(i);
-        }
     }
 
     // Update is called once per frame
@@ -29,7 +27,6 @@ public class TechnologyList : MonoBehaviour
     public void AddTechno(int index)
     {
         (string, string) both = (game.listTechno[index].name, game.listTechno[index].description);
-        
 
         GameObject tech = Instantiate(ChildS);
         GameObject texts = tech.transform.Find("Name").gameObject;
@@ -38,12 +35,9 @@ public class TechnologyList : MonoBehaviour
         texts = tech.transform.Find("Description").gameObject;
         whythis = texts.GetComponent<TextMeshProUGUI>();
         whythis.text = both.Item2;
-        tech.transform.parent = ListS.transform;
+        tech.transform.SetParent(ListS.transform);
 
         tech.transform.localScale = new Vector3(1, 1, 1);
-        VerticalLayoutGroup listoftech = ListS.GetComponent<VerticalLayoutGroup>();
-        tech.transform.localPosition = new Vector3(0, 0, 0);
-        listoftech.spacing = 0;
 
 
         RectTransform rect = ListS.GetComponent<RectTransform>();
@@ -53,4 +47,8 @@ public class TechnologyList : MonoBehaviour
         rectparent.sizeDelta = new Vector2(0, rectparent.sizeDelta.y + 31);
     }
 
+    public void DisplayAvailableTechno(int index)
+    {
+
+    }
 }

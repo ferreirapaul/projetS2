@@ -95,7 +95,7 @@ public class UIdeplacement : MonoBehaviour
                 cam.transform.position = Cameramov(cam.transform.position + diff);
             }
 
-            if (mousedrag.isOn)
+            if (allcities.Panelville.activeSelf == false && mousedrag.isOn)
             {
                 if (Input.GetMouseButtonDown(0))
                 {
