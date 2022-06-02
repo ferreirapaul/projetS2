@@ -11,6 +11,7 @@ namespace Technology
         protected List<Building.Building> availableBuildings;
         protected List<Army.Army> availableArmy;
         protected bool isUnlock;
+        protected Game.Game game;
         public string name;
         public string description;
 
@@ -25,7 +26,8 @@ namespace Technology
             this.availableBuildings = b;
         }
 
-        public abstract void Unlock();
+        public abstract void Unlock(); 
+
         public abstract void Effects();
 
         public abstract void upgradePeriod();

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Ressources;
 using Army;
+using Network;
 using Technology;
 using UnityEngine;
 
@@ -15,16 +16,45 @@ namespace Game
         public List<Building.Building> availableBuildings;
         public List<Army.Army> availableArmy;
         public List<Technology.Technology> listTechno;
+        public List<City> citiesOwn;
+        public Network_global Network;
+        public string turnInfo;
 
-        void Start()
+        public void Start()
         {
             //map.Generate(lobbby.Seed);
-            lobbby = (LobbyInfos) GameObject.FindObjectOfType(typeof(LobbyInfos));
+            lobbby = FindObjectOfType<LobbyInfos>();
+            Network = FindObjectOfType<Network_global>();
             Initiate();
         }
 
-        void Initiate()
+        public void AddInfos(IdAction id, string str)
         {
+            turnInfo += id + ":" + str;
+        }
+
+        public void Win()
+        {
+            Network.SendString("trop fort!!!",IdMsg.winGame);
+        }
+        
+
+        public void EndTurn()
+        {
+            if (citiesOwn.Count >= 8)
+            {
+                Win();
+            }
+            else
+            {
+                Network.SendString(turnInfo, IdMsg.endTurn);
+            }
+        }
+
+
+        public void Initiate()
+        {
+            citiesOwn = new List<City>();
             ressources = new List<Ressources.Ressources>();
             ressources.Add(new Gold());
             ressources.Add(new Food());
@@ -67,7 +97,6 @@ namespace Game
             listTechno.Add(new Oil(ressources,availableBuildings,availableArmy));
             listTechno.Add(new Sniper(ressources,availableBuildings,availableArmy));
             listTechno.Add(new Tank(ressources,availableBuildings,availableArmy));
-
         }
 
         
