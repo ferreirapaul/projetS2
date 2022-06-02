@@ -10,6 +10,7 @@ namespace Server
         public int dataBufferSize = 4096;
         public string name;
         public int emperor;
+        public int idlobby;
         public TcpClient socket;
         private NetworkStream stream;
         private Packet receivedData;

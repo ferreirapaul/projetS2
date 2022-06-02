@@ -49,6 +49,14 @@ namespace Server
                 case IdMsg.launchGame:
                     Send.SendEveryoneExcept(clientId,IdMsg.launchGame,val);
                     break;
+                
+                case IdMsg.endTurn:
+                    Server.lobbys[Server.clients[clientId].idlobby].EndTurn(val,clientId);
+                    break;
+                
+                case IdMsg.winGame:
+                    Server.lobbys[Server.clients[clientId].idlobby].Win(clientId);
+                    break;
                 default:
                     Console.Error.WriteLine("Unknow Id");
                     break;

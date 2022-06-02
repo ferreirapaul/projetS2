@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Network;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
@@ -14,6 +15,7 @@ public class LobbyInfos : MonoBehaviour
     public int Code;
     public int choice = 1;
     public bool isGetInfo = false;
+    private bool ChangeScene = false;
     public List<string> getinfosValues;
     public Network_global Network;
     public bool isCreated = false;
@@ -24,7 +26,9 @@ public class LobbyInfos : MonoBehaviour
 
     public void Start()
     {
-        DontDestroyOnLoad(this);
+        BaseEventData data;
+        
+        DontDestroyOnLoad(this); 
     }
 
     public void Update()
@@ -36,6 +40,12 @@ public class LobbyInfos : MonoBehaviour
         if (lobby is null && SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(2))
         {
             lobby = FindObjectOfType<lobbyjunior>();
+        }
+
+        if (ChangeScene)
+        {
+            SceneManager.LoadScene(4);
+            ChangeScene = false;
         }
     }
 
@@ -59,6 +69,7 @@ public class LobbyInfos : MonoBehaviour
         me = new Player(ClientHandle.GetValues(res), true);
         players = new Dictionary<int, Player>();
         players.Add(me.Id, me);
+        
     }
     
     public void SendJoin()
@@ -138,7 +149,7 @@ public class LobbyInfos : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(4);
+        ChangeScene = true;
     }
 
     public void ChangeCode(string codestr)

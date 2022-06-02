@@ -2,7 +2,7 @@
 
 namespace Game
 {
-    public class City
+    public class  City
     {
         private int health;
         private Player owner;
