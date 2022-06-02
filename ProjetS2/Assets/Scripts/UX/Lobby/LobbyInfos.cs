@@ -14,6 +14,7 @@ public class LobbyInfos : MonoBehaviour
     public int Code;
     public int choice = 1;
     public bool isGetInfo = false;
+    public bool iqdebile = false;
     public List<string> getinfosValues;
     public Network_global Network;
     public bool isCreated = false;
@@ -36,6 +37,12 @@ public class LobbyInfos : MonoBehaviour
         if (lobby is null && SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(2))
         {
             lobby = FindObjectOfType<lobbyjunior>();
+        }
+
+        if(iqdebile)
+        {
+            iqdebile = false;
+            SceneManager.LoadScene(4);
         }
     }
 
@@ -129,7 +136,7 @@ public class LobbyInfos : MonoBehaviour
 
     public void StartGameHost()
     {
-        if (isCreated && players.Count >= 2 && me.isHost)
+        if (isCreated && players.Count >= 1 && me.isHost)
         {
             Network.SendString("start", IdMsg.launchGame);
             StartGame();
@@ -138,7 +145,7 @@ public class LobbyInfos : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(4);
+        iqdebile = true;
     }
 
     public void ChangeCode(string codestr)
