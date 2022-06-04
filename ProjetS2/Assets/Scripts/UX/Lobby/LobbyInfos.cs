@@ -26,8 +26,6 @@ public class LobbyInfos : MonoBehaviour
 
     public void Start()
     {
-        BaseEventData data;
-        
         DontDestroyOnLoad(this); 
     }
 

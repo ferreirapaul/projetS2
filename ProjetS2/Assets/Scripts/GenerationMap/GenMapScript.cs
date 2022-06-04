@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Network;
 using UnityEngine;
  
 /* Danndx 2021 (youtube.com/danndx)
@@ -30,6 +31,11 @@ public class GenMapScript : MonoBehaviour
     List<List<int>> noise_grid = new List<List<int>>();
     List<List<GameObject>> tile_grid = new List<List<GameObject>>();
 
+    public LobbyInfos lobby;
+    public Network_global network;
+
+    public int numberOfPlayers;
+
     /** changing this seed will offset the base coordinates of the perlin nois function by the given amount
         the same see will always generate the same map **/
     
@@ -38,8 +44,6 @@ public class GenMapScript : MonoBehaviour
  
     void Start()
     {
-<<<<<<< Updated upstream
-=======
         lobby   = FindObjectOfType<LobbyInfos>();
         network = FindObjectOfType<Network_global>();
         Debug.Log(lobby);
@@ -52,8 +56,7 @@ public class GenMapScript : MonoBehaviour
             playersList.Add(lobby.players[playerID]);
         }*/
         
-        int amountOfCities = numberOfPlayers * 3;   
->>>>>>> Stashed changes
+        int amountOfCities = numberOfPlayers * 3;
         map_width = spriteRenderer.transform.localScale.x;
         map_height = spriteRenderer.transform.localScale.y;
         if (seed == -1)
@@ -201,5 +204,10 @@ public class GenMapScript : MonoBehaviour
         tile.transform.localPosition = new Vector3(x, y, 0);
  
         tile_grid[x].Add(tile);
+    }
+
+    public void SelectCity(int x, int y)
+    {
+        
     }
 }

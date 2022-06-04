@@ -52,8 +52,9 @@ public class allcities : MonoBehaviour
 
     public void AddBuildings(string name)
     {
-        GameObject Build=ListB.transform.Find(name).gameObject;
+        GameObject Build = ListB.transform.Find(name).gameObject;
         Build.SetActive(true);
+    }
 
     public void DisplayInformations()
     {
