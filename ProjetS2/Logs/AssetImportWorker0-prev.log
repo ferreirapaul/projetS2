@@ -16,17 +16,23 @@ C:/Users/plavi/Documents/GitHub/projetS2/ProjetS2
 Logs/AssetImportWorker0.log
 -srvPort
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 61531
 Successfully changed project path to: C:/Users/plavi/Documents/GitHub/projetS2/ProjetS2
 C:/Users/plavi/Documents/GitHub/projetS2/ProjetS2
 Using Asset Import Pipeline V2.
 Refreshing native plugins compatible for Editor in 49.40 ms, found 3 plugins.
 =======
+=======
+>>>>>>> Stashed changes
 53553
 Successfully changed project path to: C:/Users/plavi/Documents/GitHub/projetS2/ProjetS2
 C:/Users/plavi/Documents/GitHub/projetS2/ProjetS2
 Using Asset Import Pipeline V2.
 Refreshing native plugins compatible for Editor in 35.08 ms, found 2 plugins.
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.20f1 (41c4e627c95f)
@@ -44,6 +50,7 @@ Mono path[0] = 'C:/Program Files/Unity 2020.3.20f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity 2020.3.20f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity 2020.3.20f1/Editor/Data/MonoBleedingEdge/etc'
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56308
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
@@ -58,6 +65,8 @@ Domain Reload Profiling:
 	ReloadAssembly (1296ms)
 		BeginReloadAssembly (69ms)
 =======
+=======
+>>>>>>> Stashed changes
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56424
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
@@ -71,12 +80,16 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling:
 	ReloadAssembly (1077ms)
 		BeginReloadAssembly (60ms)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 		EndReloadAssembly (497ms)
 			LoadAssemblies (67ms)
@@ -129,6 +142,8 @@ Domain Reload Profiling:
 				ProcessInitializeOnLoadMethodAttributes (18ms)
 				AfterProcessingInitializeOnLoad (8ms)
 =======
+=======
+>>>>>>> Stashed changes
 		EndReloadAssembly (414ms)
 			LoadAssemblies (58ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
@@ -1933,11 +1948,15 @@ Domain Reload Profiling:
 				ProcessInitializeOnLoadAttributes (252ms)
 				ProcessInitializeOnLoadMethodAttributes (12ms)
 				AfterProcessingInitializeOnLoad (6ms)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (9ms)
 Platform modules already initialized, skipping
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 ========================================================================
 Worker process is ready to serve import requests
@@ -1951,6 +1970,8 @@ System memory in use after: 96.9 MB.
 Unloading 26 unused Assets to reduce memory usage. Loaded Objects now: 2598.
 Total: 4.214700 ms (FindLiveObjects: 0.229600 ms CreateObjectMapping: 0.089100 ms MarkObjects: 3.776200 ms  DeleteObjects: 0.118800 ms)
 =======
+=======
+>>>>>>> Stashed changes
 Refreshing native plugins compatible for Editor in 0.43 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1601 Unused Serialized files (Serialized files now loaded: 0)
@@ -2015,6 +2036,9 @@ System memory in use after: 72.3 MB.
 
 Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2113.
 Total: 4.112000 ms (FindLiveObjects: 0.212100 ms CreateObjectMapping: 0.083900 ms MarkObjects: 3.780200 ms  DeleteObjects: 0.034000 ms)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -2028,6 +2052,7 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 Received Import Request.
   path: Assets/Scenes/join.unity
@@ -2046,6 +2071,8 @@ System memory in use after: 52.9 MB.
 Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2598.
 Total: 4.722600 ms (FindLiveObjects: 0.246200 ms CreateObjectMapping: 0.096100 ms MarkObjects: 4.330300 ms  DeleteObjects: 0.048800 ms)
 =======
+=======
+>>>>>>> Stashed changes
 Received Prepare
 Registering precompiled user dll's ...
 Registered in 0.007272 seconds.
@@ -2146,6 +2173,9 @@ System memory in use after: 72.3 MB.
 
 Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2117.
 Total: 4.404000 ms (FindLiveObjects: 0.248900 ms CreateObjectMapping: 0.090000 ms MarkObjects: 4.031200 ms  DeleteObjects: 0.032300 ms)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -2162,6 +2192,7 @@ AssetImportParameters requested are different than current active one (requested
 Received Prepare
 Registering precompiled user dll's ...
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 Registered in 0.004253 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -2173,6 +2204,8 @@ Domain Reload Profiling:
 	ReloadAssembly (1363ms)
 		BeginReloadAssembly (165ms)
 =======
+=======
+>>>>>>> Stashed changes
 Registered in 0.006487 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -2183,11 +2216,15 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling:
 	ReloadAssembly (1344ms)
 		BeginReloadAssembly (150ms)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (8ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 			CreateAndSetChildDomain (45ms)
 		EndReloadAssembly (1115ms)
@@ -2198,6 +2235,8 @@ Domain Reload Profiling:
 			RebuildScriptCaches (53ms)
 			SetupLoadedEditorAssemblies (409ms)
 =======
+=======
+>>>>>>> Stashed changes
 			CreateAndSetChildDomain (34ms)
 		EndReloadAssembly (1103ms)
 			LoadAssemblies (133ms)
@@ -2206,11 +2245,15 @@ Domain Reload Profiling:
 			ReleaseScriptCaches (1ms)
 			RebuildScriptCaches (52ms)
 			SetupLoadedEditorAssemblies (353ms)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (9ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 				BeforeProcessingInitializeOnLoad (85ms)
 				ProcessInitializeOnLoadAttributes (299ms)
@@ -2229,6 +2272,8 @@ System memory in use after: 95.1 MB.
 Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2601.
 Total: 3.861700 ms (FindLiveObjects: 0.264400 ms CreateObjectMapping: 0.096500 ms MarkObjects: 3.478300 ms  DeleteObjects: 0.021100 ms)
 =======
+=======
+>>>>>>> Stashed changes
 				BeforeProcessingInitializeOnLoad (66ms)
 				ProcessInitializeOnLoadAttributes (259ms)
 				ProcessInitializeOnLoadMethodAttributes (11ms)
@@ -2245,6 +2290,9 @@ System memory in use after: 72.3 MB.
 
 Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2119.
 Total: 3.315900 ms (FindLiveObjects: 0.244300 ms CreateObjectMapping: 0.090700 ms MarkObjects: 2.825800 ms  DeleteObjects: 0.153200 ms)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -2261,6 +2309,7 @@ AssetImportParameters requested are different than current active one (requested
 Received Prepare
 Registering precompiled user dll's ...
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 Registered in 0.003532 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -2272,6 +2321,8 @@ Domain Reload Profiling:
 	ReloadAssembly (1193ms)
 		BeginReloadAssembly (195ms)
 =======
+=======
+>>>>>>> Stashed changes
 Registered in 0.007021 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -2282,11 +2333,15 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling:
 	ReloadAssembly (1383ms)
 		BeginReloadAssembly (139ms)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (7ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 			CreateAndSetChildDomain (53ms)
 		EndReloadAssembly (915ms)
@@ -2317,6 +2372,8 @@ System memory in use after: 95.1 MB.
 Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2604.
 Total: 4.652100 ms (FindLiveObjects: 0.233900 ms CreateObjectMapping: 0.098000 ms MarkObjects: 4.292000 ms  DeleteObjects: 0.027000 ms)
 =======
+=======
+>>>>>>> Stashed changes
 			CreateAndSetChildDomain (38ms)
 		EndReloadAssembly (1154ms)
 			LoadAssemblies (113ms)
@@ -2569,6 +2626,9 @@ System memory in use after: 72.3 MB.
 
 Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2129.
 Total: 3.464300 ms (FindLiveObjects: 0.194300 ms CreateObjectMapping: 0.058700 ms MarkObjects: 3.190100 ms  DeleteObjects: 0.020000 ms)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 AssetImportParameters requested are different than current active one (requested -> active):
