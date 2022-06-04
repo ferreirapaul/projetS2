@@ -9,8 +9,8 @@ namespace Technology
         {
             coast = 70;
             name = "Comunism";
-            description = "This technology allow you hide yourself by the other player and to buff your army. \n" +
-                          "But, you have to choose between this technology and the globalization.";
+            description = "This technology allow you hide yourself from the other player and to buff your army. \n" +
+                          "But, you can't have this technology and the globalization.";
         }
 
         public override void Unlock()

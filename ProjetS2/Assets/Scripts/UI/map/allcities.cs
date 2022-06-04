@@ -52,14 +52,9 @@ public class allcities : MonoBehaviour
 
     public void AddBuildings(string name)
     {
-        GameObject build = Instantiate(ChildB);
-        GameObject textb = build.transform.Find("Name").gameObject;
-        TextMeshProUGUI whythis = textb.GetComponent<TextMeshProUGUI>();
-        whythis.text = name;
-        build.transform.parent = ListB.transform;
-        build.transform.localScale = new Vector3(1, 1, 1);
-        VerticalLayoutGroup listofbuildings = ListB.GetComponent<VerticalLayoutGroup>();
-    }
+        GameObject Build=ListB.transform.Find(name).gameObject;
+        Build.SetActive(true);
+
     public void DisplayInformations()
     {
         Panelville.SetActive(true);

@@ -11,7 +11,7 @@ namespace Technology
             coast = 70;
             name = "Globalization";
             description = "This technology allow to sse all the other player and to win 100 gold per turn. \n" +
-                          "But, you have to choose between this technology and the communism.";
+                          "But, you can't have this technology and the communism.";
             gain = 100;
         }
 
