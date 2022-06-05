@@ -1,10 +1,14 @@
 -a="C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PlayerScriptAssemblies\Assembly-CSharp.dll"
+<<<<<<< Updated upstream
 -a="C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PlayerScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll"
 -a="C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PlayerScriptAssemblies\Unity.2D.PixelPerfect.dll"
+=======
+>>>>>>> Stashed changes
 -a="C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PlayerScriptAssemblies\UnityEngine.TestRunner.dll"
 -a="C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PlayerScriptAssemblies\Unity.Timeline.dll"
 -a="C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PlayerScriptAssemblies\Unity.TextMeshPro.dll"
 -a="C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PlayerScriptAssemblies\UnityEngine.UI.dll"
+<<<<<<< Updated upstream
 -a="C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PlayerScriptAssemblies\Unity.Mathematics.dll"
 -a="C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PlayerScriptAssemblies\Unity.2D.IK.Runtime.dll"
 -a="C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PlayerScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll"
@@ -14,6 +18,17 @@
 -a="C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll"
 -s="C:\Program Files\Unity\Hub\Editor\2020.3.20f1\Editor\Data\Managed\UnityEngine"
 -s="C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PlayerScriptAssemblies"
+=======
+-a="C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\AOT\Newtonsoft.Json.dll"
+-a="C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Portable\Newtonsoft.Json.dll"
+-a="C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll"
+-a="C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll"
+-s="C:\Program Files\Unity\Hub\Editor\2020.3.20f1\Editor\Data\Managed\UnityEngine"
+-s="C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PlayerScriptAssemblies"
+-s="C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\AOT"
+-s="C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Portable"
+-s="C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime"
+>>>>>>> Stashed changes
 -s="C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom"
 -s="C:\Program Files\Unity\Hub\Editor\2020.3.20f1\Editor\Data\Managed\UnityEngine"
 -s="C:\Program Files\Unity\Hub\Editor\2020.3.20f1\Editor\Data\NetStandard\ref\2.0.0"

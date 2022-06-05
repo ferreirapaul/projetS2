@@ -573,6 +573,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136090943}
   m_CullTransparentMesh: 1
+--- !u!1001 &242418128
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4135230394470663693, guid: 15709af24c0122a46b7db32610f6c444, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135230394470663695, guid: 15709af24c0122a46b7db32610f6c444, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135230394470663695, guid: 15709af24c0122a46b7db32610f6c444, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135230394470663695, guid: 15709af24c0122a46b7db32610f6c444, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135230394470663695, guid: 15709af24c0122a46b7db32610f6c444, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135230394470663695, guid: 15709af24c0122a46b7db32610f6c444, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135230394470663695, guid: 15709af24c0122a46b7db32610f6c444, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135230394470663695, guid: 15709af24c0122a46b7db32610f6c444, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135230394470663695, guid: 15709af24c0122a46b7db32610f6c444, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135230394470663695, guid: 15709af24c0122a46b7db32610f6c444, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135230394470663695, guid: 15709af24c0122a46b7db32610f6c444, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135230394470663695, guid: 15709af24c0122a46b7db32610f6c444, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 15709af24c0122a46b7db32610f6c444, type: 3}
 --- !u!1 &278989477
 GameObject:
   m_ObjectHideFlags: 0
@@ -2262,7 +2319,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1332761419}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
 --- !u!1 &1348063078
+=======
+--- !u!1 &1633949088
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2270,21 +2331,35 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 1348063079}
   m_Layer: 5
   m_Name: Fill Area
+=======
+  - component: {fileID: 1633949089}
+  m_Layer: 5
+  m_Name: Sliding Area
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream
 --- !u!224 &1348063079
+=======
+--- !u!224 &1633949089
+>>>>>>> Stashed changes
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1348063078}
+=======
+  m_GameObject: {fileID: 1633949088}
+>>>>>>> Stashed changes
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -2951,6 +3026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -2978,6 +3054,21 @@ CanvasRenderer:
   m_GameObject: {fileID: 1460876251}
   m_CullTransparentMesh: 1
 --- !u!1 &1477151464
+=======
+  Panel: {fileID: 278989477}
+  DResolution: {fileID: 650377545}
+  audiosource: {fileID: 0}
+  slider: {fileID: 1160474309}
+  TxtVolume: {fileID: 786270578}
+  KeyBinding: {fileID: 2043925212803675540, guid: 6e0ebafc9194b3b4698fbc7d50b7f9d4, type: 3}
+  local: {fileID: 639573620}
+  online: {fileID: 1147274165}
+  Forward: {fileID: 514251882068653533}
+  Left: {fileID: 514251881895139085}
+  Back: {fileID: 514251881616407647}
+  Right: {fileID: 514251881232847113}
+--- !u!1 &1998553262
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
