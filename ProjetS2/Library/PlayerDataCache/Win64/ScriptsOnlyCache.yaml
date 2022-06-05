@@ -3,7 +3,10 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - Game.Game
     - GenMapScript
+<<<<<<< Updated upstream
     - LobbyInfos
+=======
+>>>>>>> Stashed changes
     - Network.Client
     - Network.Network_global
     - TechnologyList
@@ -14,6 +17,7 @@ ScriptsOnlyBuild:
     - join
     - lobbyjunior
     - options
+<<<<<<< Updated upstream
     - size_map
     - start
     Unity.2D.Animation.Editor.dll:
@@ -31,6 +35,11 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
+=======
+    - settinginstart
+    - size_map
+    - start
+>>>>>>> Stashed changes
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -80,6 +89,7 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
+<<<<<<< Updated upstream
       Script: {instanceID: 1476}
     - Class: 114
       Script: {instanceID: 1478}
@@ -103,6 +113,31 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4930}
     - Class: 114
       Script: {instanceID: 5148}
+=======
+      Script: {instanceID: 1468}
+    - Class: 114
+      Script: {instanceID: 1470}
+    - Class: 114
+      Script: {instanceID: 1836}
+    - Class: 114
+      Script: {instanceID: 2438}
+    - Class: 114
+      Script: {instanceID: 2558}
+    - Class: 114
+      Script: {instanceID: 2600}
+    - Class: 114
+      Script: {instanceID: 2730}
+    - Class: 114
+      Script: {instanceID: 2774}
+    - Class: 114
+      Script: {instanceID: 2946}
+    - Class: 114
+      Script: {instanceID: 3036}
+    - Class: 114
+      Script: {instanceID: 4090}
+    - Class: 114
+      Script: {instanceID: 4238}
+>>>>>>> Stashed changes
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -137,6 +172,7 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
+<<<<<<< Updated upstream
       Script: {instanceID: 1476}
     - Class: 114
       Script: {instanceID: 1478}
@@ -154,6 +190,25 @@ ScriptsOnlyBuild:
       Script: {instanceID: 3484}
     - Class: 114
       Script: {instanceID: 4568}
+=======
+      Script: {instanceID: 1468}
+    - Class: 114
+      Script: {instanceID: 1470}
+    - Class: 114
+      Script: {instanceID: 2438}
+    - Class: 114
+      Script: {instanceID: 2558}
+    - Class: 114
+      Script: {instanceID: 2730}
+    - Class: 114
+      Script: {instanceID: 2774}
+    - Class: 114
+      Script: {instanceID: 2946}
+    - Class: 114
+      Script: {instanceID: 3036}
+    - Class: 114
+      Script: {instanceID: 3830}
+>>>>>>> Stashed changes
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -192,6 +247,7 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
+<<<<<<< Updated upstream
       Script: {instanceID: 1476}
     - Class: 114
       Script: {instanceID: 1478}
@@ -241,6 +297,57 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5790}
     - Class: 114
       Script: {instanceID: 5810}
+=======
+      Script: {instanceID: 1468}
+    - Class: 114
+      Script: {instanceID: 1470}
+    - Class: 114
+      Script: {instanceID: 1590}
+    - Class: 114
+      Script: {instanceID: 1688}
+    - Class: 114
+      Script: {instanceID: 1748}
+    - Class: 114
+      Script: {instanceID: 1836}
+    - Class: 114
+      Script: {instanceID: 2262}
+    - Class: 114
+      Script: {instanceID: 2438}
+    - Class: 114
+      Script: {instanceID: 2558}
+    - Class: 114
+      Script: {instanceID: 2600}
+    - Class: 114
+      Script: {instanceID: 2730}
+    - Class: 114
+      Script: {instanceID: 2774}
+    - Class: 114
+      Script: {instanceID: 2844}
+    - Class: 114
+      Script: {instanceID: 2946}
+    - Class: 114
+      Script: {instanceID: 2956}
+    - Class: 114
+      Script: {instanceID: 3036}
+    - Class: 114
+      Script: {instanceID: 3246}
+    - Class: 114
+      Script: {instanceID: 3306}
+    - Class: 114
+      Script: {instanceID: 3628}
+    - Class: 114
+      Script: {instanceID: 3752}
+    - Class: 114
+      Script: {instanceID: 3798}
+    - Class: 114
+      Script: {instanceID: 3858}
+    - Class: 114
+      Script: {instanceID: 3948}
+    - Class: 114
+      Script: {instanceID: 4716}
+    - Class: 114
+      Script: {instanceID: 4730}
+>>>>>>> Stashed changes
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -279,6 +386,7 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
+<<<<<<< Updated upstream
       Script: {instanceID: 1476}
     - Class: 114
       Script: {instanceID: 1478}
@@ -310,6 +418,39 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4524}
     - Class: 114
       Script: {instanceID: 4734}
+=======
+      Script: {instanceID: 1468}
+    - Class: 114
+      Script: {instanceID: 1470}
+    - Class: 114
+      Script: {instanceID: 1688}
+    - Class: 114
+      Script: {instanceID: 1748}
+    - Class: 114
+      Script: {instanceID: 2198}
+    - Class: 114
+      Script: {instanceID: 2438}
+    - Class: 114
+      Script: {instanceID: 2558}
+    - Class: 114
+      Script: {instanceID: 2730}
+    - Class: 114
+      Script: {instanceID: 2774}
+    - Class: 114
+      Script: {instanceID: 2946}
+    - Class: 114
+      Script: {instanceID: 2956}
+    - Class: 114
+      Script: {instanceID: 3036}
+    - Class: 114
+      Script: {instanceID: 3306}
+    - Class: 114
+      Script: {instanceID: 3628}
+    - Class: 114
+      Script: {instanceID: 3798}
+    - Class: 114
+      Script: {instanceID: 3948}
+>>>>>>> Stashed changes
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -346,6 +487,7 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
+<<<<<<< Updated upstream
       Script: {instanceID: 1476}
     - Class: 114
       Script: {instanceID: 1478}
@@ -379,6 +521,41 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4874}
     - Class: 114
       Script: {instanceID: 5270}
+=======
+      Script: {instanceID: 1468}
+    - Class: 114
+      Script: {instanceID: 1836}
+    - Class: 114
+      Script: {instanceID: 2128}
+    - Class: 114
+      Script: {instanceID: 2438}
+    - Class: 114
+      Script: {instanceID: 2558}
+    - Class: 114
+      Script: {instanceID: 2600}
+    - Class: 114
+      Script: {instanceID: 2728}
+    - Class: 114
+      Script: {instanceID: 2730}
+    - Class: 114
+      Script: {instanceID: 2946}
+    - Class: 114
+      Script: {instanceID: 3006}
+    - Class: 114
+      Script: {instanceID: 3036}
+    - Class: 114
+      Script: {instanceID: 3150}
+    - Class: 114
+      Script: {instanceID: 3632}
+    - Class: 114
+      Script: {instanceID: 3932}
+    - Class: 114
+      Script: {instanceID: 4052}
+    - Class: 114
+      Script: {instanceID: 4334}
+    - Class: 114
+      Script: {instanceID: 17546}
+>>>>>>> Stashed changes
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -428,12 +605,15 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
+<<<<<<< Updated upstream
       Hash: 71b711096c6c32621c1d4c02310898b7
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.U2D.Animation
     className: SpriteSkin
   - hash:
       serializedVersion: 2
+=======
+>>>>>>> Stashed changes
       Hash: 62fef86270a167c41a606cfca1ecc156
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
@@ -446,24 +626,30 @@ ScriptsOnlyBuild:
     className: SignalAsset
   - hash:
       serializedVersion: 2
+<<<<<<< Updated upstream
       Hash: d1b036fbe5adcfe372c77a9d812c7e37
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEditor.U2D.IK
     className: IKEditorManagerHelper
   - hash:
       serializedVersion: 2
+=======
+>>>>>>> Stashed changes
       Hash: bcaee4c2a83047257b5f47d6ed264b75
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Toggle
   - hash:
       serializedVersion: 2
+<<<<<<< Updated upstream
       Hash: 59ce5902048c1041729c804e2772b2ce
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: CCDSolver2D
   - hash:
       serializedVersion: 2
+=======
+>>>>>>> Stashed changes
       Hash: 0dbc3be398b4869a5c8d0d8481ee402c
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -548,24 +734,32 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
+<<<<<<< Updated upstream
       Hash: 80d8defb2be2685faa433069a7cf5883
+=======
+      Hash: 851ede75ab73c40a31d74c6624a517d9
+>>>>>>> Stashed changes
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: formainmenu
   - hash:
       serializedVersion: 2
+<<<<<<< Updated upstream
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.2D.PixelPerfect.dll
     namespaceName: UnityEngine.U2D
     className: CinemachinePixelPerfect
   - hash:
       serializedVersion: 2
+=======
+>>>>>>> Stashed changes
       Hash: c1d728126ff1918728036c59106d32b2
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: RawImage
   - hash:
       serializedVersion: 2
+<<<<<<< Updated upstream
       Hash: cfdd0010efd7b54c2b7512656dbc9119
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
@@ -578,6 +772,8 @@ ScriptsOnlyBuild:
     className: LobbyInfos
   - hash:
       serializedVersion: 2
+=======
+>>>>>>> Stashed changes
       Hash: 4f60ff347d4efee4ef8cc7f627735018
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
@@ -650,6 +846,15 @@ ScriptsOnlyBuild:
     className: TestRunCallbackListener
   - hash:
       serializedVersion: 2
+<<<<<<< Updated upstream
+=======
+      Hash: f662608ecea4e9ca8287c9136df0f137
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: settinginstart
+  - hash:
+      serializedVersion: 2
+>>>>>>> Stashed changes
       Hash: ae83e830e7a90c0aff918c4c2e520825
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -674,12 +879,15 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
+<<<<<<< Updated upstream
       Hash: 9b2d72155209a515197b0788f9f11a91
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: LimbSolver2D
   - hash:
       serializedVersion: 2
+=======
+>>>>>>> Stashed changes
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
@@ -692,7 +900,11 @@ ScriptsOnlyBuild:
     className: Benchmark03
   - hash:
       serializedVersion: 2
+<<<<<<< Updated upstream
       Hash: 39b68baab42471341c2e0831b939bd53
+=======
+      Hash: 06119975537ec4e5ea951a2a6f6930b7
+>>>>>>> Stashed changes
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GenMapScript
@@ -746,22 +958,32 @@ ScriptsOnlyBuild:
     className: ToggleGroup
   - hash:
       serializedVersion: 2
+<<<<<<< Updated upstream
       Hash: fe2d355deb0ca31d59a0a7cf4d141fc3
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: Benchmark04
   - hash:
       serializedVersion: 2
+=======
+>>>>>>> Stashed changes
       Hash: 69415240821be7986b27e72bf9609a30
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Button
   - hash:
       serializedVersion: 2
+<<<<<<< Updated upstream
       Hash: 349d08daa6108b9a28f8c38fd40ce96f
     assemblyName: Unity.2D.SpriteShape.Runtime.dll
     namespaceName: UnityEngine.U2D
     className: SpriteShapeController
+=======
+      Hash: fe2d355deb0ca31d59a0a7cf4d141fc3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: TMPro.Examples
+    className: Benchmark04
+>>>>>>> Stashed changes
   - hash:
       serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
@@ -896,12 +1118,15 @@ ScriptsOnlyBuild:
     className: EventTrigger
   - hash:
       serializedVersion: 2
+<<<<<<< Updated upstream
       Hash: 87cef3c82381dc586f6772c3e27561b6
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.Experimental.U2D.Animation
     className: SpriteLibrary
   - hash:
       serializedVersion: 2
+=======
+>>>>>>> Stashed changes
       Hash: a81d4c2c1cf3ad164d277d927a193679
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -932,12 +1157,15 @@ ScriptsOnlyBuild:
     className: TMP_TextSelector_B
   - hash:
       serializedVersion: 2
+<<<<<<< Updated upstream
       Hash: 0edeba255bdbade25edc357f1412ba38
     assemblyName: Unity.2D.SpriteShape.Runtime.dll
     namespaceName: UnityEngine.U2D
     className: SpriteShape
   - hash:
       serializedVersion: 2
+=======
+>>>>>>> Stashed changes
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -968,18 +1196,22 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
+<<<<<<< Updated upstream
       Hash: 523ce309f50d9eee6a8fc0e2f86c9c97
     assemblyName: Unity.2D.SpriteShape.Runtime.dll
     namespaceName: 
     className: SpriteShapeGeometryCache
   - hash:
       serializedVersion: 2
+=======
+>>>>>>> Stashed changes
       Hash: 3c4c9c9c511cb49fd1e8afbfd77bd6fb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: join
   - hash:
       serializedVersion: 2
+<<<<<<< Updated upstream
       Hash: 80d8defb2be2685faa433069a7cf5883
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -990,6 +1222,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.Experimental.U2D.Animation
     className: SpriteResolver
+=======
+      Hash: 7f9a522ef49b7646ff14a8e7e13e3097
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: search
+  - hash:
+      serializedVersion: 2
+      Hash: 84584888e325f27d28ac7f65d7a931e0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: options
+>>>>>>> Stashed changes
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -1046,18 +1290,22 @@ ScriptsOnlyBuild:
     className: CameraController
   - hash:
       serializedVersion: 2
+<<<<<<< Updated upstream
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.U2D.Animation
     className: SpriteSkinEntity
   - hash:
       serializedVersion: 2
+=======
+>>>>>>> Stashed changes
       Hash: 593609bcc40c4724805721c28b685e09
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: lobbyjunior
   - hash:
       serializedVersion: 2
+<<<<<<< Updated upstream
       Hash: 28cfb4bd305dd11c6326cc3ee7c14138
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.Experimental.U2D.Animation
@@ -1070,6 +1318,8 @@ ScriptsOnlyBuild:
     className: PixelPerfectCamera
   - hash:
       serializedVersion: 2
+=======
+>>>>>>> Stashed changes
       Hash: 6980e81ddc615a861309d2d659cc3760
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -1148,12 +1398,15 @@ ScriptsOnlyBuild:
     className: ObjectSpin
   - hash:
       serializedVersion: 2
+<<<<<<< Updated upstream
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.U2D.Animation
     className: BufferManager
   - hash:
       serializedVersion: 2
+=======
+>>>>>>> Stashed changes
       Hash: b6514f552bd2ee9e736a5678aa7f7de3
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
@@ -1166,6 +1419,15 @@ ScriptsOnlyBuild:
     className: SignalEmitter
   - hash:
       serializedVersion: 2
+<<<<<<< Updated upstream
+=======
+      Hash: ea7184494699e6c609937ed78e33a4ce
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LobbyInfos
+  - hash:
+      serializedVersion: 2
+>>>>>>> Stashed changes
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -1196,18 +1458,25 @@ ScriptsOnlyBuild:
     className: UIdeplacement
   - hash:
       serializedVersion: 2
+<<<<<<< Updated upstream
       Hash: dea72f6a02e33702a45aefae23397c7a
+=======
+      Hash: 2976d1476245592f652c6d5d3770cb2d
+>>>>>>> Stashed changes
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TechnologyList
   - hash:
       serializedVersion: 2
+<<<<<<< Updated upstream
       Hash: 762a30c8d779b11af16ed9ce1f2d32fa
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
   - hash:
       serializedVersion: 2
+=======
+>>>>>>> Stashed changes
       Hash: dd7520b7d4e690e8c593273e7b9fbe80
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples

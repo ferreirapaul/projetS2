@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "dp+Z01mWb6BOXTnN9jK6o2llvFCaOccm4smMhVzhdnAkVPrndl0McmkPZpo9m4hyQmVIW+myrSuyk7wFK7WvrA==",
+  "dgSpecHash": "D9am3q4Bt8e4wO8x1aYWuLARYDXabS/NctG7+zUXC60tItUiHVz7sVdosV02flMStArP+IcIPCMMGZ+J9uJcTw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\paulf\\prog\\projetS2\\Reseaux\\Server\\Server\\Server.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\rapha\\OneDrive\\Documents\\Epita\\projetS2\\Reseaux\\Server\\Server\\Server.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rapha\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512"
+  ],
   "logs": []
 }

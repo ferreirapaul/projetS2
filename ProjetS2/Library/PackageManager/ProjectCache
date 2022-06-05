@@ -5,16 +5,26 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
+<<<<<<< Updated upstream
       ticks: 637869274457966028
     m_Hash: 4072686707
+=======
+      ticks: 637898852511357970
+    m_Hash: 1518922824
+>>>>>>> Stashed changes
   m_LockFileStatus:
     m_FilePath: C:/Users/rapha/OneDrive/Documents/Epita/projetS2/ProjetS2/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
+<<<<<<< Updated upstream
       ticks: 637869274457966028
     m_Hash: 4186997714
+=======
+      ticks: 637898852511367872
+    m_Hash: 3317231064
+>>>>>>> Stashed changes
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -25,6 +35,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 5.0.7
       source: 1
+<<<<<<< Updated upstream
       resolvedPath: C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PackageCache\com.unity.2d.animation@5.0.7
       assetPath: Packages/com.unity.2d.animation
       name: com.unity.2d.animation
@@ -654,6 +665,9 @@ m_PackageAssets:
       version: 1.11.2
       source: 1
       resolvedPath: C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PackageCache\com.unity.collab-proxy@1.11.2
+=======
+      resolvedPath: C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PackageCache\com.unity.collab-proxy@1.15.7
+>>>>>>> Stashed changes
       assetPath: Packages/com.unity.collab-proxy
       name: com.unity.collab-proxy
       displayName: Version Control
@@ -901,7 +915,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 2.0.11
       source: 1
+<<<<<<< Updated upstream
       resolvedPath: C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PackageCache\com.unity.ide.visualstudio@2.0.11
+=======
+      resolvedPath: C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PackageCache\com.unity.ide.visualstudio@2.0.12
+>>>>>>> Stashed changes
       assetPath: Packages/com.unity.ide.visualstudio
       name: com.unity.ide.visualstudio
       displayName: Visual Studio Editor
@@ -3359,22 +3377,43 @@ m_PackageAssets:
       isDirectDependency: 0
       version: 1.1.0
       source: 1
+<<<<<<< Updated upstream
       resolvedPath: C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PackageCache\com.unity.mathematics@1.1.0
       assetPath: Packages/com.unity.mathematics
       name: com.unity.mathematics
       displayName: Mathematics
+=======
+      resolvedPath: C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0
+      assetPath: Packages/com.unity.nuget.newtonsoft-json
+      name: com.unity.nuget.newtonsoft-json
+      displayName: Newtonsoft Json
+>>>>>>> Stashed changes
       author:
         name: 
         email: 
         url: 
       category: 
       type: 
+<<<<<<< Updated upstream
       description: Unity's C# SIMD math library providing vector types and math functions
         with a shader like syntax.
+=======
+      description: 'Newtonsoft Json for use in Unity projects and Unity packages.
+        Currently synced to version 12.0.2.
+
+
+        This package is used for advanced
+        json serialization and deserialization. Most Unity users will be better suited
+        using the existing json tools built into Unity.
+
+        To avoid assembly
+        clashes, please use this package if you intend to use Newtonsoft Json.'
+>>>>>>> Stashed changes
       status: 4
       errors: []
       versions:
         all:
+<<<<<<< Updated upstream
         - 0.0.12-preview.2
         - 0.0.12-preview.5
         - 0.0.12-preview.8
@@ -3409,6 +3448,32 @@ m_PackageAssets:
         - 1.2.4
         - 1.2.5
         verified: 1.2.5
+=======
+        - 1.0.0-preview.2
+        - 1.0.0-preview.3
+        - 1.0.0-preview.4
+        - 1.0.1-preview.1
+        - 1.1.2
+        - 2.0.0-preview
+        - 2.0.0-preview.1
+        - 2.0.0-preview.2
+        - 2.0.0
+        - 2.0.1-preview.1
+        - 2.0.2
+        compatible:
+        - 1.0.0-preview.2
+        - 1.0.0-preview.3
+        - 1.0.0-preview.4
+        - 1.0.1-preview.1
+        - 1.1.2
+        - 2.0.0-preview
+        - 2.0.0-preview.1
+        - 2.0.0-preview.2
+        - 2.0.0
+        - 2.0.1-preview.1
+        - 2.0.2
+        verified: 2.0.2
+>>>>>>> Stashed changes
       dependencies: []
       resolvedDependencies: []
       keywords:
@@ -3425,7 +3490,11 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
+<<<<<<< Updated upstream
       datePublishedTicks: 636984649280000000
+=======
+      datePublishedTicks: 637237898320000000
+>>>>>>> Stashed changes
       documentationUrl: 
       hasRepository: 1
       repository:
@@ -3438,10 +3507,17 @@ m_PackageAssets:
       isDirectDependency: 0
       version: 4.0.3
       source: 1
+<<<<<<< Updated upstream
       resolvedPath: C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PackageCache\com.unity.2d.common@4.0.3
       assetPath: Packages/com.unity.2d.common
       name: com.unity.2d.common
       displayName: 2D Common
+=======
+      resolvedPath: C:\Users\rapha\OneDrive\Documents\Epita\projetS2\ProjetS2\Library\PackageCache\com.unity.services.core@1.0.1
+      assetPath: Packages/com.unity.services.core
+      name: com.unity.services.core
+      displayName: Services Core
+>>>>>>> Stashed changes
       author:
         name: 
         email: 
@@ -3454,6 +3530,7 @@ m_PackageAssets:
       errors: []
       versions:
         all:
+<<<<<<< Updated upstream
         - 1.0.9-preview.1
         - 1.0.9-preview.2
         - 1.0.10-preview
@@ -3489,6 +3566,24 @@ m_PackageAssets:
         - 4.0.3
         - 4.0.4
         verified: 4.0.4
+=======
+        - 1.0.1
+        - 1.1.0-pre.7
+        - 1.1.0-pre.8
+        - 1.1.0-pre.9
+        - 1.1.0-pre.10
+        - 1.1.0-pre.11
+        - 1.1.0-pre.41
+        compatible:
+        - 1.0.1
+        - 1.1.0-pre.7
+        - 1.1.0-pre.8
+        - 1.1.0-pre.9
+        - 1.1.0-pre.10
+        - 1.1.0-pre.11
+        - 1.1.0-pre.41
+        verified: 1.0.1
+>>>>>>> Stashed changes
       dependencies:
       - name: com.unity.2d.sprite
         version: 1.0.0
@@ -3521,6 +3616,7 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
+<<<<<<< Updated upstream
       datePublishedTicks: 637408843940000000
       documentationUrl: 
       hasRepository: 1
@@ -3591,6 +3687,9 @@ m_PackageAssets:
         isAllowed: 1
       isAssetStorePackage: 0
       datePublishedTicks: 637637511040000000
+=======
+      datePublishedTicks: 637604883250000000
+>>>>>>> Stashed changes
       documentationUrl: 
       hasRepository: 1
       repository:
