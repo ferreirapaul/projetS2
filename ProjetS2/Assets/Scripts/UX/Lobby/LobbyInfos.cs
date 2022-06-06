@@ -138,7 +138,7 @@ public class LobbyInfos : MonoBehaviour
 
     public void StartGameHost()
     {
-        if (isCreated && players.Count >= 1 && me.isHost)
+        if (isCreated && players.Count >= 2 && me.isHost)
         {
             Network.SendString("start", IdMsg.launchGame);
             StartGame();

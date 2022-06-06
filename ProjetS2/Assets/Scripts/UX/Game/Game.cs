@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Ressources;
@@ -5,15 +6,14 @@ using Army;
 using Network;
 using Technology;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Game
 {
     public class Game : MonoBehaviour
     {
-        public Text Won;
         public LobbyInfos lobbby;
         public GenMapScript map;
+        public InformationBox box;
         public List<Ressources.Ressources> ressources;
         public List<Building.Building> availableBuildings;
         public List<Army.Army> availableArmy;
@@ -21,32 +21,39 @@ namespace Game
         public List<City> citiesOwn;
         public Network_global Network;
         public string turnInfo;
+        private List<Tuple<IdAction, string>> actions;
+        public List<Technology.Technology> UnlockTechnologies;
+        public List<Army.Army> UnlockArmy;
+        public int era = 0;
 
         public void Start()
         {
-            Initiate();
             lobbby = FindObjectOfType<LobbyInfos>();
-            map.Generate(lobbby.Seed);
             Network = FindObjectOfType<Network_global>();
-            
+            map.Generate(lobbby.Seed);
+            actions = new List<Tuple<IdAction, string>>();
+            Initiate();
+        }
+
+        public void Update()
+        {
+            if (actions.Count > 0)
+            {
+                foreach (Tuple<IdAction, string> i in actions)
+                {
+                    MakeAction(i.Item1, i.Item2);
+                }
+            }
         }
 
         public void AddInfos(IdAction id, string str)
         {
-            turnInfo += id + ":" + str;
+            turnInfo += id + ":" + str + ";";
         }
 
         public void Win()
         {
             Network.SendString("trop fort!!!",IdMsg.winGame);
-        }
-        public void AffichageWin()
-        {
-            Text won=Instantiate(Won);
-            allcities citi = FindObjectOfType<allcities>();
-            won.transform.SetParent(citi.transform);
-            won.transform.localScale = new Vector3(1, 1, 1);
-            won.transform.localPosition = new Vector3(0, 0, 0) ;
         }
         
 
@@ -62,9 +69,95 @@ namespace Game
             }
         }
 
+        public void MakeAction(IdAction action, string val)
+        {
+            switch (action)
+            {
+                case IdAction.eraChange:
+                    box.ChangeText(val);
+                    break;
+            }
+        }
+
+        public void DecryptTurn(List<string> value)
+        {
+            IdAction id = IdAction.eraChange;
+            string temp = "";
+            foreach (string i in value)
+            {
+                temp = "";
+                foreach (char j in i)
+                {
+                    if (j == ':')
+                    {
+                        id = (IdAction) Int32.Parse(temp);
+                        temp = "";
+                    }
+                    else
+                    {
+                        temp += j;
+                    }
+                }
+
+                actions.Add(new Tuple<IdAction, string>(id,temp));
+            }
+            
+        }
+
+        public void EraChange()
+        {
+            era++;
+            switch (era)
+            {
+                case 1:
+                    listTechno.Add(new Technology.Catapult(ressources,availableBuildings,availableArmy));
+                    listTechno.Add(new Crossbow(ressources,availableBuildings,availableArmy));
+                    listTechno.Add(new Feudalism(ressources,availableBuildings,availableArmy));
+                    listTechno.Add(new Technology.Knight(ressources,availableBuildings,availableArmy));
+                    listTechno.Add(new Technology.Knight(ressources,availableBuildings,availableArmy));
+                    listTechno.Add(new Mill(ressources,availableBuildings,availableArmy));
+                    listTechno.Add(new Technology.Pike(ressources,availableBuildings,availableArmy));
+                    listTechno.Add(new Religion(ressources,availableBuildings,availableArmy));
+                    listTechno.Add(new Wall(ressources,availableBuildings,availableArmy,this));
+                    break;
+                case 2:
+                    listTechno.Add(new Cannon(ressources,availableBuildings,availableArmy));
+                    listTechno.Add(new Halberdier(ressources,availableBuildings,availableArmy));
+                    listTechno.Add(new Hussar(ressources,availableBuildings,availableArmy));
+                    listTechno.Add(new Lumieres(ressources,availableBuildings,availableArmy));
+                    listTechno.Add(new Musketeers(ressources,availableBuildings,availableArmy));
+                    listTechno.Add(new Napoleon(ressources,availableBuildings,availableArmy,this));
+                    listTechno.Add(new Revolution(ressources,availableBuildings,availableArmy));
+                    listTechno.Add(new SteamMachine(ressources,availableBuildings,availableArmy));
+                    break;
+                case 3:
+                    listTechno.Add(new Computer(ressources,availableBuildings,availableArmy,this));
+                    listTechno.Add(new Comunism(ressources,availableBuildings,availableArmy));
+                    listTechno.Add(new Globalization(ressources,availableBuildings,availableArmy));
+                    listTechno.Add(new Technology.Infantry(ressources,availableBuildings,availableArmy));
+                    listTechno.Add(new Missiles(ressources,availableBuildings,availableArmy));
+                    listTechno.Add(new Oil(ressources,availableBuildings,availableArmy));
+                    listTechno.Add(new Technology.Sniper(ressources,availableBuildings,availableArmy));
+                    listTechno.Add(new Technology.Tank(ressources,availableBuildings,availableArmy));
+                    break;
+                default:
+                    break;
+                    
+            }
+
+            foreach (Technology.Technology i in this.UnlockTechnologies)
+            {
+                i.upgradePeriod();
+            }
+            
+            AddInfos(IdAction.eraChange,this.lobbby.Name +" Change of era");
+        }
+
 
         public void Initiate()
         {
+            UnlockTechnologies = new List<Technology.Technology>();
+            UnlockArmy = new List<Army.Army>();
             citiesOwn = new List<City>();
             ressources = new List<Ressources.Ressources>();
             ressources.Add(new Gold());
@@ -83,31 +176,7 @@ namespace Game
             listTechno.Add(new Forge(ressources,availableBuildings,availableArmy));
             listTechno.Add(new Market(ressources,availableBuildings,availableArmy));
             listTechno.Add(new School(ressources,availableBuildings,availableArmy));
-            listTechno.Add(new Catapult(ressources,availableBuildings,availableArmy));
-            listTechno.Add(new Crossbow(ressources,availableBuildings,availableArmy));
-            listTechno.Add(new Feudalism(ressources,availableBuildings,availableArmy));
-            listTechno.Add(new Knight(ressources,availableBuildings,availableArmy));
-            listTechno.Add(new Knight(ressources,availableBuildings,availableArmy));
-            listTechno.Add(new Mill(ressources,availableBuildings,availableArmy));
-            listTechno.Add(new Pike(ressources,availableBuildings,availableArmy));
-            listTechno.Add(new Religion(ressources,availableBuildings,availableArmy));
-            listTechno.Add(new Wall(ressources,availableBuildings,availableArmy));
-            listTechno.Add(new Cannon(ressources,availableBuildings,availableArmy));
-            listTechno.Add(new Halberdier(ressources,availableBuildings,availableArmy));
-            listTechno.Add(new Hussar(ressources,availableBuildings,availableArmy));
-            listTechno.Add(new Lumieres(ressources,availableBuildings,availableArmy));
-            listTechno.Add(new Musketeers(ressources,availableBuildings,availableArmy));
-            listTechno.Add(new Napoleon(ressources,availableBuildings,availableArmy));
-            listTechno.Add(new Revolution(ressources,availableBuildings,availableArmy));
-            listTechno.Add(new SteamMachine(ressources,availableBuildings,availableArmy));
-            listTechno.Add(new Computer(ressources,availableBuildings,availableArmy));
-            listTechno.Add(new Comunism(ressources,availableBuildings,availableArmy));
-            listTechno.Add(new Globalization(ressources,availableBuildings,availableArmy));
-            listTechno.Add(new Infantry(ressources,availableBuildings,availableArmy));
-            listTechno.Add(new Missiles(ressources,availableBuildings,availableArmy));
-            listTechno.Add(new Oil(ressources,availableBuildings,availableArmy));
-            listTechno.Add(new Sniper(ressources,availableBuildings,availableArmy));
-            listTechno.Add(new Tank(ressources,availableBuildings,availableArmy));
+            
         }
 
         

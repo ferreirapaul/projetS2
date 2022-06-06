@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Net.Sockets;
+using Game;
 using System;
 
 
@@ -23,6 +25,7 @@ namespace Network
         private byte[] receiveBuffer;
 
         public LobbyInfos lobby;
+        public Game.Game game;
 
         public void Awake()
         {
@@ -34,7 +37,15 @@ namespace Network
             }
             ConnectToServer();
         }
-        
+
+        public void Update()
+        {
+            if (lobby is null && SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(4))
+            {
+                game = FindObjectOfType<Game.Game>();
+            }
+        }
+
         public void ConnectToServer()
         {
             socket = new TcpClient

@@ -8,5 +8,6 @@
         healthChange,
         movingTroup,
         attackOtherTroup,
+        createTroup
     }
 }

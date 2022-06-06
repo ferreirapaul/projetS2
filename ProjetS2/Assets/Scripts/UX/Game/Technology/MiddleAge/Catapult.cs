@@ -15,7 +15,7 @@ namespace Technology
         public override void Unlock()
         {
             isUnlock = true;
-            //TODO:....
+            this.availableArmy.Add(new Army.Catapult());
         }
 
         public override void Effects()

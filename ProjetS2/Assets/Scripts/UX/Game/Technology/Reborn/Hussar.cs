@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Army;
 
 namespace Technology
 {
@@ -15,7 +16,7 @@ namespace Technology
         public override void Unlock()
         {
             isUnlock = true;
-            //TODO ???
+            this.availableArmy.Add(new Hussards());
         }
 
         public override void Effects()

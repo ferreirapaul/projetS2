@@ -27,5 +27,6 @@ namespace Game
             this.builtBuildings = new List<Building.Building>();
         }
         
+        
     }
 }

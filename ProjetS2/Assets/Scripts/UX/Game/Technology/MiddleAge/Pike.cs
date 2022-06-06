@@ -15,7 +15,7 @@ namespace Technology
         public override void Unlock()
         {
             isUnlock = true;
-            //TODO:01515
+            this.availableArmy.Add(new Army.Pike());
         }
 
         public override void Effects()

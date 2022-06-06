@@ -44,12 +44,15 @@ namespace Network
                     break;
                 case IdMsg.sendInfos:
                     msg = p.ReadString();
-                    Debug.Log(msg);
                     client.lobby.getinfosValues = GetValues(msg);
                     client.lobby.isGetInfo = true;
                     break;
                 case IdMsg.launchGame:
                     client.lobby.StartGame();
+                    break;
+                case IdMsg.endTurn:
+                    msg = p.ReadString();
+                    client.game.DecryptTurn(GetValues(msg));
                     break;
                 default:
                     Welcome(p);
