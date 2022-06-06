@@ -6,7 +6,7 @@ namespace Army
 {
     public class Canon : Army
     {
-        void Start()
+        public Canon()
         {
             AttackDamage = 80;
             Health = 100;

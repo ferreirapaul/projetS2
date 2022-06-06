@@ -6,7 +6,7 @@ namespace Army
 {
     public class Hallebardeer : Army
     {
-        void Start()
+        public Hallebardeer()
         {
             AttackDamage = 40;
             Health = 120;

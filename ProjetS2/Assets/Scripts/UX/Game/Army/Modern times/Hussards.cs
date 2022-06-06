@@ -6,7 +6,7 @@ namespace Army
 {
     public class Hussards : Army
     {
-        void Start()
+        public Hussards()
         {
             AttackDamage = 40;
             Health = 160;

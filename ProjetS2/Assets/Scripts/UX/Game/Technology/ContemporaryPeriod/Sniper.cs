@@ -15,7 +15,7 @@ namespace Technology
         public override void Unlock()
         {
             isUnlock = true;
-            //TODO : tu connais
+            this.availableArmy.Add(new Army.Sniper());
         }
 
         public override void Effects()

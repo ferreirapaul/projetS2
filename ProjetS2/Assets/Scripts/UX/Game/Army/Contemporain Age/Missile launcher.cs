@@ -6,7 +6,7 @@ namespace Army
 {
     public class MissileLauncher : Army
     {
-        void Start()
+        public MissileLauncher()
         {
             AttackDamage = 100;
             Health = 100;

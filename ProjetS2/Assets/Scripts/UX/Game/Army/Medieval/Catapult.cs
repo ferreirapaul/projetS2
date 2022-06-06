@@ -6,7 +6,7 @@ namespace Army
 {
     public class Catapult : Army
     {
-        void Start()
+        public Catapult()
         {
             AttackDamage = 60;
             Health = 100;

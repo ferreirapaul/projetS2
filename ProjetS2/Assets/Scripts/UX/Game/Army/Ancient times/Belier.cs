@@ -6,7 +6,7 @@ namespace Army
 {
     public class Belier : Army
     {
-        void Start()
+        public Belier()
         {
             AttackDamage = 40;
             Health = 50;

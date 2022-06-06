@@ -6,7 +6,7 @@ namespace Army
 {
     public class Pike : Army
     {
-        void Start()
+        public Pike()
         {
             AttackDamage = 30;
             Health = 100;

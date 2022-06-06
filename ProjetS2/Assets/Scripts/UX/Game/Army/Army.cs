@@ -5,18 +5,25 @@ using UnityEngine;
 
 namespace Army
 {
-    public abstract class Army : MonoBehaviour
+    public abstract class Army
     {
-        public int AttackDamage = 20;
-        public int Health = 100;
-        public int cost = 15;
+        public int AttackDamage;
+        public int Health;
+        public int cost;
+
+        public Army()
+        {
+            this.AttackDamage = 20;
+            this.Health = 100;
+            this.cost = 15;
+        }
 
         public void ApplyDamage(int AttackDamage)
         {
             Health -= AttackDamage;
             if (Health <= 0)
             {
-               Destroy(this);
+               //Todo destroy
             }
         }
 
@@ -27,7 +34,7 @@ namespace Army
 
         void movement(int x, int y)
         {
-            transform.position = new Vector2(x, y);
+            //TODO mouv
         }
     }
 }

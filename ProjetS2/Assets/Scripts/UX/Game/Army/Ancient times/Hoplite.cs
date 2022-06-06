@@ -6,7 +6,7 @@ namespace Army
 {
     public class Hoplite : Army
     {
-        public void Start()
+        public Hoplite()
         {
             int AttackDamage = 15;
             int Health = 100;

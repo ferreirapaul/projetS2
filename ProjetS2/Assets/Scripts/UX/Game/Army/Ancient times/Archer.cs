@@ -6,7 +6,7 @@ namespace Army
 {
     public class Archer : Army
     {
-        void Start()
+        public Archer()
         {
             AttackDamage = 20;
             Health = 80;

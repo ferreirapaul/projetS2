@@ -6,7 +6,7 @@ namespace Army
 {
     public class Musketeer : Army
     {
-        void Start()
+        public Musketeer()
         {
             AttackDamage = 40;
             Health = 120;

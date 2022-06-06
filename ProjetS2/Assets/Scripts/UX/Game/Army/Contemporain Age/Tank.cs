@@ -6,7 +6,7 @@ namespace Army
 {
     public class Tank : Army
     {
-        void Start()
+        public Tank()
         {
             AttackDamage = 60;
             Health = 200;

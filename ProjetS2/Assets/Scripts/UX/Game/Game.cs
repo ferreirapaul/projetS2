@@ -22,13 +22,15 @@ namespace Game
         public Network_global Network;
         public string turnInfo;
         private List<Tuple<IdAction, string>> actions;
+        public List<Technology.Technology> UnlockTechnologies;
+        public List<Army.Army> UnlockArmy;
         public int era = 0;
 
         public void Start()
         {
-            //map.Generate(lobbby.Seed);
             lobbby = FindObjectOfType<LobbyInfos>();
             Network = FindObjectOfType<Network_global>();
+            map.Generate(lobbby.Seed);
             actions = new List<Tuple<IdAction, string>>();
             Initiate();
         }
@@ -116,7 +118,7 @@ namespace Game
                     listTechno.Add(new Mill(ressources,availableBuildings,availableArmy));
                     listTechno.Add(new Technology.Pike(ressources,availableBuildings,availableArmy));
                     listTechno.Add(new Religion(ressources,availableBuildings,availableArmy));
-                    listTechno.Add(new Wall(ressources,availableBuildings,availableArmy));
+                    listTechno.Add(new Wall(ressources,availableBuildings,availableArmy,this));
                     break;
                 case 2:
                     listTechno.Add(new Cannon(ressources,availableBuildings,availableArmy));
@@ -124,12 +126,12 @@ namespace Game
                     listTechno.Add(new Hussar(ressources,availableBuildings,availableArmy));
                     listTechno.Add(new Lumieres(ressources,availableBuildings,availableArmy));
                     listTechno.Add(new Musketeers(ressources,availableBuildings,availableArmy));
-                    listTechno.Add(new Napoleon(ressources,availableBuildings,availableArmy));
+                    listTechno.Add(new Napoleon(ressources,availableBuildings,availableArmy,this));
                     listTechno.Add(new Revolution(ressources,availableBuildings,availableArmy));
                     listTechno.Add(new SteamMachine(ressources,availableBuildings,availableArmy));
                     break;
                 case 3:
-                    listTechno.Add(new Computer(ressources,availableBuildings,availableArmy));
+                    listTechno.Add(new Computer(ressources,availableBuildings,availableArmy,this));
                     listTechno.Add(new Comunism(ressources,availableBuildings,availableArmy));
                     listTechno.Add(new Globalization(ressources,availableBuildings,availableArmy));
                     listTechno.Add(new Technology.Infantry(ressources,availableBuildings,availableArmy));
@@ -142,6 +144,11 @@ namespace Game
                     break;
                     
             }
+
+            foreach (Technology.Technology i in this.UnlockTechnologies)
+            {
+                i.upgradePeriod();
+            }
             
             AddInfos(IdAction.eraChange,this.lobbby.Name +" Change of era");
         }
@@ -149,6 +156,8 @@ namespace Game
 
         public void Initiate()
         {
+            UnlockTechnologies = new List<Technology.Technology>();
+            UnlockArmy = new List<Army.Army>();
             citiesOwn = new List<City>();
             ressources = new List<Ressources.Ressources>();
             ressources.Add(new Gold());
