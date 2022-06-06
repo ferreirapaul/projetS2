@@ -76,6 +76,20 @@ namespace Game
                 case IdAction.eraChange:
                     box.ChangeText(val);
                     break;
+                case IdAction.healthChange:
+                    bool go = true;
+                    int i = 0;
+                    while (i < this.citiesOwn.Count && go)
+                    {
+                        if (citiesOwn[i].ID == Int32.Parse(val))
+                        {
+                            go = false;
+                            citiesOwn[i].Health += 1000;
+                        }
+
+                        i++;
+                    }
+                    break;
             }
         }
 

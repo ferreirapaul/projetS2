@@ -8,6 +8,8 @@
         healthChange,
         movingTroup,
         attackOtherTroup,
-        createTroup
+        createTroup,
+        UnlockGlobal,
+        UnlockCommunism
     }
 }

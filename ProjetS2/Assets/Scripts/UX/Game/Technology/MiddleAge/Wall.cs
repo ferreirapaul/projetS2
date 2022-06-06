@@ -27,6 +27,11 @@ namespace Technology
             {
                 i.Health += gain;
             }
+
+            foreach (Game.City i in this.game.citiesOwn)
+            {
+                game.MakeAction(IdAction.eraChange,i.ID +"");   
+            }
         }
 
         public override void Effects()

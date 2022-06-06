@@ -5,6 +5,7 @@ namespace Game
     public class  City
     {
         private int health;
+        public int ID;
         private Player owner;
         private List<Building.Building> builtBuildings;
 
