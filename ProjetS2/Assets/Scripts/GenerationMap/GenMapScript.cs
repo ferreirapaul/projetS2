@@ -19,6 +19,7 @@ public class GenMapScript : MonoBehaviour
     public GameObject Snow_Hill;
     public GameObject Deep_Ocean;
     public GameObject Shallow_Ocean;
+    public GameObject Fog_Of_War;
     public GameObject City;
 
 
@@ -34,7 +35,6 @@ public class GenMapScript : MonoBehaviour
     public int map_height;
     public int map_width;
     public int numberOfPlayers;
-    public Map map;
 
  
     public void Generate(int seed)
@@ -51,7 +51,7 @@ public class GenMapScript : MonoBehaviour
         CreateTileset();
         CreateTileGroups();
 
-        map = new Map(map_width,map_height,numberOfPlayers,spriteRenderer,tileset,tile_groups,seed,magnification,lobby,network);
+        Map map = new Map(map_width,map_height,numberOfPlayers,spriteRenderer,tileset,tile_groups,seed,magnification,lobby,network);
     }
  
     void CreateTileset()

@@ -9,9 +9,6 @@ public class Map
     List<List<Tile>>    TileGrid;       // liste contenant les listes de cases
     List<City>          ListOfCities;   // liste contenant les cases avec des villes 
     List<List<int>>     noise_grid;     // liste contenant les valeurs generes avec le bruit de perlin
-    List<(int, int)>    listPosCiv;
-
-    public List<(int, int)> ListPosCiv => listPosCiv;
 
     int     numberOfPlayers;
     int     amountOfCities;
@@ -52,7 +49,7 @@ public class Map
         this.lobby      = lobby;
         this.network    = network;
         playerIDs       = new List<int>();
-        listPosCiv = new List<(int, int)>();
+
 
 
         foreach(int key in lobby.players.Keys)
@@ -70,18 +67,15 @@ public class Map
             seed = Random.Range(0, 1000);
         }
 
+        Debug.Log("All good so far 1");
 
         GenerateMap();
+        Debug.Log("All good so far 2");
         generateCities(amountOfCities);
-        
-        for (int i = 0; i < ListOfCities.Count; i++)
-        {
-            listPosCiv.Add((ListOfCities[i].posX, ListOfCities[i].posY));
-        }
-
-
+        Debug.Log("All good so far 3");
         ChooseStartingCity();
-        
+        Debug.Log("All good so far 4");
+
 
     }
 
@@ -99,7 +93,6 @@ public class Map
                 TileGrid[x].Add(new Tile(tile_id,x,y,tileset,tile_groups));
             }
         }
-        
     }
 
     private int GetAltitudeIdUsingPerlin(int x, int y)
@@ -258,20 +251,22 @@ public class Map
         {
             playerNumber++;
         }
+        
+        Debug.Log(ListOfCities.Count);
         List<City> citiesToChooseFrom = new List<City>
         {
-            ListOfCities[playerNumber-1],
             ListOfCities[playerNumber],
-            ListOfCities[playerNumber+1]
-
+            ListOfCities[playerNumber+1],
+            ListOfCities[playerNumber+2],
         };
-        Debug.Log("not my fault");
+
         return citiesToChooseFrom;
     }
 
     void ChooseStartingCity ()
     {
         List<City> startingCities = GetStartingCities();
+        Debug.Log(ListOfCities.Count);
         foreach (City city in startingCities)
         {
             AddVision(city.posX,city.posY,10);
