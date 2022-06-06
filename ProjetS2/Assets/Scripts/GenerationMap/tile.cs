@@ -38,8 +38,7 @@ public class Tile
     public void setFOW(bool b)
     {
         FOW f = gameObject.GetComponent<FOW>();
-        Debug.Log(b);
-        Debug.Log(f);
         f.setFOW(b);
+        this.FogOfWar = b;
     }
 }

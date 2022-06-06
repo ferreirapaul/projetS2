@@ -167,7 +167,15 @@ public class Map
             {
                 if (x >= 0 && x < map_width && y >= 0 && y < map_height)
                 {
-                    TileGrid[x][y].FogOfWar = false;
+                    TileGrid[x][y].setFOW(false);
+
+                    foreach (City city in ListOfCities)
+                    {
+                        if (city.posX == x && city.posY == y)
+                        {
+                            city.setFOW(false);
+                        }
+                    }
                 }
             }            
         }
@@ -181,7 +189,15 @@ public class Map
             {
                 if (x >= 0 && x < map_width && y >= 0 && y < map_height)
                 {
-                    TileGrid[x][y].FogOfWar = true;
+                    TileGrid[x][y].setFOW(true);
+
+                    foreach (City city in ListOfCities)
+                    {
+                        if (city.posX == x && city.posY == y)
+                        {
+                            city.setFOW(true);
+                        }
+                    }
                 }
             }            
         }
