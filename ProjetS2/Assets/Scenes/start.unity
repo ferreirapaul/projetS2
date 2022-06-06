@@ -136,7 +136,6 @@ GameObject:
   - component: {fileID: 58495086}
   - component: {fileID: 58495085}
   - component: {fileID: 58495089}
-  - component: {fileID: 58495090}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -217,7 +216,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 247175176}
-  - {fileID: 946981260}
+  - {fileID: 1690002245}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -238,25 +237,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e28cdf96a4158e94e9a52d852322509e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &58495090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 58495084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cf6b6b6095b22943a9e67d2a8297414, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ip: epirum.fr
-  movement:
-  - z
-  - q
-  - s
-  - d
-  volume: 1
 --- !u!1 &247175175
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,10 +266,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1690002245}
   - {fileID: 2028722889}
   - {fileID: 1593052948}
   - {fileID: 1848955199}
+  - {fileID: 946981260}
   m_Father: {fileID: 58495088}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -778,17 +758,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 946981259}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 58495088}
-  m_RootOrder: 1
+  m_Father: {fileID: 247175176}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.000016212, y: 65}
-  m_SizeDelta: {x: 1223.254, y: 553.232}
+  m_AnchoredPosition: {x: -8.0988, y: 65}
+  m_SizeDelta: {x: 1207.0565, y: 534.3347}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &946981261
 MonoBehaviour:
@@ -994,7 +974,7 @@ RectTransform:
   m_Children:
   - {fileID: 1702690354}
   m_Father: {fileID: 247175176}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -1137,8 +1117,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 860220182}
-  m_Father: {fileID: 247175176}
-  m_RootOrder: 0
+  m_Father: {fileID: 58495088}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1466,7 +1446,7 @@ RectTransform:
   m_Children:
   - {fileID: 414807723}
   m_Father: {fileID: 247175176}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1567,6 +1547,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848955198}
   m_CullTransparentMesh: 1
+--- !u!1 &1855774855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1855774857}
+  - component: {fileID: 1855774856}
+  m_Layer: 0
+  m_Name: settinginstart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1855774856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855774855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cf6b6b6095b22943a9e67d2a8297414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ip: epirum.fr
+  movement:
+  - z
+  - q
+  - s
+  - d
+  volume: 1
+--- !u!4 &1855774857
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855774855}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 553.0299, y: 244.9499, z: -465.06915}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1964625360
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1628,7 +1658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7643365723590813438, guid: a96aad5848fe15b4596207d957f17c62, type: 3}
       propertyPath: ip
-      value: 192.168.1.180
+      value: 127.0.0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7643365723590813438, guid: a96aad5848fe15b4596207d957f17c62, type: 3}
       propertyPath: port
@@ -1672,7 +1702,7 @@ RectTransform:
   m_Children:
   - {fileID: 1459177896}
   m_Father: {fileID: 247175176}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

@@ -22,9 +22,9 @@ namespace Game
 
         public void Start()
         {
-            //map.Generate(lobbby.Seed);
             lobbby = FindObjectOfType<LobbyInfos>();
             Network = FindObjectOfType<Network_global>();
+            map.Generate(lobbby.Seed);
             Initiate();
         }
 
