@@ -121,7 +121,7 @@ public class UIdeplacement : MonoBehaviour
                     bool found = false;
                     while (i < 4 && !found)
                     {
-                        found = Genmap.map.ListPosCiv.Contains(citipos[i]);
+                        //TODO found = Genmap.map.ListPosCiv.Contains(citipos[i]);
                         
                         i++;
                     }
