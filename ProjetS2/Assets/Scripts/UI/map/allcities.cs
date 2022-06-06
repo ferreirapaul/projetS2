@@ -10,7 +10,6 @@ public class allcities : MonoBehaviour
     public GameObject Panelbuildings;
     public GameObject Panelsciences;
     public GameObject Panelarmy;
-    public InputField Name;
     public GameObject ListB;
     public GameObject ListA;
     public GameObject ChildB;
@@ -36,11 +35,11 @@ public class allcities : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Or.text = game.ressources[0].Value.ToString()+"Gold";
-        Nourriture.text = game.ressources[1].Value.ToString()+"Food";
-        Population.text = game.ressources[2].Value.ToString()+"Po";
-        Production.text = game.ressources[3].Value.ToString()+"Pr";
-        Sciences.text = game.ressources[4].Value.ToString()+"Sc";
+        Or.text = game.ressources[0].Value+" Gold";
+        Nourriture.text = game.ressources[1].Value+" Food";
+        Population.text = game.ressources[2].Value+" Po";
+        Production.text = game.ressources[3].Value+" Pr";
+        Sciences.text = game.ressources[4].Value+" Sc";
     }
     public void AddArmy(string name)
     {

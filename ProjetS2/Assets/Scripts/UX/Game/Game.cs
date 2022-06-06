@@ -24,10 +24,11 @@ namespace Game
 
         public void Start()
         {
-            //map.Generate(lobbby.Seed);
-            lobbby = FindObjectOfType<LobbyInfos>();
-            Network = FindObjectOfType<Network_global>();
             Initiate();
+            lobbby = FindObjectOfType<LobbyInfos>();
+            map.Generate(lobbby.Seed);
+            Network = FindObjectOfType<Network_global>();
+            
         }
 
         public void AddInfos(IdAction id, string str)

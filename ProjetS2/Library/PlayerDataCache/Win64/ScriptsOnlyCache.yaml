@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - FOW
     - Game.Game
     - GenMapScript
     - LobbyInfos
@@ -14,6 +15,7 @@ ScriptsOnlyBuild:
     - join
     - lobbyjunior
     - options
+    - settinginstart
     - size_map
     - start
     Unity.2D.Animation.Editor.dll:
@@ -84,25 +86,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1478}
     - Class: 114
-      Script: {instanceID: 1870}
+      Script: {instanceID: 1856}
     - Class: 114
-      Script: {instanceID: 2706}
+      Script: {instanceID: 2692}
     - Class: 114
-      Script: {instanceID: 2874}
+      Script: {instanceID: 2860}
     - Class: 114
-      Script: {instanceID: 2922}
+      Script: {instanceID: 2908}
     - Class: 114
-      Script: {instanceID: 3096}
+      Script: {instanceID: 3084}
     - Class: 114
-      Script: {instanceID: 3154}
+      Script: {instanceID: 3142}
     - Class: 114
-      Script: {instanceID: 3372}
+      Script: {instanceID: 3340}
     - Class: 114
-      Script: {instanceID: 3496}
+      Script: {instanceID: 3464}
     - Class: 114
-      Script: {instanceID: 4942}
+      Script: {instanceID: 4920}
     - Class: 114
-      Script: {instanceID: 5160}
+      Script: {instanceID: 5138}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -141,19 +143,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1478}
     - Class: 114
-      Script: {instanceID: 2706}
+      Script: {instanceID: 2692}
     - Class: 114
-      Script: {instanceID: 2874}
+      Script: {instanceID: 2860}
     - Class: 114
-      Script: {instanceID: 3096}
+      Script: {instanceID: 3084}
     - Class: 114
-      Script: {instanceID: 3154}
+      Script: {instanceID: 3142}
     - Class: 114
-      Script: {instanceID: 3372}
+      Script: {instanceID: 3340}
     - Class: 114
-      Script: {instanceID: 3496}
+      Script: {instanceID: 3464}
     - Class: 114
-      Script: {instanceID: 4580}
+      Script: {instanceID: 4558}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -196,51 +198,53 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1478}
     - Class: 114
-      Script: {instanceID: 1550}
+      Script: {instanceID: 1532}
     - Class: 114
-      Script: {instanceID: 1680}
+      Script: {instanceID: 1662}
     - Class: 114
-      Script: {instanceID: 1752}
+      Script: {instanceID: 1736}
     - Class: 114
-      Script: {instanceID: 1870}
+      Script: {instanceID: 1856}
     - Class: 114
-      Script: {instanceID: 2452}
+      Script: {instanceID: 2438}
     - Class: 114
-      Script: {instanceID: 2706}
+      Script: {instanceID: 2692}
     - Class: 114
-      Script: {instanceID: 2874}
+      Script: {instanceID: 2860}
     - Class: 114
-      Script: {instanceID: 2922}
+      Script: {instanceID: 2908}
     - Class: 114
-      Script: {instanceID: 3096}
+      Script: {instanceID: 3084}
     - Class: 114
-      Script: {instanceID: 3154}
+      Script: {instanceID: 3142}
     - Class: 114
-      Script: {instanceID: 3250}
+      Script: {instanceID: 3238}
     - Class: 114
-      Script: {instanceID: 3372}
+      Script: {instanceID: 3340}
     - Class: 114
-      Script: {instanceID: 3382}
+      Script: {instanceID: 3350}
     - Class: 114
-      Script: {instanceID: 3496}
+      Script: {instanceID: 3464}
     - Class: 114
-      Script: {instanceID: 3794}
+      Script: {instanceID: 3766}
     - Class: 114
-      Script: {instanceID: 3884}
+      Script: {instanceID: 3856}
     - Class: 114
-      Script: {instanceID: 4314}
+      Script: {instanceID: 4288}
     - Class: 114
-      Script: {instanceID: 4476}
+      Script: {instanceID: 4310}
     - Class: 114
-      Script: {instanceID: 4536}
+      Script: {instanceID: 4452}
     - Class: 114
-      Script: {instanceID: 4628}
+      Script: {instanceID: 4512}
     - Class: 114
-      Script: {instanceID: 4746}
+      Script: {instanceID: 4606}
     - Class: 114
-      Script: {instanceID: 5802}
+      Script: {instanceID: 4724}
     - Class: 114
-      Script: {instanceID: 5822}
+      Script: {instanceID: 5780}
+    - Class: 114
+      Script: {instanceID: 5800}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -283,33 +287,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1478}
     - Class: 114
-      Script: {instanceID: 1680}
+      Script: {instanceID: 1662}
     - Class: 114
-      Script: {instanceID: 1752}
+      Script: {instanceID: 1736}
     - Class: 114
-      Script: {instanceID: 2344}
+      Script: {instanceID: 2330}
     - Class: 114
-      Script: {instanceID: 2706}
+      Script: {instanceID: 2692}
     - Class: 114
-      Script: {instanceID: 2874}
+      Script: {instanceID: 2860}
     - Class: 114
-      Script: {instanceID: 3096}
+      Script: {instanceID: 3084}
     - Class: 114
-      Script: {instanceID: 3154}
+      Script: {instanceID: 3142}
     - Class: 114
-      Script: {instanceID: 3372}
+      Script: {instanceID: 3340}
     - Class: 114
-      Script: {instanceID: 3382}
+      Script: {instanceID: 3350}
     - Class: 114
-      Script: {instanceID: 3496}
+      Script: {instanceID: 3464}
     - Class: 114
-      Script: {instanceID: 3884}
+      Script: {instanceID: 3856}
     - Class: 114
-      Script: {instanceID: 4314}
+      Script: {instanceID: 4288}
     - Class: 114
-      Script: {instanceID: 4536}
+      Script: {instanceID: 4512}
     - Class: 114
-      Script: {instanceID: 4746}
+      Script: {instanceID: 4724}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -348,37 +352,37 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1476}
     - Class: 114
-      Script: {instanceID: 1478}
+      Script: {instanceID: 1856}
     - Class: 114
-      Script: {instanceID: 1870}
+      Script: {instanceID: 2254}
     - Class: 114
-      Script: {instanceID: 2268}
+      Script: {instanceID: 2550}
     - Class: 114
-      Script: {instanceID: 2564}
+      Script: {instanceID: 2692}
     - Class: 114
-      Script: {instanceID: 2706}
+      Script: {instanceID: 2860}
     - Class: 114
-      Script: {instanceID: 2874}
+      Script: {instanceID: 2908}
     - Class: 114
-      Script: {instanceID: 2922}
+      Script: {instanceID: 3082}
     - Class: 114
-      Script: {instanceID: 3096}
+      Script: {instanceID: 3084}
     - Class: 114
-      Script: {instanceID: 3372}
+      Script: {instanceID: 3340}
     - Class: 114
-      Script: {instanceID: 3450}
+      Script: {instanceID: 3418}
     - Class: 114
-      Script: {instanceID: 3496}
+      Script: {instanceID: 3464}
     - Class: 114
-      Script: {instanceID: 3650}
+      Script: {instanceID: 3618}
     - Class: 114
-      Script: {instanceID: 4318}
+      Script: {instanceID: 4292}
     - Class: 114
-      Script: {instanceID: 4724}
+      Script: {instanceID: 4702}
     - Class: 114
-      Script: {instanceID: 4886}
+      Script: {instanceID: 4864}
     - Class: 114
-      Script: {instanceID: 5282}
+      Script: {instanceID: 5260}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -416,7 +420,7 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 711a4cf9316d0e21134eef26c8bba2fb
+      Hash: 5008fa2028647d36f488708e42cd6c49
     assemblyName: Assembly-CSharp.dll
     namespaceName: Game
     className: Game
@@ -458,16 +462,16 @@ ScriptsOnlyBuild:
     className: Toggle
   - hash:
       serializedVersion: 2
-      Hash: 59ce5902048c1041729c804e2772b2ce
-    assemblyName: Unity.2D.IK.Runtime.dll
-    namespaceName: UnityEngine.U2D.IK
-    className: CCDSolver2D
-  - hash:
-      serializedVersion: 2
       Hash: 0dbc3be398b4869a5c8d0d8481ee402c
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: LayoutElement
+  - hash:
+      serializedVersion: 2
+      Hash: 59ce5902048c1041729c804e2772b2ce
+    assemblyName: Unity.2D.IK.Runtime.dll
+    namespaceName: UnityEngine.U2D.IK
+    className: CCDSolver2D
   - hash:
       serializedVersion: 2
       Hash: 6bc76e17f0d5e93f3eea7f5a2fe227f3
@@ -498,6 +502,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Shadow
+  - hash:
+      serializedVersion: 2
+      Hash: 66056c2209ff8e6b238f8b056c7eb331
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AudioManager
   - hash:
       serializedVersion: 2
       Hash: e6f0efd0e20669d577e9d21526b3d3f9
@@ -548,7 +558,7 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
-      Hash: 80d8defb2be2685faa433069a7cf5883
+      Hash: 851ede75ab73c40a31d74c6624a517d9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: formainmenu
@@ -650,6 +660,12 @@ ScriptsOnlyBuild:
     className: TestRunCallbackListener
   - hash:
       serializedVersion: 2
+      Hash: f662608ecea4e9ca8287c9136df0f137
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: settinginstart
+  - hash:
+      serializedVersion: 2
       Hash: ae83e830e7a90c0aff918c4c2e520825
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -692,7 +708,7 @@ ScriptsOnlyBuild:
     className: Benchmark03
   - hash:
       serializedVersion: 2
-      Hash: 852770cc24b890f9c251af597e9ef1df
+      Hash: 89d34905bd975c7fa11d042a463e4d39
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GenMapScript
@@ -788,7 +804,7 @@ ScriptsOnlyBuild:
     className: ContentSizeFitter
   - hash:
       serializedVersion: 2
-      Hash: f01944a5a243b677595053ca4fb712a8
+      Hash: 309d53b846b7376f69017b869d5d248f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: allcities
@@ -920,6 +936,12 @@ ScriptsOnlyBuild:
     className: VertexShakeB
   - hash:
       serializedVersion: 2
+      Hash: 126404e92688ed41a5eece96454644f2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FOW
+  - hash:
+      serializedVersion: 2
       Hash: a5781dc71a671b1ad2b38de19f24b71f
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -980,7 +1002,7 @@ ScriptsOnlyBuild:
     className: join
   - hash:
       serializedVersion: 2
-      Hash: 80d8defb2be2685faa433069a7cf5883
+      Hash: 84584888e325f27d28ac7f65d7a931e0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: options
@@ -1190,13 +1212,13 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
-      Hash: f33034cdeaa35b0d11967bf70249f287
+      Hash: 45af4ba74c7f2ac2cbc92767150da983
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIdeplacement
   - hash:
       serializedVersion: 2
-      Hash: dea72f6a02e33702a45aefae23397c7a
+      Hash: 8aec3ee2a827ba86e309b856ee8bbe2b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TechnologyList

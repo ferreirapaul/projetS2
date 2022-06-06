@@ -23,8 +23,8 @@ public class UIdeplacement : MonoBehaviour
     public float ClickDuration = 0.2f;
     bool clicking = false;
     float totalDownTime = 0;
-    public allcities allcities;
-    public GenMapScript map;
+    public GameObject Panevile;
+    public GenMapScript Genmap;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +45,7 @@ public class UIdeplacement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (allcities.Panelville.activeSelf == false)
+        if (Panevile.activeSelf == false)
         {
             if (Input.mouseScrollDelta.y != 0 && (cam.orthographicSize != 5 || cam.orthographicSize != 20))
             {
@@ -101,31 +101,36 @@ public class UIdeplacement : MonoBehaviour
             {
                      totalDownTime = 0;
                      clicking = true;
-                      drag = cam.ScreenToWorldPoint(Input.mousePosition);
+                     drag = cam.ScreenToWorldPoint(Input.mousePosition);
             }
 
-                if (clicking && Input.GetMouseButton(0))
+            if (clicking && Input.GetMouseButton(0))
+            {
+                totalDownTime += Time.deltaTime;
+
+                if (totalDownTime >= ClickDuration && mousedrag.isOn)
                 {
-                   totalDownTime += Time.deltaTime;
-
-                     if (totalDownTime >= ClickDuration&& mousedrag.isOn)
-                     {
-                       
-                        Vector3 diff = drag - cam.ScreenToWorldPoint(Input.mousePosition);
-                        cam.transform.position = Cameramov(cam.transform.position + diff);
-                      }
-                    else
+                    Vector3 diff = drag - cam.ScreenToWorldPoint(Input.mousePosition);
+                    cam.transform.position = Cameramov(cam.transform.position + diff);
+                }
+                else
+                {
+                   Vector3 mickey = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    List<(int, int)> citipos = new List<(int, int)> { ((int)mickey[0], (int)mickey[1]), ((int)mickey[0] - 1, (int)mickey[1]), ((int)mickey[0], (int)mickey[1] - 1), ((int)mickey[0] - 1, (int)mickey[1] - 1) };
+                    int i = 0;
+                    bool found = false;
+                    while (i < 4 && !found)
                     {
-                        Vector3 mickey = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                        mickey = new Vector3((int)mickey.x, (int)mickey.y, 0);
-                        //if (map.listcities.Contains(mickey))
-                        //{
-                        //  allcities.DisplayInformations();
-                        //}
-
-
+                        found = Genmap.map.ListPosCiv.Contains(citipos[i]);
+                        
+                        i++;
+                    }
+                    if (found)
+                    {
+                        Panevile.SetActive(true);
                     }
                 }
+            }
         }
         
 

@@ -100,13 +100,18 @@ public class formainmenu : MonoBehaviour
     }
     public void IpLocal()
     {
+        local = GetComponent<Toggle>();
+        online= GetComponent<Toggle>();
+        Debug.Log(local);
         local.isOn = true;
         online.isOn = false;
-        settinginstart.ip = "127.0.0.1";
+        settinginstart.ip = "192.168.1.72";
 
     }
     public void IpOnline()
     {
+        local = GetComponent<Toggle>();
+        online = GetComponent<Toggle>();
         local.isOn = false;
         online.isOn = true;
         settinginstart.ip = "epirum.fr";
