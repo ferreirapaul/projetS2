@@ -5,11 +5,13 @@ using Army;
 using Network;
 using Technology;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Game
 {
     public class Game : MonoBehaviour
     {
+        public Text Won;
         public LobbyInfos lobbby;
         public GenMapScript map;
         public List<Ressources.Ressources> ressources;
@@ -36,6 +38,14 @@ namespace Game
         public void Win()
         {
             Network.SendString("trop fort!!!",IdMsg.winGame);
+        }
+        public void AffichageWin()
+        {
+            Text won=Instantiate(Won);
+            allcities citi = FindObjectOfType<allcities>();
+            won.transform.SetParent(citi.transform);
+            won.transform.localScale = new Vector3(1, 1, 1);
+            won.transform.localPosition = new Vector3(0, 0, 0) ;
         }
         
 

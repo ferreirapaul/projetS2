@@ -24,6 +24,7 @@ public class UIdeplacement : MonoBehaviour
     bool clicking = false;
     float totalDownTime = 0;
     public allcities allcities;
+    public GenMapScript map;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,8 +45,9 @@ public class UIdeplacement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-            if (allcities.Panelville.activeSelf==false&&Input.mouseScrollDelta.y != 0 && (cam.orthographicSize != 5 || cam.orthographicSize != 20))
+        if (allcities.Panelville.activeSelf == false)
+        {
+            if (Input.mouseScrollDelta.y != 0 && (cam.orthographicSize != 5 || cam.orthographicSize != 20))
             {
                 float targetZoom = cam.orthographicSize - Input.mouseScrollDelta.y * zoom;
                 cam.orthographicSize = Mathf.Clamp(targetZoom, minsize, maxsize);
@@ -95,68 +97,37 @@ public class UIdeplacement : MonoBehaviour
                 cam.transform.position = Cameramov(cam.transform.position + diff);
             }
 
-            if (allcities.Panelville.activeSelf == false && mousedrag.isOn)
+            if (Input.GetMouseButtonDown(0))
             {
-                if (Input.GetMouseButtonDown(0))
-                {
                      totalDownTime = 0;
                      clicking = true;
                       drag = cam.ScreenToWorldPoint(Input.mousePosition);
-                }
+            }
 
                 if (clicking && Input.GetMouseButton(0))
                 {
                    totalDownTime += Time.deltaTime;
 
-                     if (totalDownTime >= ClickDuration)
+                     if (totalDownTime >= ClickDuration&& mousedrag.isOn)
                      {
                        
                         Vector3 diff = drag - cam.ScreenToWorldPoint(Input.mousePosition);
                         cam.transform.position = Cameramov(cam.transform.position + diff);
                       }
+                    else
+                    {
+                        Vector3 mickey = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                        mickey = new Vector3((int)mickey.x, (int)mickey.y, 0);
+                        //if (map.listcities.Contains(mickey))
+                        //{
+                        //  allcities.DisplayInformations();
+                        //}
+
+
+                    }
                 }
-            }
+        }
         
-
-    }
-
-
-
-    public void verify(InputField input)
-    {
-
-        if (input.text.Length == 1)
-        {
-            if ((input.text[0] > 'a' && input.text[0] < 'z') || (input.text[0] > 'A' && input.text[0] < 'Z'))
-            {
-                //input.text = input.text[0].ToString();
-            }
-            else
-            {
-                input.text = "?";
-            }
-        }
-        else
-        {
-
-            input.text = "?";
-        }
-        int i = 0;
-        if (input == left)
-        {
-            i = 1;
-        }
-        if (input == backward)
-        {
-            i = 2;
-        }
-        if (input == right)
-        {
-            i = 3;
-        }
-        zqsd[i] = input.text;
-        print(zqsd);
-        print(zqsd[i]);
 
     }
 

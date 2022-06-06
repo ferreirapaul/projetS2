@@ -23,13 +23,15 @@ public class GenMapScript : MonoBehaviour
     public GameObject Deep_Ocean;
     public GameObject Shallow_Ocean;
 
+    public List<(int, int)> citiposition=new List<(int, int)>();
+
     public SpriteRenderer spriteRenderer;
     private float map_width = 160f;   // value is the amount of tiles 
     private float map_height = 90f;
     public float magnification = 15.0f;  // recommend 4 to 20
  
     List<List<int>> noise_grid = new List<List<int>>();
-    List<List<GameObject>> tile_grid = new List<List<GameObject>>();
+    public List<List<GameObject>> tile_grid = new List<List<GameObject>>();
 
     public LobbyInfos lobby;
     public Network_global network;

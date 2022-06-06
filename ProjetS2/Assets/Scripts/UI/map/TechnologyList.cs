@@ -13,8 +13,11 @@ public class TechnologyList : MonoBehaviour
     public Game.Game game;
     public GameObject ListSAvailable;
     public GameObject ChildSAvailable;
-    
-    
+
+    public void Start()
+    {
+        
+    }
     public void AddTechno(int index)
     {
         (string, string) both = (game.listTechno[index].name, game.listTechno[index].description);
@@ -22,7 +25,7 @@ public class TechnologyList : MonoBehaviour
         GameObject tech = Instantiate(ChildS);
         GameObject texts = tech.transform.Find("Name").gameObject;
         TextMeshProUGUI whythis = texts.GetComponent<TextMeshProUGUI>();
-        whythis.text =both.Item1;
+        whythis.text = both.Item1;
         texts = tech.transform.Find("Description").gameObject;
         whythis = texts.GetComponent<TextMeshProUGUI>();
         whythis.text = both.Item2;

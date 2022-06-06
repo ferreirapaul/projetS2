@@ -2902,7 +2902,6 @@ GameObject:
   - component: {fileID: 1990652510}
   - component: {fileID: 1990652509}
   - component: {fileID: 1990652513}
-  - component: {fileID: 1990652508}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2910,25 +2909,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1990652508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1990652507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cf6b6b6095b22943a9e67d2a8297414, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ip: epirum.fr
-  movement:
-  - z
-  - q
-  - s
-  - d
-  volume: 1
 --- !u!114 &1990652509
 MonoBehaviour:
   m_ObjectHideFlags: 0

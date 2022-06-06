@@ -15,6 +15,14 @@ public class allcities : MonoBehaviour
     public GameObject ListA;
     public GameObject ChildB;
     public GameObject ChildA;
+
+    public Game.Game game;
+    public InputField Production;
+    public InputField Sciences;
+    public InputField Or;
+    public InputField Nourriture;
+    public InputField Population;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +36,11 @@ public class allcities : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Or.text = game.ressources[0].Value.ToString()+"Gold";
+        Nourriture.text = game.ressources[1].Value.ToString()+"Food";
+        Population.text = game.ressources[2].Value.ToString()+"Po";
+        Production.text = game.ressources[3].Value.ToString()+"Pr";
+        Sciences.text = game.ressources[4].Value.ToString()+"Sc";
     }
     public void AddArmy(string name)
     {
