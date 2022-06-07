@@ -54,6 +54,9 @@ namespace Network
                     msg = p.ReadString();
                     client.game.DecryptTurn(GetValues(msg));
                     break;
+                case IdMsg.youTurn:
+                    client.game.youTurn = true;
+                    break;
                 default:
                     Welcome(p);
                     break;

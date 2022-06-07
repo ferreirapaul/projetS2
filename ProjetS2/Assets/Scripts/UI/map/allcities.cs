@@ -177,7 +177,7 @@ public class allcities : MonoBehaviour
             arm.transform.localPosition = new Vector3(UIdeplacement.citi.Item1, UIdeplacement.citi.Item2 -1, 2);
             Army.Army kratos = arm.GetComponent<Army.Army>();
             game.availableArmy.Add(kratos);
-            whereandwhicharmy.Add((UIdeplacement.citi-(0,1), kratos));
+            whereandwhicharmy.Add(((UIdeplacement.citi.Item1, UIdeplacement.citi.Item2 - 1), kratos));
 
         }
         

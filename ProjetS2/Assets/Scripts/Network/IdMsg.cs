@@ -10,6 +10,7 @@ namespace Network
         launchGame = 6,
         endTurn = 7,
         youTurn = 8,
-        winGame = 9
+        winGame = 9,
+        asChoosen = 10
     }
 }

@@ -274,6 +274,6 @@ public class Map
 
     public void SelectCity(City city)
     {
-        return;
+        city.Owner = lobby.me;
     }
 }

@@ -27,6 +27,8 @@ namespace Game
         public List<Building.Building> UnlockBuildings;
         public List<Army.Army> UnlockArmy;
         public int era = 0;
+        public bool youTurnInfo = false;
+        public bool youTurn;
 
         public void Start()
         {
@@ -46,6 +48,13 @@ namespace Game
                     MakeAction(i.Item1, i.Item2);
                 }
             }
+
+            if (youTurnInfo)
+            {
+                box.ChangeText("It's you turn : make you actions and then click on end turn");
+                youTurn = true;
+                youTurnInfo = false;
+            }
         }
 
         public void AddInfos(IdAction id, string str)
@@ -61,29 +70,36 @@ namespace Game
 
         public void EndTurn()
         {
-            if (citiesOwn.Count >= 8)
+            if (youTurn)
             {
-                Win();
+                if (citiesOwn.Count >= 8)
+                {
+                    Win();
+                }
+                else
+                {
+                    Network.SendString(turnInfo, IdMsg.endTurn);
+                    foreach (Technology.Technology i in this.UnlockTechnologies)
+                    {
+                        i.Effects();
+                    }
+
+                    foreach (Building.Building i in this.UnlockBuildings)
+                    {
+                        i.DoTurn();
+                    }
+
+                    foreach (Army.Army i in this.UnlockArmy)
+                    {
+                        this.ressources[0].Value -= i.coastEachTurn;
+                    }
+
+
+                }
             }
             else
             {
-                Network.SendString(turnInfo, IdMsg.endTurn);
-                foreach (Technology.Technology i in this.UnlockTechnologies)
-                {
-                    i.Effects();
-                }
-
-                foreach (Building.Building i in this.UnlockBuildings)
-                {
-                    i.DoTurn();
-                }
-                
-                foreach (Army.Army i in this.UnlockArmy)
-                {
-                    this.ressources[0].Value -= i.coastEachTurn;
-                }
-                
-                
+                box.ChangeText("It's not your turn !");
             }
         }
 

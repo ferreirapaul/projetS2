@@ -57,6 +57,9 @@ namespace Server
                 case IdMsg.winGame:
                     Server.lobbys[Server.clients[clientId].idlobby].Win(clientId);
                     break;
+                case IdMsg.asChoosen:
+                    Server.lobbys[Server.clients[clientId].idlobby].Choose();
+                    break;
                 default:
                     Console.Error.WriteLine("Unknow Id");
                     break;

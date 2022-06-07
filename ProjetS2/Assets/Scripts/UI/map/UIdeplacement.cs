@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Network;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +18,7 @@ public class UIdeplacement : MonoBehaviour
     public InputField left;
     public InputField right;
     private List<string> zqsd;
+    public Network_global network;
 
     public (int, int) citi;
     public Toggle mousedrag;
@@ -29,6 +31,15 @@ public class UIdeplacement : MonoBehaviour
 
     public allcities allcities;
     private bool armychoose = false;
+
+    public bool startOfGame;
+    
+    void Awake()
+    {
+        startOfGame = true;
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -119,19 +130,15 @@ public class UIdeplacement : MonoBehaviour
                 }
                 else
                 {
-                    if (true)
-                    {
-
-                    }
                     Map map = Genmap.map;
                     Vector3 mickey = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     List<(int, int)> citipos = new List<(int, int)> { ((int)mickey[0], (int)mickey[1]), ((int)mickey[0] - 1, (int)mickey[1]), ((int)mickey[0], (int)mickey[1] - 1), ((int)mickey[0] - 1, (int)mickey[1] - 1) };
                     int i = 0;
                     bool foundciti = false;
                     bool foundarmy = false;
+                    int index = 0;
                     while (i < 4 && !foundciti && !foundarmy)
                     {
-                        int index = 0;
                         foundciti = map.ListOfCities[i].posX == citipos[0].Item1 && map.ListOfCities[i].posY == citipos[0].Item2;
                         while (!foundciti && index < map.ListOfCities.Count && !foundarmy)
                         {
@@ -145,8 +152,17 @@ public class UIdeplacement : MonoBehaviour
                     }
                     if (foundciti)
                     {
+                        City city = Genmap.map.ListOfCities[index];
                         citi=citipos[i];
                         Panevile.SetActive(true);
+
+                        if (startOfGame)
+                        {
+                            Genmap.map.SelectCity(city);
+                            network.SendString("i have choose", IdMsg.asChoosen);
+                            startOfGame = false;
+                        }
+
                     }
                     if (foundarmy)
                     {

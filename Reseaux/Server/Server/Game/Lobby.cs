@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using Server;
 
 namespace Lobby
@@ -11,11 +12,13 @@ namespace Lobby
         public Dictionary<int, Client> players;
         private List<int> clientsId;
         public int i;
+        public int chooseWait;
 
         public Lobby(List<string> value, Client creator)
         {
             clientsId = new List<int>();
             clientsId.Add(creator.Id);
+            i = 0;
             creator.name = value[0];
             creator.emperor = Int32.Parse(value[1]);
             creator.idlobby = Int32.Parse(value[3]);
@@ -55,6 +58,15 @@ namespace Lobby
         public void Win(int clientId)
         {
             Send.SendEveryoneExcept(clientId,IdMsg.winGame,"you loose eheheheheh"); 
+        }
+
+        public void Choose()
+        {
+            chooseWait++;
+            if (chooseWait >= players.Count)
+            {
+                Send.SendDataClient(clientsId[i],IdMsg.youTurn,"go go power rangers tutututu");
+            }
         }
     }
 }
