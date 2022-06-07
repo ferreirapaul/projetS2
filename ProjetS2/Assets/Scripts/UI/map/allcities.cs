@@ -44,9 +44,6 @@ public class allcities : MonoBehaviour
     public InputField Nourriture;
     public InputField Population;
 
-
-    public List<((int, int), Army.Army)> whereandwhicharmy = new List<((int, int), Army.Army)>();
-
     // Start is called before the first frame update
 
     // Update is called once per frame
@@ -59,24 +56,22 @@ public class allcities : MonoBehaviour
         Sciences.text = game.ressources[4].Value+" Sc";
     }
 
-    public void UnlockArmy()
+    public void UnlockNewArmy()
     {
         GameObject arm = Instantiate(ChildAUnlocked);
-        int index = game.UnlockArmy.Count;
+        int index = game.availableArmy.Count;
         arm.name = index.ToString();
 
         GameObject texta = arm.transform.Find("Name").gameObject;
         TextMeshProUGUI whythis = texta.GetComponent<TextMeshProUGUI>();
 
-        whythis.text = game.UnlockArmy[index-1].Name;
+        whythis.text = game.availableArmy[index-1].Name;
         texta = arm.transform.Find("Cost").gameObject;
         whythis = texta.GetComponent<TextMeshProUGUI>();
-        whythis.text += game.UnlockArmy[index-1].cost;
+        whythis.text += game.availableArmy[index-1].cost;
 
         texta = arm.transform.Find("Buy").gameObject;
         Button whybutton = texta.GetComponent<Button>();
-        //TODO Lev UP
-        //whybutton.onClick.AddListener(delegate { LevUp(game.AvailableArmy[]); });
 
         arm.transform.parent = ListAUnlocked.transform;
         arm.transform.localScale = new Vector3(1, 1, 1);
@@ -97,16 +92,12 @@ public class allcities : MonoBehaviour
         if (true)
         {
             GameObject arm = Instantiate(ChildA);
-            arm.name = game.availableArmy.Count.ToString();
-
+            arm.name = game.UnlockArmy.Count.ToString();
+            
             GameObject texta = arm.transform.Find("Name").gameObject;
             TextMeshProUGUI whythis=texta.GetComponent<TextMeshProUGUI>();
-            whythis.text = game.UnlockArmy[index].Name;
+            whythis.text = game.availableArmy[index].Name;
 
-            texta = arm.transform.Find("Lv up").gameObject;
-            Button whybutton = texta.GetComponent<Button>();
-            //TODO Lev UP
-            //whybutton.onClick.AddListener(delegate { LevUpA(game.AvailableArmy[]); });
 
             arm.transform.parent = ListA.transform;
             arm.transform.localScale = new Vector3(1, 1, 1);
@@ -176,8 +167,7 @@ public class allcities : MonoBehaviour
             arm.transform.localScale = new Vector3(1, 1, 1);
             arm.transform.localPosition = new Vector3(UIdeplacement.citi.Item1, UIdeplacement.citi.Item2 -1, 2);
             Army.Army kratos = arm.GetComponent<Army.Army>();
-            game.availableArmy.Add(kratos);
-            whereandwhicharmy.Add(((UIdeplacement.citi.Item1, UIdeplacement.citi.Item2 - 1), kratos));
+            game.UnlockArmy.Add(kratos);
 
         }
         
@@ -203,23 +193,18 @@ public class allcities : MonoBehaviour
         RectTransform rectparent = ListA.transform.parent.gameObject.GetComponent<RectTransform>();
         rectparent.sizeDelta = new Vector2(0, rectparent.sizeDelta.y - 14);
     }
-    /*public void AddBuildings(int index)
+    public void AddBuildings(int index)
     {
         GameObject build = Instantiate(ChildB);
-        build.name = game.availableArmy.Count.ToString();
+        build.name = game.UnlockBuildings.Count.ToString();
 
         GameObject textb = build.transform.Find("Name").gameObject;
         TextMeshProUGUI whythis = textb.GetComponent<TextMeshProUGUI>();
         whythis.text = game.availableBuildings[index].Name;
 
-        textb = build.transform.Find("Give").gameObject;
-        TextMeshProUGUI whythis = textb.GetComponent<TextMeshProUGUI>();
-        whythis.text += game.availableBuildings[index].Gain;
-
         textb = build.transform.Find("Lv up").gameObject;
         Button whybutton = textb.GetComponent<Button>();
-        //TODO Lev UP
-        //whybutton.onClick.AddListener(delegate { LevUpB(); });
+        whybutton.onClick.AddListener(delegate { game.UnlockBuildings[index].LevelUp(); });
 
         build.transform.parent = ListB.transform;
         build.transform.localScale = new Vector3(1, 1, 1);
@@ -227,13 +212,12 @@ public class allcities : MonoBehaviour
         build.transform.localPosition = new Vector3(0, 0, 0);
         listofarmy.spacing = 0;
 
-
         RectTransform rect = ListB.GetComponent<RectTransform>();
         rect.sizeDelta = new Vector2(160.74f, rect.sizeDelta.y + 13.355f);
         ListB.transform.localPosition = new Vector3(ListB.transform.localPosition.x, ListB.transform.localPosition.y - 6.677f, 0);
         RectTransform rectparent = ListB.transform.parent.gameObject.GetComponent<RectTransform>();
         rectparent.sizeDelta = new Vector2(0, rectparent.sizeDelta.y + 14);
-    }*/
+    }
 
     public void DisplayInformations()
     {

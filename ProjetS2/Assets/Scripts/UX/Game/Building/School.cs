@@ -11,6 +11,7 @@ namespace Building
         {
             this.sciences = s;
             this.gain = 2;
+            this.Name = "School";
         }
 
         public override void DoTurn()

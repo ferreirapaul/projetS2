@@ -11,6 +11,8 @@ namespace Building
         {
             this.golds = g;
             this.gain = 20;
+
+            this.Name = "Market";
         }
 
         public override void DoTurn()

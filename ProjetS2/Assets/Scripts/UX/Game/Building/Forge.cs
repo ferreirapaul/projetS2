@@ -11,6 +11,7 @@ namespace Building
         {
             this.points = p;
             this.gain = 1;
+            this.Name = "Forge";
         }
 
         public override void DoTurn()

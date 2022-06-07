@@ -22,6 +22,8 @@ namespace Building
             this.food = f;
             this.game = ga;
             this.game.availableArmy.Add(new Hoplite());
+
+            this.Name = "Army Camp";
         }
 
         public override void DoTurn()

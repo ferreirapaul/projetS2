@@ -11,6 +11,7 @@ namespace Building
         {
             this.food = f;
             this.gain = 4;
+            this.Name = "Land";
         }
 
         public override void DoTurn()

@@ -27,6 +27,7 @@ namespace Game
         public List<Building.Building> UnlockBuildings;
         public List<Army.Army> UnlockArmy;
         public int era = 0;
+        public TechnologyList TechnologyList;
         public bool youTurnInfo = false;
         public bool youTurn;
 
@@ -48,7 +49,6 @@ namespace Game
                     MakeAction(i.Item1, i.Item2);
                 }
             }
-
             if (youTurnInfo)
             {
                 box.ChangeText("It's you turn : make you actions and then click on end turn");
@@ -219,7 +219,7 @@ namespace Game
             {
                 i.upgradePeriod();
             }
-            
+            TechnologyList.DysplayNewEra(era);
             AddInfos(IdAction.eraChange,this.lobbby.Name +" Change of era");
         }
 

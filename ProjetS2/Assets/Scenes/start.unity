@@ -1604,7 +1604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7643365723590813438, guid: a96aad5848fe15b4596207d957f17c62, type: 3}
       propertyPath: ip
-      value: 127.0.0.1
+      value: epirum.fr
       objectReference: {fileID: 0}
     - target: {fileID: 7643365723590813438, guid: a96aad5848fe15b4596207d957f17c62, type: 3}
       propertyPath: port
@@ -1649,7 +1649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cf6b6b6095b22943a9e67d2a8297414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ip: 127.0.0.1
+  ip: epirum.fr
   movement:
   - z
   - q

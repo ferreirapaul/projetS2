@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Network;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,7 +17,6 @@ public class UIdeplacement : MonoBehaviour
     public InputField left;
     public InputField right;
     private List<string> zqsd;
-    public Network_global network;
 
     public (int, int) citi;
     public Toggle mousedrag;
@@ -28,18 +26,9 @@ public class UIdeplacement : MonoBehaviour
     float totalDownTime = 0;
     public GameObject Panevile;
     public GenMapScript Genmap;
-
+    public Game.Game game;
     public allcities allcities;
-    private bool armychoose = false;
-
-    public bool startOfGame;
-    
-    void Awake()
-    {
-        startOfGame = true;
-    }
-
-
+    private (bool,int) armychoose = (false,0);
     // Start is called before the first frame update
     void Start()
     {
@@ -130,43 +119,49 @@ public class UIdeplacement : MonoBehaviour
                 }
                 else
                 {
+                    
                     Map map = Genmap.map;
                     Vector3 mickey = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    if (armychoose.Item1)
+                    {
+                        Army.Army arm = game.UnlockArmy[armychoose.Item2];
+                        arm.movement((int)arm.gameObject.transform.localPosition.x, (int)arm.gameObject.transform.localPosition.y, (int)mickey[0], (int)mickey[1], armychoose.Item2);
+                        
+
+                    }
                     List<(int, int)> citipos = new List<(int, int)> { ((int)mickey[0], (int)mickey[1]), ((int)mickey[0] - 1, (int)mickey[1]), ((int)mickey[0], (int)mickey[1] - 1), ((int)mickey[0] - 1, (int)mickey[1] - 1) };
                     int i = 0;
                     bool foundciti = false;
                     bool foundarmy = false;
-                    int index = 0;
-                    while (i < 4 && !foundciti && !foundarmy)
+                    while (i < game.citiesOwn.Count && !foundciti && !foundarmy)
                     {
-                        foundciti = map.ListOfCities[i].posX == citipos[0].Item1 && map.ListOfCities[i].posY == citipos[0].Item2;
-                        while (!foundciti && index < map.ListOfCities.Count && !foundarmy)
-                        {
-                            if (!foundarmy)
-                            {
-                                foundarmy= allcities.whereandwhicharmy[i].Item1.Item1 == citipos[index].Item1 && allcities.whereandwhicharmy[i].Item1.Item1 == citipos[index].Item2;
-                                index++;
-                            }
-                        }
+                        
+                        GameObject citi = game.citiesOwn[i].gameObject;
+                        foundciti = citi.transform.localPosition.x == citipos[0].Item1 && citi.transform.localPosition.y == citipos[0].Item2;
+                        
                         i++;
+                    }
+                    int index = 0;
+                    while (!foundciti && index < game.UnlockArmy.Count && !foundarmy)
+                    {
+                        int ind = 0;
+                        while (ind<4 && !foundciti)
+                        { 
+                            foundarmy= game.UnlockArmy[index].gameObject.transform.localPosition[0] == citipos[index].Item1 && game.UnlockArmy[i].gameObject.transform.localPosition[1] == citipos[index].Item2 ;
+
+                            ind++;
+                        }
+                        index++;
                     }
                     if (foundciti)
                     {
-                        City city = Genmap.map.ListOfCities[index];
                         citi=citipos[i];
                         Panevile.SetActive(true);
-
-                        if (startOfGame)
-                        {
-                            Genmap.map.SelectCity(city);
-                            network.SendString("i have choose", IdMsg.asChoosen);
-                            startOfGame = false;
-                        }
-
                     }
                     if (foundarmy)
                     {
-                        armychoose = true;
+                        armychoose.Item1 = game.UnlockArmy[index].IsEnemy;
+                        armychoose.Item2 = index;
                     }
                 }
             }
