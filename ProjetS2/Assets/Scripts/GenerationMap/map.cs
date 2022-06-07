@@ -67,14 +67,10 @@ public class Map
             seed = Random.Range(0, 1000);
         }
 
-        Debug.Log("All good so far 1");
 
         GenerateMap();
-        Debug.Log("All good so far 2");
         generateCities(amountOfCities);
-        Debug.Log("All good so far 3");
         ChooseStartingCity();
-        Debug.Log("All good so far 4");
 
 
     }
@@ -213,6 +209,7 @@ public class Map
             
             if( getDistanceSquared(ListOfCities[index].posX,ListOfCities[index].posY,city.posX,city.posY) < 500 || tile_id > 3)
             {
+                Debug.Log("City at x = "+ city.posX+" ; y = " + city.posY + " is invalid");
                 valid = false;
             }
             index++;
@@ -222,8 +219,9 @@ public class Map
 
     void generateCities (int amount)
     {
+        Debug.Log("amount = " + amount);
         int Count = 0;
-        while(amount > 0 && Count < 10000)
+        while(amount > 0 && Count < 100000)
         {
             int x       = (int) Random.Range(0, map_width);
             int y       = (int) Random.Range(0, map_height);
@@ -240,6 +238,7 @@ public class Map
             }
             Count++;
         }
+        Debug.Log(Count);
     
     }
 
@@ -247,18 +246,21 @@ public class Map
     {        
         int playerID = network.Client.myId;
         int playerNumber = 0;
-        while (playerNumber<playerIDs.Count && playerID != playerIDs[playerNumber])
+        Debug.Log("playerID.Count = "+playerIDs.Count);
+        while (playerNumber<playerIDs.Count-1 && playerID != playerIDs[playerNumber])
         {
             playerNumber++;
         }
         
         Debug.Log(ListOfCities.Count);
-        List<City> citiesToChooseFrom = new List<City>
+        List<City> citiesToChooseFrom = new List<City>{};
+        Debug.Log("playernumber = "+playerNumber);
+        int i =0;
+        while (citiesToChooseFrom.Count <= 3 && playerNumber*3+i <ListOfCities.Count)
         {
-            ListOfCities[playerNumber],
-            ListOfCities[playerNumber+1],
-            ListOfCities[playerNumber+2],
-        };
+            citiesToChooseFrom.Add(ListOfCities[playerNumber*3+i]);
+            i++;
+        }
 
         return citiesToChooseFrom;
     }
@@ -266,7 +268,6 @@ public class Map
     void ChooseStartingCity ()
     {
         List<City> startingCities = GetStartingCities();
-        Debug.Log(ListOfCities.Count);
         foreach (City city in startingCities)
         {
             AddVision(city.posX,city.posY,10);
