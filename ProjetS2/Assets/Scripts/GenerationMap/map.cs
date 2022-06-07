@@ -7,8 +7,9 @@ using Network;
 public class Map 
 {
     List<List<Tile>>    TileGrid;       // liste contenant les listes de cases
-    List<City>          ListOfCities;   // liste contenant les cases avec des villes 
+    public List<City>          ListOfCities;   // liste contenant les cases avec des villes 
     List<List<int>>     noise_grid;     // liste contenant les valeurs generes avec le bruit de perlin
+
 
     int     numberOfPlayers;
     int     amountOfCities;

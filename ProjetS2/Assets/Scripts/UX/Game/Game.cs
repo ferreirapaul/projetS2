@@ -25,7 +25,6 @@ namespace Game
         public List<Technology.Technology> UnlockTechnologies;
         public List<Army.Army> UnlockArmy;
         public int era = 0;
-
         public void Start()
         {
             lobbby = FindObjectOfType<LobbyInfos>();

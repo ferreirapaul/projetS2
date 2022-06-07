@@ -17,7 +17,23 @@ public class allcities : MonoBehaviour
     public GameObject ChildA;
     public GameObject ChildAUnlocked;
 
-    //public GameObject spawn;
+    public GameObject spawnhere;
+    public GameObject spawn1;
+    public GameObject spawn2;
+    public GameObject spawn3;
+    public GameObject spawn4;
+    public GameObject spawn5;
+    public GameObject spawn6;
+    public GameObject spawn7;
+    public GameObject spawn8;
+    public GameObject spawn9;
+    public GameObject spawn10;
+    public GameObject spawn11;
+    public GameObject spawn12;
+    public GameObject spawn13;
+    public GameObject spawn14;
+    public GameObject spawn15;
+    public GameObject spawn16;
 
     public UIdeplacement UIdeplacement;
 
@@ -27,6 +43,9 @@ public class allcities : MonoBehaviour
     public InputField Or;
     public InputField Nourriture;
     public InputField Population;
+
+
+    public List<((int, int), Army.Army)> whereandwhicharmy = new List<((int, int), Army.Army)>();
 
     // Start is called before the first frame update
 
@@ -102,8 +121,63 @@ public class allcities : MonoBehaviour
             RectTransform rectparent = ListA.transform.parent.gameObject.GetComponent<RectTransform>();
             rectparent.sizeDelta = new Vector2(0, rectparent.sizeDelta.y + 14);
 
-           // arm = Instantiate(spawn);
-
+            switch (whythis.text)
+            {
+                case "Archer":
+                    arm = Instantiate(spawn1);
+                    break;
+                case "Belier":
+                    arm = Instantiate(spawn2);
+                    break;
+                case "Canon":
+                    arm = Instantiate(spawn3);
+                    break;
+                case "Catapult":
+                    arm = Instantiate(spawn4);
+                    break;
+                case "Cavalier":
+                    arm = Instantiate(spawn5);
+                    break;
+                case "Crossbowman":
+                    arm = Instantiate(spawn6);
+                    break;
+                case "Hallebardeer":
+                    arm = Instantiate(spawn7);
+                    break;
+                case "Hoplite":
+                    arm = Instantiate(spawn8);
+                    break;
+                case "Hussard":
+                    arm = Instantiate(spawn9);
+                    break;
+                case "Infantry":
+                    arm = Instantiate(spawn10);
+                    break;
+                case "Knight":
+                    arm = Instantiate(spawn11);
+                    break;
+                case "Pikeman":
+                    arm = Instantiate(spawn12);
+                    break;
+                case "Missile Launcher":
+                    arm = Instantiate(spawn13);
+                    break;
+                case "Musketeer":
+                    arm = Instantiate(spawn14);
+                    break;
+                case "Sniper":
+                    arm = Instantiate(spawn15);
+                    break;
+                default:
+                    arm = Instantiate(spawn16);
+                    break;
+            }
+            arm.transform.parent = spawnhere.transform;
+            arm.transform.localScale = new Vector3(1, 1, 1);
+            arm.transform.localPosition = new Vector3(UIdeplacement.citi.Item1, UIdeplacement.citi.Item2 -1, 2);
+            Army.Army kratos = arm.GetComponent<Army.Army>();
+            game.availableArmy.Add(kratos);
+            whereandwhicharmy.Add((UIdeplacement.citi-(0,1), kratos));
 
         }
         

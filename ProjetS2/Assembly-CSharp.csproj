@@ -162,7 +162,7 @@
      <Compile Include="Assets\Scripts\UX\Game\Technology\Reborn\Hussar.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
-     <Compile Include="Assets\Scripts\UX\Game\Army\Contemporain Age\Missile launcher.cs" />
+     <Compile Include="Assets\Scripts\UX\Game\Army\Contemporain Age\MissileLauncher.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
      <Compile Include="Assets\Scripts\UX\Game\Technology\Reborn\Revolution.cs" />
      <Compile Include="Assets\Scripts\UX\Game\Building\School.cs" />

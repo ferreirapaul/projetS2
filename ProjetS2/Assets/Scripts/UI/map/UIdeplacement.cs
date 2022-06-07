@@ -25,7 +25,10 @@ public class UIdeplacement : MonoBehaviour
     bool clicking = false;
     float totalDownTime = 0;
     public GameObject Panevile;
-    public Map map;
+    public GenMapScript Genmap;
+
+    public allcities allcities;
+    private bool armychoose = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -116,20 +119,38 @@ public class UIdeplacement : MonoBehaviour
                 }
                 else
                 {
-                   Vector3 mickey = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    if (true)
+                    {
+
+                    }
+                    Map map = Genmap.map;
+                    Vector3 mickey = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     List<(int, int)> citipos = new List<(int, int)> { ((int)mickey[0], (int)mickey[1]), ((int)mickey[0] - 1, (int)mickey[1]), ((int)mickey[0], (int)mickey[1] - 1), ((int)mickey[0] - 1, (int)mickey[1] - 1) };
                     int i = 0;
-                    bool found = false;
-                    while (i < 4 && !found)
+                    bool foundciti = false;
+                    bool foundarmy = false;
+                    while (i < 4 && !foundciti && !foundarmy)
                     {
-                        //TODO found = Genmap.map.ListPosCiv.Contains(citipos[i]);
-                        
+                        int index = 0;
+                        foundciti = map.ListOfCities[i].posX == citipos[0].Item1 && map.ListOfCities[i].posY == citipos[0].Item2;
+                        while (!foundciti && index < map.ListOfCities.Count && !foundarmy)
+                        {
+                            if (!foundarmy)
+                            {
+                                foundarmy= allcities.whereandwhicharmy[i].Item1.Item1 == citipos[index].Item1 && allcities.whereandwhicharmy[i].Item1.Item1 == citipos[index].Item2;
+                                index++;
+                            }
+                        }
                         i++;
                     }
-                    if (found)
+                    if (foundciti)
                     {
                         citi=citipos[i];
                         Panevile.SetActive(true);
+                    }
+                    if (foundarmy)
+                    {
+                        armychoose = true;
                     }
                 }
             }
