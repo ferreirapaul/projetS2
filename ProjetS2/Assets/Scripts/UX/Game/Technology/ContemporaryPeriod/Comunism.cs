@@ -4,9 +4,12 @@ namespace Technology
 {
     public class Comunism : Technology
     {
-        public Comunism(List<Ressources.Ressources> r, List<Building.Building> b, List<Army.Army> a)
+        public GenMapScript genMapScript;
+
+        public Comunism(List<Ressources.Ressources> r, List<Building.Building> b, List<Army.Army> a, GenMapScript genMapScript)
             : base(r, b, a)
         {
+            this.genMapScript = genMapScript;
             coast = 70;
             name = "Comunism";
             description = "This technology allow you hide yourself from the other player and to buff your army. \n" +
@@ -16,7 +19,7 @@ namespace Technology
         public override void Unlock()
         {
             isUnlock = true;
-            //TODO effects
+            //TODO
         }
 
         public override void Effects()

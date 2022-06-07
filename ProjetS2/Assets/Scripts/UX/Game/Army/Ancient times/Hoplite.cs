@@ -6,11 +6,11 @@ namespace Army
 {
     public class Hoplite : Army
     {
-        public Hoplite()
+        public void Start()
         {
-            int AttackDamage = 15;
-            int Health = 100;
-            int cost = 15;
+            AttackDamage = 15;
+            Health = 100;
+            cost = 15;
             name = "Hoplite";
         }
     }

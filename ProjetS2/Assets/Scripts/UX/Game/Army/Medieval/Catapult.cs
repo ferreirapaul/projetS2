@@ -6,11 +6,12 @@ namespace Army
 {
     public class Catapult : Army
     {
-        public Catapult()
+        public void Start()
         {
             AttackDamage = 60;
             Health = 100;
             cost = 60;
+            range = 2;
             name = "Catapult";
         }
     }

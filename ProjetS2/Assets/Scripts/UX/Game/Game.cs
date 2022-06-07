@@ -19,12 +19,14 @@ namespace Game
         public List<Army.Army> availableArmy;
         public List<Technology.Technology> listTechno;
         public List<City> citiesOwn;
+        public List<City> citiesHidden;
         public Network_global Network;
         public string turnInfo;
         private List<Tuple<IdAction, string>> actions;
         public List<Technology.Technology> UnlockTechnologies;
         public List<Army.Army> UnlockArmy;
         public int era = 0;
+
 
         public void Start()
         {
@@ -145,8 +147,8 @@ namespace Game
                     break;
                 case 3:
                     listTechno.Add(new Computer(ressources,availableBuildings,availableArmy,this));
-                    listTechno.Add(new Comunism(ressources,availableBuildings,availableArmy));
-                    listTechno.Add(new Globalization(ressources,availableBuildings,availableArmy));
+                    listTechno.Add(new Comunism(ressources,availableBuildings,availableArmy,map));
+                    listTechno.Add(new Globalization(ressources,availableBuildings,availableArmy,map));
                     listTechno.Add(new Technology.Infantry(ressources,availableBuildings,availableArmy));
                     listTechno.Add(new Missiles(ressources,availableBuildings,availableArmy));
                     listTechno.Add(new Oil(ressources,availableBuildings,availableArmy));

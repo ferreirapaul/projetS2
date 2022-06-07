@@ -23,12 +23,12 @@ namespace Technology
         public override void Unlock()
         {
             isUnlock = true;
-            foreach (Game.City i in this.game.citiesOwn)
+            foreach (City i in this.game.citiesOwn)
             {
                 i.Health += gain;
             }
 
-            foreach (Game.City i in this.game.citiesOwn)
+            foreach (City i in this.game.citiesOwn)
             {
                 game.MakeAction(IdAction.eraChange,i.ID +"");   
             }
@@ -41,7 +41,7 @@ namespace Technology
 
         public override void upgradePeriod()
         {
-            foreach (Game.City i in this.game.citiesOwn)
+            foreach (City i in this.game.citiesOwn)
             {
                 i.Health += gain;
             }

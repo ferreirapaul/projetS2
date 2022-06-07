@@ -6,12 +6,13 @@ namespace Army
 {
     public class Belier : Army
     {
-        public Belier()
+        public void Start()
         {
             AttackDamage = 40;
             Health = 50;
             cost = 40;
-            name = "Bélier";
+            range = 1;
+            name = "Belier";
         }
     }
 }

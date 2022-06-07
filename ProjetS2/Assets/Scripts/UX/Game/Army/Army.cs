@@ -5,29 +5,36 @@ using UnityEngine;
 
 namespace Army
 {
-    public abstract class Army
+    public abstract class Army : MonoBehaviour
     {
         public int AttackDamage;
         public int Health;
         public int cost;
+        public int coastEachTurn;
         public string name;
-
+        public int range;
+        public GenMapScript genMapScript;
         public string Name => this.name;
 
-        public Army()
+        public void Start()
         {
+            this.genMapScript = GameObject.FindObjectOfType<GenMapScript>();
             this.AttackDamage = 20;
             this.Health = 100;
             this.cost = 15;
+            this.coastEachTurn = 2;
+            this.range = 5;
+            
             this.name = "";
         }
+        
 
         public void ApplyDamage(int AttackDamage)
         {
             Health -= AttackDamage;
             if (Health <= 0)
             {
-               //Todo destroy
+                Destroy(this);
             }
         }
 
@@ -36,9 +43,9 @@ namespace Army
             victim.ApplyDamage(AttackDamage);
         }
 
-        void movement(int x, int y)
+        public void movement(int x, int y)
         {
-            //TODO mouv
+            genMapScript.map.AddVision(x,y,range);
         }
     }
 }

@@ -3,7 +3,20 @@ guid: 6f962098b919bdb46bb17a127409c13c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Desert: {fileID: 192628842752504769, guid: 72490f331106dad46bb56d3ad5bdc023, type: 3}
+  - Jungle: {fileID: 4976580017866672085, guid: 926f3ccb3cad8bc4a881cc37fa63cb81, type: 3}
+  - Plains: {fileID: 4976580017866672085, guid: 926f3ccb3cad8bc4a881cc37fa63cb81, type: 3}
+  - Snow: {fileID: 5967084383861935641, guid: c0d36da6f2d2e694c899209f7ac2c146, type: 3}
+  - Desert_Hill: {instanceID: 0}
+  - Jungle_Hill: {instanceID: 0}
+  - Plains_Hill: {instanceID: 0}
+  - Snow_Hill: {instanceID: 0}
+  - Deep_Ocean: {instanceID: 0}
+  - Shallow_Ocean: {instanceID: 0}
+  - Fog_Of_War: {instanceID: 0}
+  - City: {instanceID: 0}
+  - spriteRenderer: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

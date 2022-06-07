@@ -18,6 +18,7 @@ public class UIdeplacement : MonoBehaviour
     public InputField right;
     private List<string> zqsd;
 
+
     public Toggle mousedrag;
     public float speed = 1f;
     public float ClickDuration = 0.2f;
@@ -25,6 +26,9 @@ public class UIdeplacement : MonoBehaviour
     float totalDownTime = 0;
     public GameObject Panevile;
     public GenMapScript Genmap;
+    bool
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +49,11 @@ public class UIdeplacement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
+    
+
+
         if (Panevile.activeSelf == false)
         {
             if (Input.mouseScrollDelta.y != 0 && (cam.orthographicSize != 5 || cam.orthographicSize != 20))
@@ -118,16 +127,32 @@ public class UIdeplacement : MonoBehaviour
                    Vector3 mickey = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     List<(int, int)> citipos = new List<(int, int)> { ((int)mickey[0], (int)mickey[1]), ((int)mickey[0] - 1, (int)mickey[1]), ((int)mickey[0], (int)mickey[1] - 1), ((int)mickey[0] - 1, (int)mickey[1] - 1) };
                     int i = 0;
-                    bool found = false;
-                    while (i < 4 && !found)
+                    
+                    Map map = Genmap.map;
+                    bool foundciti = false;
+                    bool foundarmy = false;
+                    while (i < 4 && !foundciti && !foundarmy)
                     {
-                        //TODO found = Genmap.map.ListPosCiv.Contains(citipos[i]);
-                        
+                        int index = 0;
+                        foundciti = map.ListOfCities[i].posX == citipos[0].Item1 && map.ListOfCities[i].posY == citipos[0].Item2;
+                        while (!foundciti && index < map.ListOfCities.Count && !foundarmy)
+                        {
+                            if (!foundarmy)
+                            {
+                                foundarmy= allcities.whereandwhicharmy[i].Item1.Item1 == citipos[index].Item1 && allcities.whereandwhicharmy[i].Item1.Item1 == citipos[index].Item2;
+                                index++;
+                            }
+                        }
                         i++;
                     }
-                    if (found)
+                    if (foundciti)
                     {
+                        citi=citipos[i];
                         Panevile.SetActive(true);
+                    }
+                    if (foundarmy)
+                    {
+                        armychoose = true;
                     }
                 }
             }

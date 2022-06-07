@@ -1100,8 +1100,8 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1201304384}
   seed: 42069
   magnification: 25
-  map_height: 0
-  map_width: 0
+  map_height: 200
+  map_width: 200
   numberOfPlayers: 1
 --- !u!4 &47778317
 Transform:
@@ -9269,8 +9269,10 @@ MonoBehaviour:
   lobbby: {fileID: 0}
   map: {fileID: 47778316}
   box: {fileID: 0}
+  availableArmy: []
   Network: {fileID: 0}
   turnInfo: 
+  UnlockArmy: []
   era: 0
 --- !u!4 &454719656
 Transform:
