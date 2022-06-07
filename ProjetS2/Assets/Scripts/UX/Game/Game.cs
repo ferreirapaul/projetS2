@@ -72,7 +72,7 @@ namespace Game
         {
             if (youTurn)
             {
-                if (citiesOwn.Count >= 8)
+                if (citiesOwn.Count >= (2/3) * map.map.ListOfCities.Count)
                 {
                     Win();
                 }
