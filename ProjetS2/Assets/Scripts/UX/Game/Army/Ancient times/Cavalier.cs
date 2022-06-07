@@ -6,11 +6,12 @@ namespace Army
 {
     public class Cavalier : Army
     {
-        public Cavalier()
+        public void Start()
         {
             AttackDamage = 15;
             Health = 120;
             cost = 25;
+            range = 6;
             name = "Cavalier";
         }
     }

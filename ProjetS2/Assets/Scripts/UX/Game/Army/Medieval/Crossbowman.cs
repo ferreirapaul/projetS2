@@ -6,11 +6,12 @@ namespace Army
 {
     public class Crossbowman : Army
     {
-        public Crossbowman()
+        public void Start()
         {
             AttackDamage = 40;
             Health = 90;
             cost = 60;
+            range = 6;
             name = "Crossbowman";
         }
     }

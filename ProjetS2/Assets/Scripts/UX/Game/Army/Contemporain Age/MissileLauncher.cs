@@ -6,11 +6,12 @@ namespace Army
 {
     public class MissileLauncher : Army
     {
-        public MissileLauncher()
+        public void Start()
         {
             AttackDamage = 100;
             Health = 100;
             cost = 100;
+            range = 150;
             name = "Missile Launcher";
         }
     }
