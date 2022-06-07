@@ -11,6 +11,7 @@ namespace Army
             AttackDamage = 40;
             Health = 50;
             cost = 40;
+            name = "Bélier";
         }
     }
 }

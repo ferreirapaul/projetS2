@@ -11,6 +11,7 @@ namespace Army
             AttackDamage = 40;
             Health = 90;
             cost = 60;
+            name = "Crossbowman";
         }
     }
 }

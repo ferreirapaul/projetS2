@@ -10,12 +10,16 @@ namespace Army
         public int AttackDamage;
         public int Health;
         public int cost;
+        public string name;
+
+        public string Name => this.name;
 
         public Army()
         {
             this.AttackDamage = 20;
             this.Health = 100;
             this.cost = 15;
+            this.name = "";
         }
 
         public void ApplyDamage(int AttackDamage)

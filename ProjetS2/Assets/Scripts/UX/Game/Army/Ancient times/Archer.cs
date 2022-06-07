@@ -11,6 +11,7 @@ namespace Army
             AttackDamage = 20;
             Health = 80;
             cost = 20;
+            name = "Archer";
         }
     }
 }

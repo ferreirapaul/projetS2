@@ -11,6 +11,7 @@ namespace Army
             AttackDamage = 30;
             Health = 100;
             cost = 25;
+            name = "Pikeman";
         }
     }
 }

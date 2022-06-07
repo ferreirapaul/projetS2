@@ -11,6 +11,7 @@ namespace Army
             AttackDamage = 60;
             Health = 100;
             cost = 50;
+            name = "Sniper";
         }
     }
 }

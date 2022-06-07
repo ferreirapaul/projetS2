@@ -11,6 +11,7 @@ namespace Army
             AttackDamage = 50;
             Health = 140; 
             cost = 60;
+            name = "Infantry";
         }
     }
 }

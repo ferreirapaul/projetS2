@@ -11,6 +11,7 @@ namespace Army
             AttackDamage = 80;
             Health = 100;
             cost = 80;
+            name = "Canon";
         }
     }
 }

@@ -18,10 +18,12 @@ public class TechnologyList : MonoBehaviour
     {
         
     }
+
+    
     public void AddTechno(int index)
     {
         (string, string) both = (game.listTechno[index].name, game.listTechno[index].description);
-
+        Debug.Log(game.availableArmy.Count);
         GameObject tech = Instantiate(ChildS);
         GameObject texts = tech.transform.Find("Name").gameObject;
         TextMeshProUGUI whythis = texts.GetComponent<TextMeshProUGUI>();
@@ -50,6 +52,16 @@ public class TechnologyList : MonoBehaviour
         RectTransform rectparent = ListSAvailable.transform.parent.gameObject.GetComponent<RectTransform>();
         rectparent.sizeDelta = new Vector2(0, rectparent.sizeDelta.y - 31);
     }
+    public void Dumber(string sciences)
+    {
+        string[] fichtre = sciences.Split('x');
+        if (game.ressources[4].Value - int.Parse(fichtre[0])>0)
+        {
+            game.ressources[4].Value -= int.Parse(fichtre[0]);
+            AddTechno(int.Parse(fichtre[1]));
+        }
+      
+    }
     /*
     public void AddTechnoA(int index)
     {
@@ -62,13 +74,16 @@ public class TechnologyList : MonoBehaviour
         texts = tech.transform.Find("Description").gameObject;
         whythis = texts.GetComponent<TextMeshProUGUI>();
         whythis.text = both.Item2;
-        Debug.Log("ok");
+        texts = tech.transform.Find("Cost").gameObject;
+        whythis = texts.GetComponent<TextMeshProUGUI>();
+        whythis.text += game.listTechno[index].Coast;
+
         Button button= tech.transform.Find("Buy").gameObject.GetComponent<Button>();
         Debug.Log(button);
         int x = new int();
         x = index;
-        button.GetComponent<Button>().onClick.AddListener(delegate { AddTechno(x); });
-        Debug.Log("ok");
+        //button.GetComponent<Button>().onClick.AddListener(delegate { AddTechno(x); });
+
         tech.transform.SetParent(ListSAvailable.transform);
         tech.transform.localScale = new Vector3(1, 1, 1);
 

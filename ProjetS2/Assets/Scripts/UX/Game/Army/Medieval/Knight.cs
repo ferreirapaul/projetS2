@@ -11,6 +11,7 @@ namespace Army
             AttackDamage = 30;
             Health = 140;
             cost = 50;
+            name = "Knight";
         }
     }
 }

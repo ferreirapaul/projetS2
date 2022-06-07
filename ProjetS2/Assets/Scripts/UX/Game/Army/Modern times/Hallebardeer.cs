@@ -11,6 +11,7 @@ namespace Army
             AttackDamage = 40;
             Health = 120;
             cost = 40;
+            name = "Hallebardeer";
         }
     }
 }

@@ -11,6 +11,7 @@ namespace Army
             AttackDamage = 60;
             Health = 200;
             cost = 100;
+            name = "Tank";
         }
     }
 }

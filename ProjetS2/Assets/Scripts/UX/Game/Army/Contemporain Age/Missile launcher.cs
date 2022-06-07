@@ -11,6 +11,7 @@ namespace Army
             AttackDamage = 100;
             Health = 100;
             cost = 100;
+            name = "Missile Launcher";
         }
     }
 }

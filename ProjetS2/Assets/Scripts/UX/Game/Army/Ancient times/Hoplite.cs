@@ -11,6 +11,7 @@ namespace Army
             int AttackDamage = 15;
             int Health = 100;
             int cost = 15;
+            name = "Hoplite";
         }
     }
 }

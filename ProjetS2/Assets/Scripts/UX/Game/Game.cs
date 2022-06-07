@@ -128,7 +128,6 @@ namespace Game
                     listTechno.Add(new Crossbow(ressources,availableBuildings,availableArmy));
                     listTechno.Add(new Feudalism(ressources,availableBuildings,availableArmy));
                     listTechno.Add(new Technology.Knight(ressources,availableBuildings,availableArmy));
-                    listTechno.Add(new Technology.Knight(ressources,availableBuildings,availableArmy));
                     listTechno.Add(new Mill(ressources,availableBuildings,availableArmy));
                     listTechno.Add(new Technology.Pike(ressources,availableBuildings,availableArmy));
                     listTechno.Add(new Religion(ressources,availableBuildings,availableArmy));

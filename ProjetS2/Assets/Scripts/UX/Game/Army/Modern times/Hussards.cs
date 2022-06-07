@@ -11,6 +11,7 @@ namespace Army
             AttackDamage = 40;
             Health = 160;
             cost = 70;
+            name = "Hussard";
         }
     }
 }
