@@ -11,7 +11,7 @@ namespace Army
         public int Health;
         public int cost;
         public string name;
-
+        public int range;
         public string Name => this.name;
 
         public Army()
@@ -20,6 +20,7 @@ namespace Army
             this.Health = 100;
             this.cost = 15;
             this.name = "";
+            this.range = 5;
         }
 
         public void ApplyDamage(int AttackDamage)

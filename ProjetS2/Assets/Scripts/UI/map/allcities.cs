@@ -17,6 +17,10 @@ public class allcities : MonoBehaviour
     public GameObject ChildA;
     public GameObject ChildAUnlocked;
 
+    //public GameObject spawn;
+
+    public UIdeplacement UIdeplacement;
+
     public Game.Game game;
     public InputField Production;
     public InputField Sciences;
@@ -71,30 +75,39 @@ public class allcities : MonoBehaviour
     //the name of the game object will be their number(1st unit=>1)
     public void AddArmy(int index)
     {
-        GameObject arm = Instantiate(ChildA);
-        arm.name = game.availableArmy.Count.ToString();
+        if (true)
+        {
+            GameObject arm = Instantiate(ChildA);
+            arm.name = game.availableArmy.Count.ToString();
 
-        GameObject texta = arm.transform.Find("Name").gameObject;
-        TextMeshProUGUI whythis=texta.GetComponent<TextMeshProUGUI>();
-        whythis.text = game.UnlockArmy[index].Name;
+            GameObject texta = arm.transform.Find("Name").gameObject;
+            TextMeshProUGUI whythis=texta.GetComponent<TextMeshProUGUI>();
+            whythis.text = game.UnlockArmy[index].Name;
 
-        texta = arm.transform.Find("Lv up").gameObject;
-        Button whybutton = texta.GetComponent<Button>();
-        //TODO Lev UP
-        //whybutton.onClick.AddListener(delegate { LevUpA(game.AvailableArmy[]); });
+            texta = arm.transform.Find("Lv up").gameObject;
+            Button whybutton = texta.GetComponent<Button>();
+            //TODO Lev UP
+            //whybutton.onClick.AddListener(delegate { LevUpA(game.AvailableArmy[]); });
 
-        arm.transform.parent = ListA.transform;
-        arm.transform.localScale = new Vector3(1, 1, 1);
-        VerticalLayoutGroup listofarmy = ListA.GetComponent<VerticalLayoutGroup>();
-        arm.transform.localPosition = new Vector3(0,0,0);
-        listofarmy.spacing = 0;
+            arm.transform.parent = ListA.transform;
+            arm.transform.localScale = new Vector3(1, 1, 1);
+            VerticalLayoutGroup listofarmy = ListA.GetComponent<VerticalLayoutGroup>();
+            arm.transform.localPosition = new Vector3(0,0,0);
+            listofarmy.spacing = 0;
         
 
-        RectTransform rect = ListA.GetComponent<RectTransform>();
-        rect.sizeDelta = new Vector2(160.74f, rect.sizeDelta.y+13.355f);
-        ListA.transform.localPosition =new Vector3(ListA.transform.localPosition.x, ListA.transform.localPosition.y-6.677f, 0) ;
-        RectTransform rectparent = ListA.transform.parent.gameObject.GetComponent<RectTransform>();
-        rectparent.sizeDelta = new Vector2(0, rectparent.sizeDelta.y + 14);
+            RectTransform rect = ListA.GetComponent<RectTransform>();
+            rect.sizeDelta = new Vector2(160.74f, rect.sizeDelta.y+13.355f);
+            ListA.transform.localPosition =new Vector3(ListA.transform.localPosition.x, ListA.transform.localPosition.y-6.677f, 0) ;
+            RectTransform rectparent = ListA.transform.parent.gameObject.GetComponent<RectTransform>();
+            rectparent.sizeDelta = new Vector2(0, rectparent.sizeDelta.y + 14);
+
+           // arm = Instantiate(spawn);
+
+
+        }
+        
+
     }
     public void LevUpA(int indexofdaone)
     {

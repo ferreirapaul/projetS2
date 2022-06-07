@@ -18,13 +18,14 @@ public class UIdeplacement : MonoBehaviour
     public InputField right;
     private List<string> zqsd;
 
+    public (int, int) citi;
     public Toggle mousedrag;
     public float speed = 1f;
     public float ClickDuration = 0.2f;
     bool clicking = false;
     float totalDownTime = 0;
     public GameObject Panevile;
-    public GenMapScript Genmap;
+    public Map map;
     // Start is called before the first frame update
     void Start()
     {
@@ -127,6 +128,7 @@ public class UIdeplacement : MonoBehaviour
                     }
                     if (found)
                     {
+                        citi=citipos[i];
                         Panevile.SetActive(true);
                     }
                 }
