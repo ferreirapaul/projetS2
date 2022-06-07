@@ -1360,6 +1360,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4753168435909708696, guid: 37ae233d8f97efa4aa5a36e0f50bc15e, type: 3}
+      propertyPath: sounds.Array.data[0].volume
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 5581559387282290137, guid: 37ae233d8f97efa4aa5a36e0f50bc15e, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -1655,7 +1659,7 @@ MonoBehaviour:
   - q
   - s
   - d
-  volume: 1
+  volume: 0.05
 --- !u!4 &1967609684
 Transform:
   m_ObjectHideFlags: 0

@@ -10,7 +10,8 @@ public class formainmenu : MonoBehaviour
 
     public Dropdown DResolution;
 
-    public AudioSource audiosource;
+    public GameObject audiosource;
+    public AudioSource audio;
     public Slider slider;
     public Text TxtVolume;
 
@@ -27,15 +28,15 @@ public class formainmenu : MonoBehaviour
 
     private void Awake()
     {
-       
+        audiosource = FindObjectOfType<AudioManager>().gameObject;
+        audio = audiosource.GetComponent<AudioSource>();
         settinginstart = FindObjectOfType<settinginstart>();
         Forward.text = settinginstart.movement[0];
         Left.text = settinginstart.movement[1];
         Back.text = settinginstart.movement[2];
         Right.text = settinginstart.movement[3];
         slider.value = settinginstart.volume;
-        audiosource.volume = settinginstart.volume;
-        TxtVolume.text = "Volume " + (audiosource.volume * 100).ToString("00") + "%";
+        TxtVolume.text = "Volume " + (settinginstart.volume * 100).ToString("00") + "%";
         SliderChange();
     }
     public void DisplayKeyBinding()
@@ -90,9 +91,9 @@ public class formainmenu : MonoBehaviour
 
     public void SliderChange()
     {
-        audiosource.volume=slider.value;
-        TxtVolume.text = "Volume " + (audiosource.volume * 100).ToString("00") + "%";
-        settinginstart.volume = audiosource.volume;
+        audio.volume = slider.value;
+        TxtVolume.text = "Volume " + (slider.value * 100).ToString("00") + "%";
+        settinginstart.volume = audio.volume;
     }
     public void LoadStart()
     {

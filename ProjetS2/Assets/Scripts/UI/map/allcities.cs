@@ -47,13 +47,13 @@ public class allcities : MonoBehaviour
     // Start is called before the first frame update
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         Or.text = game.ressources[0].Value+" Gold";
         Nourriture.text = game.ressources[1].Value+" Food";
-        Population.text = game.ressources[2].Value+" Po";
-        Production.text = game.ressources[3].Value+" Pr";
-        Sciences.text = game.ressources[4].Value+" Sc";
+        Population.text = game.ressources[2].Value+" Population";
+        Production.text = game.ressources[3].Value+" Production";
+        Sciences.text = game.ressources[4].Value+" Sciences";
     }
 
     public void UnlockNewArmy()
@@ -72,6 +72,7 @@ public class allcities : MonoBehaviour
 
         texta = arm.transform.Find("Buy").gameObject;
         Button whybutton = texta.GetComponent<Button>();
+        whybutton.onClick.AddListener(delegate { AddArmy(index); });
 
         arm.transform.parent = ListAUnlocked.transform;
         arm.transform.localScale = new Vector3(1, 1, 1);
@@ -89,8 +90,6 @@ public class allcities : MonoBehaviour
     //the name of the game object will be their number(1st unit=>1)
     public void AddArmy(int index)
     {
-        if (true)
-        {
             GameObject arm = Instantiate(ChildA);
             arm.name = game.UnlockArmy.Count.ToString();
             
@@ -169,15 +168,7 @@ public class allcities : MonoBehaviour
             Army.Army kratos = arm.GetComponent<Army.Army>();
             game.UnlockArmy.Add(kratos);
 
-        }
         
-
-    }
-    public void LevUpA(int indexofdaone)
-    {
-        //Army.Army= game.LevUp
-        GameObject arm = ListA.transform.Find(indexofdaone.ToString()).gameObject;
-        //TODO change
 
     }
     public void DestroyArmy(int index)

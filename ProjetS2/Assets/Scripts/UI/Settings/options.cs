@@ -11,7 +11,7 @@ public class options : MonoBehaviour
 
     public Dropdown DResolution;
 
-    public AudioSource audiosource;
+    public AudioManager audiosource;
     public Slider slider;
     public Text TxtVolume;
 
@@ -27,16 +27,14 @@ public class options : MonoBehaviour
 
     private void Awake() 
     {
-        
+        audiosource = FindObjectOfType<AudioManager>();
         settinginstart = FindObjectOfType<settinginstart>();
         Forward.text = settinginstart.movement[0];
         Left.text = settinginstart.movement[1];
         Back.text = settinginstart.movement[2];
         Right.text = settinginstart.movement[3];
         slider.value = settinginstart.volume;
-        audiosource.volume =settinginstart.volume;
-        TxtVolume.text = "Volume " + (audiosource.volume * 100).ToString("00") + "%";
-        SliderChange();
+        TxtVolume.text = "Volume " + (settinginstart.volume * 100).ToString("00") + "%";
     }
 
     void Update()
@@ -90,9 +88,9 @@ public class options : MonoBehaviour
 
     public void SliderChange()
     {
-        audiosource.volume = slider.value;
-        TxtVolume.text = "Volume " + (audiosource.volume * 100).ToString("00") + "%";
-        settinginstart.volume = audiosource.volume;
+        audiosource.sounds[0].volume = slider.value;
+        TxtVolume.text = "Volume " + (slider.value * 100).ToString("00") + "%";
+        settinginstart.volume = audiosource.sounds[0].volume;
 
     }
     public void LoadStart()

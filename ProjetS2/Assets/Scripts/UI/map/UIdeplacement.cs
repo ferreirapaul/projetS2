@@ -135,7 +135,6 @@ public class UIdeplacement : MonoBehaviour
                     bool foundarmy = false;
                     while (i < game.citiesOwn.Count && !foundciti && !foundarmy)
                     {
-                        
                         GameObject citi = game.citiesOwn[i].gameObject;
                         foundciti = citi.transform.localPosition.x == citipos[0].Item1 && citi.transform.localPosition.y == citipos[0].Item2;
                         
