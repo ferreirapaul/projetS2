@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using Army;
 using Ressources;
 using Technology;
+using UnityEngine;
 
 namespace Building
 {
@@ -10,20 +12,16 @@ namespace Building
         private Food food;
         public int LossGold;
         public int LossFood;
-        protected List<Army.Army> availableSoldiers;
-
-        public List<Army.Army> AvailableSoldiers
-        {
-            get => this.availableSoldiers;
-        }
-
-        public ArmyCamp(Gold g, Food f)
+        public Game.Game game;
+        
+        public ArmyCamp(Gold g, Food f, Game.Game ga)
         {
             this.LossFood = 3;
             this.LossGold = 5;
             this.golds = g;
             this.food = f;
-            //TODO: Add sword man
+            this.game = ga;
+            this.game.availableArmy.Add(new Hoplite());
         }
 
         public override void DoTurn()

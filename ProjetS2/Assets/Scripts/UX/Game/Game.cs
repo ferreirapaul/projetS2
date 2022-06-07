@@ -182,7 +182,7 @@ namespace Game
             availableArmy = new List<Army.Army>();
             listTechno = new List<Technology.Technology>();
             listTechno.Add(new Aqueduct(ressources,availableBuildings,availableArmy));
-            listTechno.Add(new ArmyC(ressources,availableBuildings,availableArmy));
+            listTechno.Add(new ArmyC(ressources,availableBuildings,availableArmy,this));
             listTechno.Add(new Bow(ressources,availableBuildings,availableArmy));
             listTechno.Add(new Ebeniste(ressources,availableBuildings,availableArmy));
             listTechno.Add(new Equitation(ressources,availableBuildings,availableArmy));

@@ -9269,8 +9269,10 @@ MonoBehaviour:
   lobbby: {fileID: 0}
   map: {fileID: 47778316}
   box: {fileID: 0}
+  availableArmy: []
   Network: {fileID: 0}
   turnInfo: 
+  UnlockArmy: []
   era: 0
 --- !u!4 &454719656
 Transform:
