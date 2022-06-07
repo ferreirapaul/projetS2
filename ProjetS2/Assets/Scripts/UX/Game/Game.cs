@@ -19,10 +19,12 @@ namespace Game
         public List<Army.Army> availableArmy;
         public List<Technology.Technology> listTechno;
         public List<City> citiesOwn;
+        public List<City> citiesHidden;
         public Network_global Network;
         public string turnInfo;
         private List<Tuple<IdAction, string>> actions;
         public List<Technology.Technology> UnlockTechnologies;
+        public List<Building.Building> UnlockBuildings;
         public List<Army.Army> UnlockArmy;
         public int era = 0;
 
@@ -66,19 +68,37 @@ namespace Game
             else
             {
                 Network.SendString(turnInfo, IdMsg.endTurn);
+                foreach (Technology.Technology i in this.UnlockTechnologies)
+                {
+                    i.Effects();
+                }
+
+                foreach (Building.Building i in this.UnlockBuildings)
+                {
+                    i.DoTurn();
+                }
+                
+                foreach (Army.Army i in this.UnlockArmy)
+                {
+                    this.ressources[0].Value -= i.coastEachTurn;
+                }
+                
+                
             }
         }
 
         public void MakeAction(IdAction action, string val)
         {
+            bool go;
+            int i;
             switch (action)
             {
                 case IdAction.eraChange:
                     box.ChangeText(val);
                     break;
                 case IdAction.healthChange:
-                    bool go = true;
-                    int i = 0;
+                    go = true;
+                    i = 0;
                     while (i < this.citiesOwn.Count && go)
                     {
                         if (citiesOwn[i].ID == Int32.Parse(val))
@@ -88,6 +108,27 @@ namespace Game
                         }
 
                         i++;
+                    }
+                    break;
+                case IdAction.UnlockCommunism:
+                    string temp = "";
+                    foreach (char c in val)
+                    {
+                        if (c == '-')
+                        {
+                            go = true;
+                            i = 0;
+                            while (i < map.map.ListOfCities.Count && go)
+                            {
+                                if (map.map.ListOfCities[i].ID == Int32.Parse(temp))
+                                {
+                                    go = false;
+                                    citiesHidden.Add(map.map.ListOfCities[i]);
+                                }
+
+                                i++;
+                            }
+                        }
                     }
                     break;
             }
@@ -145,8 +186,8 @@ namespace Game
                     break;
                 case 3:
                     listTechno.Add(new Computer(ressources,availableBuildings,availableArmy,this));
-                    listTechno.Add(new Comunism(ressources,availableBuildings,availableArmy));
-                    listTechno.Add(new Globalization(ressources,availableBuildings,availableArmy));
+                    listTechno.Add(new Comunism(ressources,availableBuildings,availableArmy,map, this));
+                    listTechno.Add(new Globalization(ressources,availableBuildings,availableArmy,map));
                     listTechno.Add(new Technology.Infantry(ressources,availableBuildings,availableArmy));
                     listTechno.Add(new Missiles(ressources,availableBuildings,availableArmy));
                     listTechno.Add(new Oil(ressources,availableBuildings,availableArmy));
@@ -171,6 +212,7 @@ namespace Game
         {
             UnlockTechnologies = new List<Technology.Technology>();
             UnlockArmy = new List<Army.Army>();
+            UnlockBuildings = new List<Building.Building>();
             citiesOwn = new List<City>();
             ressources = new List<Ressources.Ressources>();
             ressources.Add(new Gold());

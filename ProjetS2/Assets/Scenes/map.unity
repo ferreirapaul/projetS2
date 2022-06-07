@@ -9269,8 +9269,10 @@ MonoBehaviour:
   lobbby: {fileID: 0}
   map: {fileID: 47778316}
   box: {fileID: 0}
+  availableArmy: []
   Network: {fileID: 0}
   turnInfo: 
+  UnlockArmy: []
   era: 0
 --- !u!4 &454719656
 Transform:
@@ -13636,7 +13638,6 @@ MonoBehaviour:
   speed: 1
   ClickDuration: 0.2
   Panevile: {fileID: 724779295}
-  Genmap: {fileID: 47778316}
 --- !u!114 &686846134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13659,6 +13660,24 @@ MonoBehaviour:
   ChildB: {fileID: 4548689095026406260, guid: f9cd06bd07473054bad9887a318b17d5, type: 3}
   ChildA: {fileID: 6278763550484853181, guid: 44869451d00042e4da70d9ac40507464, type: 3}
   ChildAUnlocked: {fileID: 6784904538075387759, guid: 725aee17101d8554a8e91fdd168c89da, type: 3}
+  spawnhere: {fileID: 47778315}
+  spawn1: {fileID: 2068938506791513517, guid: d25aec8534a0cfe4f800a0651a5bfef3, type: 3}
+  spawn2: {fileID: 2293522870635838644, guid: 72479619e4f40b14eb5c024e3f128670, type: 3}
+  spawn3: {fileID: 4314187203516182302, guid: bd7d726c3c9015245b787e93928aedfd, type: 3}
+  spawn4: {fileID: 4037985991246560854, guid: 2730fb6e076ffba44a923f09c9f59a83, type: 3}
+  spawn5: {fileID: 6535312930394428652, guid: 6bcbd475b2b8dce4181a6391c0c9dd30, type: 3}
+  spawn6: {fileID: 46888505293702439, guid: 87e1754b30124cf4cbd8a0bb47564bc5, type: 3}
+  spawn7: {fileID: 1474050697722085464, guid: ee36ea65e6b2d974093c968229832f2f, type: 3}
+  spawn8: {fileID: 6062375786647409747, guid: 579396b8cc5f0ef45b0357ae3c5cb843, type: 3}
+  spawn9: {fileID: 8988576698968579980, guid: e0945003acd4bf04bbf7b995b9fe5435, type: 3}
+  spawn10: {fileID: 5168537238014294121, guid: 612502a5c6338fc49b38b6e197824eec, type: 3}
+  spawn11: {fileID: 7739757128796184201, guid: 19d4d7f4e2217b34e8bb21f38ad3714e, type: 3}
+  spawn12: {fileID: 420558420935456061, guid: c6bad18e5dddd0b42a307975bb9d3af0, type: 3}
+  spawn13: {fileID: 3194086905724489109, guid: 510a6b6addf95be4388c77fa062fdd3d, type: 3}
+  spawn14: {fileID: 7395898934563250740, guid: 50ad9808baac7274ab667e995aeef9fc, type: 3}
+  spawn15: {fileID: 2533677925126988295, guid: b1dba24f854131e4db9ff14be079a941, type: 3}
+  spawn16: {fileID: 7143612264408248457, guid: 72012940556001846a7d069240d10fe2, type: 3}
+  UIdeplacement: {fileID: 686846133}
   game: {fileID: 454719655}
   Production: {fileID: 538284483}
   Sciences: {fileID: 1633673442}

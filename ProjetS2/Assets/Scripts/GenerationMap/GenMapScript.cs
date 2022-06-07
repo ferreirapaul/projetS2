@@ -36,6 +36,8 @@ public class GenMapScript : MonoBehaviour
     public int map_width;
     public int numberOfPlayers;
 
+    public Map map;
+
  
     public void Generate(int seed)
     {
@@ -51,7 +53,7 @@ public class GenMapScript : MonoBehaviour
         CreateTileset();
         CreateTileGroups();
 
-        Map map = new Map(map_width,map_height,numberOfPlayers,spriteRenderer,tileset,tile_groups,seed,magnification,lobby,network);
+        this.map = new Map(map_width,map_height,numberOfPlayers,spriteRenderer,tileset,tile_groups,seed,magnification,lobby,network);
     }
  
     void CreateTileset()

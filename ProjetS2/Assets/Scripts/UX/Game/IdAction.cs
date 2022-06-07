@@ -9,7 +9,6 @@
         movingTroup,
         attackOtherTroup,
         createTroup,
-        UnlockGlobal,
         UnlockCommunism
     }
 }

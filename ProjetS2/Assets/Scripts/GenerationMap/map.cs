@@ -6,28 +6,28 @@ using Network;
 
 public class Map 
 {
-    List<List<Tile>>    TileGrid;       // liste contenant les listes de cases
-    List<City>          ListOfCities;   // liste contenant les cases avec des villes 
-    List<List<int>>     noise_grid;     // liste contenant les valeurs generes avec le bruit de perlin
+    public List<List<Tile>>    TileGrid;       // liste contenant les listes de cases
+    public List<City>          ListOfCities;   // liste contenant les cases avec des villes 
+    public List<List<int>>     noise_grid;     // liste contenant les valeurs generes avec le bruit de perlin
 
-    int     numberOfPlayers;
-    int     amountOfCities;
+    public int     numberOfPlayers;
+    public int     amountOfCities;
 
-    int     map_width;                  // nb de cases en largeur
-    int     map_height;                 // nb de cases en hauteur
-    float   magnification;              // l'effet de zoom ou dezoom sur la map
-    int     seed;                       // la graine untilisee pour la generation 
+    public int     map_width;                  // nb de cases en largeur
+    public int     map_height;                 // nb de cases en hauteur
+    public float   magnification;              // l'effet de zoom ou dezoom sur la map
+    public int     seed;                       // la graine untilisee pour la generation 
 
 
-    SpriteRenderer   spriteRenderer;
+    public SpriteRenderer   spriteRenderer;
 
-    List<int>        playerIDs;
-    LobbyInfos       lobby;
-    Network_global   network;
-    List<Player>     playersList;
+    public List<int>        playerIDs;
+    public LobbyInfos       lobby;
+    public Network_global   network;
+    public List<Player>     playersList;
 
-    Dictionary<int, GameObject> tileset;
-    Dictionary<int, GameObject> tile_groups;
+    public Dictionary<int, GameObject> tileset;
+    public Dictionary<int, GameObject> tile_groups;
 
     public Map(int Map_width,int Map_height,int NumberOfPlayers,SpriteRenderer SpriteRenderer,Dictionary<int, GameObject> Tileset,Dictionary<int, GameObject> tileGroup,int Seed,float Magnification,LobbyInfos lobby,Network_global network)
     {
@@ -42,8 +42,6 @@ public class Map
         noise_grid      = new List<List<int>>();
         playersList     = new List<Player>{};
         spriteRenderer  = SpriteRenderer;
-        map_width       = (int) spriteRenderer.transform.localScale.x;
-        map_height      = (int) spriteRenderer.transform.localScale.y;
         tileset         = Tileset;
         tile_groups     = tileGroup;
         this.lobby      = lobby;
@@ -225,7 +223,7 @@ public class Map
         {
             int x       = (int) Random.Range(0, map_width);
             int y       = (int) Random.Range(0, map_height);
-            City city   = new City(10,x,y,tileset,tile_groups,amount);
+            City city   = new City(10,x,y,tileset,tile_groups,amount,null);
             if (cityIsValid(city))
             {
                 ListOfCities.Add(city);
