@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class settinginstart : MonoBehaviour
 {
-   public string ip = "192.168.1.180";
+   public string ip = "127.0.0.1";
     public List<string> movement = new List<string>{"z","q","s","d"};
     public (int,int) resolutions=(1920,1080);
     public float volume = 1;

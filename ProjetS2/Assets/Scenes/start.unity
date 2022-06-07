@@ -1604,7 +1604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7643365723590813438, guid: a96aad5848fe15b4596207d957f17c62, type: 3}
       propertyPath: ip
-      value: 192.168.1.180
+      value: 127.0.0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7643365723590813438, guid: a96aad5848fe15b4596207d957f17c62, type: 3}
       propertyPath: port
@@ -1614,6 +1614,10 @@ PrefabInstance:
       propertyPath: lobby
       value: 
       objectReference: {fileID: 1651286084}
+    - target: {fileID: 7643365723590813438, guid: a96aad5848fe15b4596207d957f17c62, type: 3}
+      propertyPath: setting
+      value: 
+      objectReference: {fileID: 1967609683}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a96aad5848fe15b4596207d957f17c62, type: 3}
 --- !u!1 &1967609682
@@ -1645,7 +1649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cf6b6b6095b22943a9e67d2a8297414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ip: 192.168.1.180
+  ip: 127.0.0.1
   movement:
   - z
   - q

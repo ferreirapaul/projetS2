@@ -105,7 +105,7 @@ public class formainmenu : MonoBehaviour
         Debug.Log(local);
         local.isOn = true;
         online.isOn = false;
-        settinginstart.ip = "192.168.1.72";
+        settinginstart.ip = "127.0.0.1";
 
     }
     public void IpOnline()

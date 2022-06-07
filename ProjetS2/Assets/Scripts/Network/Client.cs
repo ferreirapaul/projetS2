@@ -18,6 +18,7 @@ namespace Network
         public int myId = 0;
 
         public TcpClient socket;
+        public settinginstart setting;
         public bool isConnected = false;
 
         private NetworkStream stream;
@@ -29,6 +30,7 @@ namespace Network
 
         public void Awake()
         {
+            ip = setting.ip;
             lobby = FindObjectOfType<LobbyInfos>();
             
             if (instance == null)
