@@ -78,15 +78,13 @@ namespace Game
                 }
                 else
                 {
-                    Network.SendString(turnInfo, IdMsg.endTurn);
+                    if (this.listTechno.Count == 0)
+                    {
+                        EraChange();
+                    }
                     foreach (Technology.Technology i in this.UnlockTechnologies)
                     {
                         i.Effects();
-                    }
-
-                    foreach (Building.Building i in this.UnlockBuildings)
-                    {
-                        i.DoTurn();
                     }
 
                     foreach (Army.Army i in this.UnlockArmy)
@@ -94,7 +92,11 @@ namespace Game
                         this.ressources[0].Value -= i.coastEachTurn;
                     }
 
-
+                    foreach (City i in this.citiesOwn)
+                    {
+                        i.MakeTurn();
+                    }
+                    Network.SendString(turnInfo, IdMsg.endTurn);
                 }
             }
             else

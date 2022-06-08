@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Schema;
 using UnityEngine;
 
 
@@ -30,5 +31,13 @@ public class City : Tile
         this.health = 100;
         this.owner = Owner;
         this.builtBuildings = new List<Building.Building>();
+    }
+
+    public void MakeTurn()
+    {
+        foreach (Building.Building i in this.builtBuildings)
+        {
+            i.DoTurn();
+        }
     }
 }

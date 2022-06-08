@@ -81,7 +81,7 @@ namespace Army
                 j = 0;
                 Map map = genMapScript.map;
                 int owner = game.citiesOwn[0].Owner.Id;
-                bool enemyciti = false;
+                bool enemyciti = true;
                 while (j < map.ListOfCities.Count && enemyciti && !enemyhere)
                 {
 
@@ -94,7 +94,7 @@ namespace Army
                 if (enemyhere)
                 {
                     this.Attack(game.UnlockArmy[ind]);
-                }
+                } 
                 else
                 {
                     if (enemyciti)
