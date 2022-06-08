@@ -29,9 +29,12 @@ public class UIdeplacement : MonoBehaviour
     public Game.Game game;
     public allcities allcities;
     private (bool,int) armychoose = (false,0);
+
+    private bool startOfGame;
     // Start is called before the first frame update
     void Start()
     {
+        startOfGame = true;
         mapMinx = mapRenderer.transform.position.x - mapRenderer.bounds.size.x / 2f;
         mapMaxx = mapRenderer.transform.position.x + mapRenderer.bounds.size.x / 2f;
 
@@ -129,17 +132,23 @@ public class UIdeplacement : MonoBehaviour
                         
 
                     }
-                    List<(int, int)> citipos = new List<(int, int)> { ((int)mickey[0], (int)mickey[1]), ((int)mickey[0] - 1, (int)mickey[1]), ((int)mickey[0], (int)mickey[1] - 1), ((int)mickey[0] - 1, (int)mickey[1] - 1) };
+                    List<(int, int)> citipos = new List<(int, int)> { ((int)mickey[0], (int)mickey[1]+1), ((int)mickey[0]-1, (int)mickey[1]+1), ((int)mickey[0], (int)mickey[1]), ((int)mickey[0]-1, (int)mickey[1]) };
                     int i = 0;
                     bool foundciti = false;
                     bool foundarmy = false;
+                    Debug.Log("citiesOwn.count =" + game.citiesOwn.Count);
+                    if (startOfGame)
+                    {
+                        game.citiesOwn = map.startingCities;
+                    }
                     while (i < game.citiesOwn.Count && !foundciti && !foundarmy)
                     {
                         GameObject citi = game.citiesOwn[i].gameObject;
                         foundciti = citi.transform.localPosition.x == citipos[0].Item1 && citi.transform.localPosition.y == citipos[0].Item2;
-                        
+
                         i++;
                     }
+                    Debug.Log("foundciti = " + foundciti);
                     int index = 0;
                     while (!foundciti && index < game.UnlockArmy.Count && !foundarmy)
                     {
@@ -156,6 +165,22 @@ public class UIdeplacement : MonoBehaviour
                     {
                         citi=citipos[i];
                         Panevile.SetActive(true);
+                        
+                        if (startOfGame)
+                        {
+                            foreach (City city in map.ListOfCities)
+                            {
+                                Debug.Log("city.posX = " + city.posX);
+                                Debug.Log("city.posY = " + city.posY);
+                                Debug.Log("citi.Item1 = " + citi.Item1);
+                                Debug.Log("citi.Item2 = " + citi.Item2);
+                                if (city.posX == citi.Item1 && city.posY == citi.Item2)
+                                {
+                                    startOfGame = false;
+                                    map.SelectCity(city);
+                                }
+                            }
+                        }
                     }
                     if (foundarmy)
                     {

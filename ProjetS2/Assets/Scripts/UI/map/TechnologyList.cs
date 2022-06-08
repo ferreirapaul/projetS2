@@ -27,10 +27,8 @@ public class TechnologyList : MonoBehaviour
     public void AddTechno(int index)
     {
         game.UnlockTechnologies.Add(game.listTechno[index]);
-        Debug.Log(index);
-        /*bool army = false;
+        bool army = false;
         Army.Army po = new Army.Hoplite();
-        Debug.Log(po);
         switch (index)
         {
             case 1:
@@ -86,12 +84,11 @@ public class TechnologyList : MonoBehaviour
             default:
                 break;
         }
-        Debug.Log(po);
         if (army)
         {
-            game.availableArmy.Add(Army.Army.);
+            game.availableArmy.Add(po);
             allcities.UnlockNewArmy();
-        }*/
+        }
         (string, string) both = (game.listTechno[index].name, game.listTechno[index].description);
             GameObject tech = Instantiate(ChildS);
             GameObject texts = tech.transform.Find("Name").gameObject;

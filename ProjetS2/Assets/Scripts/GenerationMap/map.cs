@@ -28,8 +28,10 @@ public class Map
 
     public Dictionary<int, GameObject> tileset;
     public Dictionary<int, GameObject> tile_groups;
+    public List<City> startingCities;
+    public Game.Game game;
 
-    public Map(int Map_width,int Map_height,int NumberOfPlayers,SpriteRenderer SpriteRenderer,Dictionary<int, GameObject> Tileset,Dictionary<int, GameObject> tileGroup,int Seed,float Magnification,LobbyInfos lobby,Network_global network)
+    public Map(int Map_width,int Map_height,int NumberOfPlayers,SpriteRenderer SpriteRenderer,Dictionary<int, GameObject> Tileset,Dictionary<int, GameObject> tileGroup,int Seed,float Magnification,LobbyInfos lobby,Network_global network,Game.Game game)
     {
         seed            = Seed;
         map_width       = Map_width;
@@ -47,6 +49,7 @@ public class Map
         this.lobby      = lobby;
         this.network    = network;
         playerIDs       = new List<int>();
+        this.game       = game;
 
 
 
@@ -265,7 +268,8 @@ public class Map
 
     void ChooseStartingCity ()
     {
-        List<City> startingCities = GetStartingCities();
+        
+        this.startingCities = GetStartingCities();
         foreach (City city in startingCities)
         {
             AddVision(city.posX,city.posY,10);
@@ -275,5 +279,6 @@ public class Map
     public void SelectCity(City city)
     {
         city.Owner = lobby.me;
+        game.citiesOwn.Add(city);
     }
 }
